@@ -43,9 +43,8 @@ Die Applikation wurde mit den folgenden Mitteln erstellt:
 * Web-Server: [node.js](https://nodejs.org), [express](http://expressjs.com/)
 * Datenbanken: [MariaDB](https://mariadb.org/) für die Tabellen, [Neo4J](https://neo4j.com/) für den Graphen
 
-Die Ähnlichkeiten von Namen werden mit der    
-[Levenshtein-Metrik](https://de.wikipedia.org/wiki/Levenshtein-Distanz) berechnet. 
-Anhand eines Netzwerks/Graphs kann man die Ähnlichkeiten untersuchen.
+Die Ähnlichkeiten von Namen werden mit der [Levenshtein-Metrik](https://de.wikipedia.org/wiki/Levenshtein-Distanz) berechnet. 
+Anhand eines Netzwerks/Graphs kann man die Ähnlichkeiten untersuchen. 
 Die Berechnung dieser Metrik ist schon ein rechenintensives Problem für die ca. 260.000 Namen, die für 
 Deutschland in den Daten vorhanden sind. Aus diesem Grund wurde die Berechnung separat mit paralllen Java 8 Streams durchgeführt. 
 Mit JavaScript würde eine Berechnung sehr viel länger dauern.
@@ -54,7 +53,7 @@ Der Java Code befindet sich in einem [separatem Projekt](https://github.com/jdin
 
 #### Daten
 
-Die Daten [Daten der deutschen Arbeitsgemeinschaft genealogischer Verbände e.V. (DAGV)](https://zenodo.org/record/61683#.WBG_hSTrt7I)
+Die [Daten der deutschen Arbeitsgemeinschaft genealogischer Verbände e.V. (DAGV)](https://zenodo.org/record/61683#.WBG_hSTrt7I)
 sind laut der Datei LICENSE.txt lizensiert unter "Creative Commons Attribution-ShareAlike 4.0 International".
 
 #### Installation
@@ -65,4 +64,16 @@ Notwendig:
 * [node.js](https://nodejs.org) und npm.
 
 
+```bash
+$ git clone https://github.com/jdinkla/codingdavinci-familiennamen.git
+$ cd codingdavinci-familiennamen
+```
+
+Die Installation erfolgt dann mit
+
+```bash
+$ bin/init.sh
+```
+
+Die Installationsroutine wird zuerst die Daten im Ordner ```import``` dekomprimieren.
 
