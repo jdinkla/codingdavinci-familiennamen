@@ -8,18 +8,18 @@
 . bin/env.sh
 
 # create dir
-mkdir -p ${FAM_APP}
+rm -rf ${FAM_APP_DIR}
+mkdir -p ${FAM_APP_DIR}
 
 # copy necessary files to tmp dir
-cd ${APP_DIR}
-
-cp Dockerfile ${FAM_APP}
-cp -r app_api ${FAM_APP}
-cp -r app_server ${FAM_APP}
-cp -r bin ${FAM_APP}
-cp -r public ${FAM_APP}
-cp app.js package.json ${FAM_APP}
+cp -r app_api ${FAM_APP_DIR}
+cp -r app_server ${FAM_APP_DIR}
+mkdir -p ${FAM_APP_DIR}/bin
+cp -r bin/www ${FAM_APP_DIR}/bin
+cp -r public ${FAM_APP_DIR}
+cp Dockerfile app.js package.json ${FAM_APP_DIR}
 
 # build docker image
-cd ${FAM_APP}
+
+cd ${FAM_APP_DIR}
 docker build -t ${FAM_APP_NAME} .

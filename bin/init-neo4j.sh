@@ -21,6 +21,6 @@ docker run -d --name ${FAM_NEO4J_NAME} --publish=7474:7474 --publish=7687:7687 -
 
 echo "Sleep until database is constructed ... "
 sleep 30
-docker exec -it ${FAM_NEO4J_NAME} /import/import-neo4j.sh
+docker exec -it ${FAM_NEO4J_NAME} /import/import-neo4j.sh > /dev/null
 
 docker stop ${FAM_NEO4J_NAME}

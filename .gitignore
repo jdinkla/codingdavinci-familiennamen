@@ -1,5 +1,6 @@
 tmp
 install
+init.log
 
 env.js
 env-docker.js

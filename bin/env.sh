@@ -21,5 +21,5 @@ export FAM_MARIADB_NAME=m1
 export FAM_NEO4J_NAME=n1
 
 # FamVis
-export FAM_APP_NAME=famvis
-export FAM_APP=${FAM_INSTALL_DIR}/app
+export FAM_APP_NAME=f1
+export FAM_APP_DIR=${FAM_INSTALL_DIR}/app

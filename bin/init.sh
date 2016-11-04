@@ -5,22 +5,18 @@
 # see the file LICENSE in the root directory for license information
 #
 
-. env.sh
+. bin/env.sh
 
 echo "Step 1. create directories"
-./init-dirs.sh
-
-cd ${FAM_HOME}
+bin/init-dirs.sh
 
 echo "Step 2. create MariaDB"
-./init-mariadb.sh
+bin/init-mariadb.sh
 
 echo "Step 3. create Neo4J"
-./init-neo4j.sh
+bin/init-neo4j.sh
 
 echo "Step 4. create web app"
-./init-famvis.sh
+bin/init-famvis.sh
 
-echo "Done. Now stopping all services"
-
-./stop-all.sh
+echo "Created. Now start with run-all.sh"
