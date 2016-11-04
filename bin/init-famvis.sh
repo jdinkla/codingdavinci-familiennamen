@@ -5,25 +5,21 @@
 # see the file LICENSE in the root directory for license information
 #
 
-
-. env.sh
+. bin/env.sh
 
 # create dir
-mkdir -p ${FAM_TMP}
+mkdir -p ${FAM_APP}
 
 # copy necessary files to tmp dir
 cd ${APP_DIR}
 
-cp Dockerfile ${FAM_TMP}
-cp -r app_api ${FAM_TMP}
-cp -r app_server ${FAM_TMP}
-cp -r bin ${FAM_TMP}
-cp -r public ${FAM_TMP}
-cp app.js package.json ${FAM_TMP}
+cp Dockerfile ${FAM_APP}
+cp -r app_api ${FAM_APP}
+cp -r app_server ${FAM_APP}
+cp -r bin ${FAM_APP}
+cp -r public ${FAM_APP}
+cp app.js package.json ${FAM_APP}
 
 # build docker image
-cd ${FAM_TMP}
+cd ${FAM_APP}
 docker build -t ${FAM_APP_NAME} .
-
-# remove tmp dir
-# rm -rf ${FAM_TMP}

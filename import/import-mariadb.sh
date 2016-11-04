@@ -6,4 +6,4 @@
 #
 # this has to run in the docker IMAGE
 
-mysql --user=root --password=mariadb < /import/mariadb-create.sql
+mysql --user=root --password=mariadb < /import/import-mariadb.sql

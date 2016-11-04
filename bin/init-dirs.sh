@@ -7,6 +7,7 @@
 
 . bin/env.sh
 
+rm -rf ${FAM_INSTALL_DIR}
 mkdir -p ${FAM_INSTALL_DIR}
 
 # uncompress the data in the import directory
