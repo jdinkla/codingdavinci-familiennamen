@@ -1,0 +1,29 @@
+//-
+  (c) 2016, Jörn Dinkla, http://www.dinkla.net
+
+  see the file LICENSE in the root directory for license information
+
+doctype html
+html(ng-app=ngApp)
+  head
+    title= title
+    meta(charset='utf-8')
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+    link(rel="stylesheet", href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css")
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js")
+    script(src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js")
+    script(src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js")
+    script(src="https://d3js.org/d3.v4.min.js")
+    script(src="https://d3js.org/d3-scale-chromatic.v1.min.js")
+    script(src="/javascripts/browser_utils.js")
+    script(src="/javascripts/famvis.js")
+    include include/meta
+    include include/style
+
+  body
+    include include/nav
+
+    div(ng-controller=ngController)#container.container-fluid
+      block content
+
+    include include/footer

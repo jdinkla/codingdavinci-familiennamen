@@ -1,0 +1,183 @@
+//-
+  (c) 2016, Jörn Dinkla, http://www.dinkla.net
+
+  see the file LICENSE in the root directory for license information
+
+extends ../layout
+
+block content
+
+  .row
+    .col-sm-12
+      h1= title
+
+  .row
+    .col-sm-12
+      p In der folgenden Abbildung ist die Architektur der Anwendung vereinfacht dargestellt.
+
+  .row
+    .col-sm-1
+    .col-sm-10
+      div
+        img.img-responsive(src="/images/Architektur.png")
+    .col-sm-1
+
+  .row
+    .col-sm-12
+      p Es gibt im wesentlichen die folgenden drei Bereiche:
+      ol
+        li Die Daten (ganz links)
+          ul
+            li Familiendaten, PLZ, Geolocation und Karten für die Darstellung
+        li
+          a(href="https://en.wikipedia.org/wiki/Extract,_transform,_load") ETL-Prozess
+          ul
+            li Berechnen der Ähnlichkeiten von Namen
+            li Anreicherung der PLZ mit Geolocations
+            li Laden der Daten in die Datenbanken
+        li Datenbanken
+          ul
+            li
+              a(href="https://mariadb.org/") MariaDB
+              | &nbsp;für die Tabellendaten (Familiendaten, PLZ)
+            li
+              a(href="https://neo4j.com/") Neo4J
+              | &nbsp; für den Ähnlichkeitsgraph
+        li Der Server
+          ul
+            li Web-Applikation, implementiert mit&nbsp;
+              a(href="https://nodejs.org") node.js
+              | &nbsp;und dem&nbsp;
+              a(href="http://expressjs.com/") express
+              | -Framework
+        li Der User bzw. der Client
+          ul
+            li
+              a(href="https://angularjs.org/") Angular.js
+            li
+              a(href="http://getbootstrap.com/") Bootstrap
+            li
+              a(href="https://d3js.org/") d3.js
+        li Deployment in der Cloud
+          ul
+            li Docker Container
+            li läuft momentan aus AWS
+
+      p Im Folgenden werden diese Teile noch genauer erläutert.
+
+  .row
+    .col-sm-12
+      h4 1. Die Daten
+
+        h5 Anreicherung mit geographischen Koordinaten
+        p Um die Daten auf einer Karte darstellen zu können, müssen die PLZ mit geographischen Koordinaten angereichert werden (
+          a(href="https://en.wikipedia.org/wiki/Geolocation") Geolocation
+          | ). Zu diesem Zweck wurden die Daten von&nbsp;
+          a(href="http://opengeodb.org/wiki/PLZ.tab") OpenGeoDB
+          | &nbsp;benutzt.
+
+        h5 Karten für die Darstellung mit d3.js
+
+        p Für die Darstellung werden die folgenden Karten verwendet
+        ul
+          li Die Deutschlandkarte steht unter der MIT-Lizenz und stammt von&nbsp;
+            a(href="https://github.com/oscar6echo/GermanyMap") hier.
+          li Die geographischen Daten der PLZ-Gebiete stammen von der Seite&nbsp;
+            a(href="https://www.suche-postleitzahl.org/downloads") www.suche-postleitzahl.org
+            | &nbsp;und sind unter der&nbsp;
+            a(href="https://www.openstreetmap.org/copyrigh") "Open Database License"
+            | &nbsp;von OpenStreetMap lizensiert.
+          li Auf der Webseite&nbsp;
+            a(href="http://mapshaper.org") mapshaper.org
+            | &nbsp;wurden sie zu&nbsp;
+            a(href="https://en.wikipedia.org/wiki/GeoJSON") GeoJSON
+            | &nbsp;umkodiert.
+
+      h4 2. ETL-Prozess
+      p Mit einem ETL-Prozess ... / Pre-Processing
+
+        h5 Berechnung der Ähnlichkeiten
+        p Die Ähnlichkeiten anhand der L-Dist werden ...
+
+        h5 Import und Anreicherung
+        p Die Daten aus der foko.csv werden ...
+
+      h4 3. Datenbanken
+      p ...
+
+      h4 4. Der Server
+      p ...
+
+      h4 5. Der User bzw. der Client
+      p ...
+
+      h4 6. Deployment in der Cloud
+      p ...
+
+
+  .row
+    .col-sm-12
+      h2 Weitere Informationen
+      p Auf den folgenden Webseiten gibt es ebenfalls Informationen über dieses Projekt.
+        ul
+          li Die &nbsp;
+            a(href="https://hackdash.org/projects/57dd5ce5d9284f016c04745b") Projektseite
+            | &nbsp;bei&nbsp;
+            a(href="https://hackdash.org/dashboards/cdvnord") HackDash
+            | .
+          li Der Sourcecode ist bei&nbsp;
+            a(href="https://github.com/jdinkla/codingdavinci-familiennamen") github
+            | &nbsp;verfügbar.
+          li Der Java-Code für die Berechnung der Ähnlichkeiten befindet sich&nbsp;
+            a(href="https://github.com/jdinkla/codingdavinci-familiennamen-graph") in einem separatem Projekt
+            | .
+
+  .row
+    .col-sm-12
+      h3 Lektüre
+      div
+        p Beim Schreiben konsultierte Bücher ...
+
+  .row
+    .col-sm-3
+      div.box
+        p Simon Holmes
+        a(href="https://www.manning.com/books/getting-mean-with-mongo-express-angular-and-node") Getting MEAN with Mongo, Express, Angular, and Node
+        p
+        img.img-responsive(src="https://images.manning.com/255/340/resize/book/7/ab105a3-8e24-4360-827c-a5211defbaec/Holmes-GettingMEAN-HI.png")
+
+    .col-sm-3
+      div.box
+        div
+          p Lukas Ruebbelke
+          a(href="https://www.manning.com/books/angularjs-in-action") AngularJS in Action
+          p
+          img.img-responsive(src="https://images.manning.com/255/340/resize/book/5/ae58f46-04df-4e0d-a3b1-17d7368cd811/Ruebbelke-AngularJS-HI.jpg")
+
+    .col-sm-3
+      div.box
+        p Elijah Meeks
+        a(href="https://www.manning.com/books/d3-js-in-action") D3.js in Action
+        p
+        img.img-responsive(src="https://images.manning.com/255/340/resize/book/f/2436cbd-0fd1-4362-83b6-110c8bd09440/meeks.png")
+
+    .col-sm-3
+      div.box
+        p Nathan Yau
+        a(href="http://flowingdata.com/data-points/") Data Points: Visualization That Means Something
+        p
+        img.img-responsive(src="http://flowingdata.com/data-points/images/dpcover.png")
+
+    .col-sm-3
+      div.box
+        p Aleksa Vukotic, Nicki Watt
+        a(href="https://www.manning.com/books/neo4j-in-action") Neo4j in Action
+        p
+        img.img-responsive(src="https://images.manning.com/255/340/resize/book/b/c992795-70c1-4c6a-b287-7b8cbcaa86de/partner.png")
+
+  script.
+
+    d3.select("#nav_docs").attr("class", "active");
+
+
+

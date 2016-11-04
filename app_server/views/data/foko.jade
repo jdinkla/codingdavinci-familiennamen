@@ -1,0 +1,91 @@
+//-
+  (c) 2016, Jörn Dinkla, http://www.dinkla.net
+
+  see the file LICENSE in the root directory for license information
+
+extends ../layout
+
+block content
+
+  .row
+    .col-sm-12
+      h1= title
+      p Folgende Datensätze sind in der Datei #{title} vorhanden (aus Performancegründen werden nur 1000 Datensätze dargestellt).
+
+      table.table.table-striped
+        thead
+          tr
+            th id
+            th familyName
+            th begin
+            th end
+            th submitter
+            th denomination
+            th country
+            th region
+            th postalCode
+            th placeName
+            th placeURI
+        tbody#theTable
+
+  script.
+
+    d3.select("#nav_data").attr("class", "active");
+
+    d3.tsv("/data/foko.csv", function (error, json) {
+      if (error) return console.warn(error);
+
+      json = json.splice(0, 1000);
+
+      var div = d3.select("#theTable")
+              .selectAll("div")
+              .data(json)
+              .enter().append("tr");
+
+      div.append("td").text(function (d) {
+        return d.id;
+      });
+
+      div.append("td").text(function (d) {
+        return d.familyName;
+      });
+
+      div.append("td").text(function (d) {
+        return d.begin;
+      });
+
+      div.append("td").text(function (d) {
+        return d.end;
+      });
+
+      div.append("td").text(function (d) {
+        return d.submitter;
+      });
+
+      div.append("td").text(function (d) {
+        return d.denomination;
+      });
+
+      div.append("td").text(function (d) {
+        return d.country;
+      });
+
+      div.append("td").text(function (d) {
+        return d.region;
+      });
+
+      div.append("td").text(function (d) {
+        return d.postalCode;
+      });
+
+      div.append("td").text(function (d) {
+        return d.placeName;
+      });
+
+      div.append("td").append("a").attr("href", function (d) {
+        return d.placeURI;
+      }).text(function (d) {
+        return d.placeURI;
+      });
+
+    });

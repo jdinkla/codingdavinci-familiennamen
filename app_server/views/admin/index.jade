@@ -1,0 +1,49 @@
+//-
+  (c) 2016, Jörn Dinkla, http://www.dinkla.net
+
+  see the file LICENSE in the root directory for license information
+
+extends ../layout
+
+block content
+
+  .row
+    .col-sm-12
+      h1= title
+
+  .row
+    .col-sm-3
+    .col-sm-6
+      div
+        table.table.table-striped
+          tbody
+            tr
+              td MariaDB
+              td#state_mariadb ?
+            tr
+              td Neo4J
+              td#state_neo4j ?
+
+        .btn-toolbar
+          button.btn.btn-info(ng-click="check_neo()") Überprüfe Neo4J
+          button.btn.btn-info(ng-click="updateGraph($index)") Überprüfe MariaDB
+    .col-sm-3
+
+  .row
+        p
+          Familiennamen
+            form(action="/api/admin/familiennamen", method="POST")
+              button#updateButton.btn.btn-primary.pull-right Update der Familiennamen
+
+        p
+          Status
+          ul
+            li Status MariaDB/nbsp;
+              a(href="/api/alive/mariadb") check
+
+            li Status Neo4J/nbsp;
+              a(href="/api/alive/neo4j") check
+
+  script.
+
+

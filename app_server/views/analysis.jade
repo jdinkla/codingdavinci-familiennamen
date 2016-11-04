@@ -1,0 +1,157 @@
+//-
+  (c) 2016, Jörn Dinkla, http://www.dinkla.net
+
+  see the file LICENSE in the root directory for license information
+
+extends layout_angular
+
+block content
+
+  .row
+    .col-sm-12
+      h1= title
+
+  include include/name_selection
+
+  .row
+    .col-sm-12
+      h3
+        button.btn.btn-toggle(type="button", data-toggle="collapse", data-target="#toggle-data")
+          span#toggle-data-icon(class="glyphicon")
+        | Daten
+      div.collapse#toggle-data
+        .btn-toolbar
+          button.btn.btn-search(ng-click="updateData()", type="button") Query
+        div#table
+          table.table.table-striped
+            thead
+              tr
+                th id
+                th familyName
+                th begin
+                th end
+                th submitter
+                th denomination
+                th country
+                th region
+                th postalCode
+                th placeName
+                th placeURI
+            tbody#table_data
+
+  .row
+    .col-sm-12
+      h3
+        button.btn.btn-toggle(type="button", data-toggle="collapse", data-target="#toggle-graph")
+          span#toggle-graph-icon(class="glyphicon")
+        | Graph
+      div.collapse#toggle-graph
+        .form.jd-options
+          p Anzahl der Nachbarn
+          input#numN1(type="radio", ng-model="neighbors", value="1")
+          label(for="#numN1") 1
+          input#numN2(type="radio", ng-model="neighbors", value="2")
+          label(for="#numN2") 2
+        .btn-toolbar
+          button.btn.btn-search(ng-click="updateGraph()", type="button") Query
+        div#graph
+
+  .row
+    .col-sm-12#timeline-container
+      h3
+        button.btn.btn-toggle(type="button", data-toggle="collapse", data-target="#toggle-timeline")
+          span#toggle-timeline-icon(class="glyphicon")
+        | Zeitreihe
+      div.collapse#toggle-timeline
+        .btn-toolbar
+          button.btn.btn-search(ng-click="updateTimeline()", type="button") Query
+        div
+          .col-sm-1
+          .col-sm-10#timeline
+          .col-sm-1
+
+
+  .row
+    .col-sm-12
+      h3
+        button.btn.btn-toggle(type="button", data-toggle="collapse", data-target="#toggle-map")
+          span#toggle-map-icon(class="glyphicon")
+        | Karte
+      div.collapse#toggle-map
+        .form.jd-options
+          label(for="mapSelect") Karte
+          select#mapSelect(ng-model="mapDataFile" ng-options="x.text for x in mapDataFiles")
+        .btn-toolbar
+          button.btn.btn-search(ng-click="updateMap()", type="button") Query
+        div#map
+
+  script(src="/javascripts/color.js")
+  script(src="/javascripts/update_graph.js")
+  script(src="/javascripts/update_table.js")
+  script(src="/javascripts/update_timeline.js")
+  script(src="/javascripts/update_map.js")
+  script(src="/javascripts/list_of_names.js")
+
+  script.
+
+    d3.select("#nav_analysis").attr("class", "active");
+
+    var plus = 'glyphicon-plus-sign';
+    var minus = 'glyphicon-minus-sign';
+
+    function setPlus(tag) {
+      var elem = $(tag);
+      elem.removeClass(minus);
+      elem.addClass(plus);
+    }
+
+    function setMinus(tag) {
+      var elem = $(tag);
+      elem.removeClass(plus);
+      elem.addClass(minus);
+    }
+
+    var toggleDataIcon = '#toggle-data-icon';
+    var elem = $('#toggle-data');
+    elem.on('hidden.bs.collapse', function () {
+      setPlus(toggleDataIcon);
+    });
+    elem.on('shown.bs.collapse', function () {
+      setMinus(toggleDataIcon);
+    });
+
+    var toggleGraphIcon = '#toggle-graph-icon';
+    elem = $('#toggle-graph');
+    elem.on('hidden.bs.collapse', function () {
+      setPlus(toggleGraphIcon);
+    });
+    elem.on('shown.bs.collapse', function () {
+      setMinus(toggleGraphIcon);
+    });
+
+    var toggleTimelineIcon = '#toggle-timeline-icon';
+    elem = $('#toggle-timeline');
+    elem.on('hidden.bs.collapse', function () {
+      setPlus(toggleTimelineIcon);
+    });
+    elem.on('shown.bs.collapse', function () {
+      setMinus(toggleTimelineIcon);
+    });
+
+    var toggleMapIcon = '#toggle-map-icon';
+    elem = $('#toggle-map');
+    elem.on('hidden.bs.collapse', function () {
+      setPlus(toggleMapIcon);
+    });
+    elem.on('shown.bs.collapse', function () {
+      setMinus(toggleMapIcon);
+    });
+
+    setPlus(toggleDataIcon);
+    setPlus(toggleGraphIcon);
+    setPlus(toggleTimelineIcon);
+    setPlus(toggleMapIcon);
+
+
+
+

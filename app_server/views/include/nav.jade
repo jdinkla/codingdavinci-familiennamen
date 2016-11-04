@@ -1,0 +1,26 @@
+//-
+  (c) 2016, Jörn Dinkla, http://www.dinkla.net
+
+  see the file LICENSE in the root directory for license information
+
+nav.navbar.navbar-inverse
+  .container-fluid
+    .navbar-header
+      button(type="button", data-toggle="collapse", data-target="#myNavbar").navbar-toggle
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+      a.navbar-brand("#")
+    #myNavbar.collapse.navbar-collapse
+      ul.nav.navbar-nav.navbar-left
+        li#nav_home
+          a(href="/") Home
+        li#nav_data
+          a(href="/data") Daten
+        li#nav_analysis
+          a(href="/analysis") Analyse und Visualisierung
+        li#nav_docs
+          a(href="/docs") Dokumentation
+      ul.nav.navbar-nav.navbar-right
+        li#nav_imprint
+          a(href="/imprint") Impressum

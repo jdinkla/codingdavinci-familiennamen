@@ -1,0 +1,54 @@
+//-
+  (c) 2016, Jörn Dinkla, http://www.dinkla.net
+
+  see the file LICENSE in the root directory for license information
+
+extends ../layout
+
+block content
+
+  .row
+    .col-sm-12
+      h1= title
+      p Folgende Datensätze sind in der Datei #{title} vorhanden.
+
+    table.table.table-striped
+      thead
+        tr
+          th Staat
+          th Kürzel
+          th Territorium
+          th URI
+      tbody#theTable
+
+  script.
+
+    d3.select("#nav_data").attr("class", "active");
+
+    d3.tsv("/data/territorium.csv", function (error, json) {
+      if (error) return console.warn(error);
+
+      var div = d3.select("#theTable")
+              .selectAll("div")
+              .data(json)
+              .enter().append("tr");
+
+      div.append("td").text(function (d) {
+        return d.Staat;
+      });
+
+      div.append("td").text(function (d) {
+        return d["Kürzel"];
+      });
+
+      div.append("td").text(function (d) {
+        return d.Territorium;
+      });
+
+      div.append("td").append("a").attr("href", function (d) {
+        return d.URI;
+      }).text(function (d) {
+        return d.URI;
+      });
+
+    });

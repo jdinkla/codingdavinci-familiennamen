@@ -1,0 +1,74 @@
+//-
+  (c) 2016, Jörn Dinkla, http://www.dinkla.net
+
+  see the file LICENSE in the root directory for license information
+
+extends layout
+
+block content
+
+  .row
+    .col-sm-12
+      h1= title
+
+    .col-sm-8
+      div
+        p Ein Projekt im Rahmen des Kultur-Hackathons&nbsp;
+          a(href="https://codingdavinci.de") Coding da Vinci Nord
+          | .
+
+        p Auf Basis der von der Deutschen Arbeitsgemeinschaft Genealogischer Verbände (DAGV)
+          | erstellten Daten über Familiennamen wurde eine Web-Applikation erstellt, mit der die Daten analysiert und
+          | visuell dargestellt werden können.
+
+        p Als Beispiel kann man sich alle Datensätze anzeigen lassen, die die Zeichenkette "meier" beinhalten.
+          | Hier werden dann auch die Namen "Bachmeier" und "Meierhof" zurückgegeben.
+
+        p In der Visualisierung kann man sich die geographische und die zeitliche Verteilung anzeigen lassen.
+          | Auf einer Deutschlandkarte werden die Namen in unterschiedlichen Farben und Helligkeiten dargestellt.
+          | Mit Hilfe einer Zeitleiste lässt sich die Entstehung der Namen untersuchen.
+
+      div
+        p Die Applikation hat die folgenden Arbeitsbereiche:
+
+          ul
+            li
+              a(href="data/") Daten
+              ul
+                li Anzeigen der Rohdaten
+                li Beschreibung der zur Anreicherung genutzten Daten für Karten und PLZ
+                li Probleme der Daten
+                li Beschreibung der aufgetretenen Probleme
+                li Datenqualität
+            li
+              a(href="analysis/") Analyse
+              ul
+                li Suche in den Daten nach dem Namen
+                  ul
+                    li exakte Suche
+                    li Suche mit LIKE-Muster
+                    li Suche mit regulärem Ausdruck
+                    li Suche ähnlicher Namen anhand der Levenshtein-Metrik
+            li
+              a(href="visualization/") Visualisierung
+              ul
+                li Geographisch auf einer Deutschlandkarte
+                li Zeitlich auf einer Zeitachse
+                li Ähnlichkeiten von Namen anhand eines Netzwerks / Graphen anhand der Levenshtein-Metrik
+            li
+              a(href="docs/") Dokumentation
+              ul
+                li Links zu Sourcecode, etc.
+                li Architektur
+                li Implementierung
+
+
+    .col-sm-4
+      p
+        a(href="https://codingdavinci.de")
+          img.img-responsive(src="https://codingdavinci.de/img/header_logo_cdvnord.png")
+
+  script.
+
+    d3.select("#nav_home").attr("class", "active");
+

@@ -1,0 +1,266 @@
+/*
+ * (c) 2016, Jörn Dinkla, http://www.dinkla.net
+ *
+ * see the file LICENSE in the root directory for license information
+ */
+
+/*
+ * Override bootstrap
+ */
+.label {
+  color: black;
+}
+
+.navbar {
+  margin-bottom: 0;
+}
+
+.navbar-header {
+  background-color: #9DD88A;
+  border-color: #9DD88A;
+  color: black;
+}
+
+.navbar-inverse {
+  color: black;
+  background-color: #9DD88A;
+  border-color: #9DD88A;
+}
+
+.navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:focus, .navbar-inverse .navbar-nav>.active>a:hover {
+  color: #fff;
+  background-color: #F49249;
+  font-weight: bold;
+}
+
+.navbar-inverse .navbar-nav>li>a {
+  /*color: #162E0F; */
+  color: #2D5B1E;
+}
+
+.row a {
+  color: #396c27;
+  text-decoration: underline;
+}
+
+/*
+@media (min-width: 768px) {
+  .footer {
+    border-radius: 4px;
+  }
+}
+*/
+
+@media (min-width: 768px) {
+  .navbar {
+    border-radius: 0;
+  }
+}
+
+.footer {
+  margin-top: 2ex;
+  padding: 0.5em;
+  background-color: #9DD88A;
+  border-color: #9DD88A;
+  height: 200%;
+  text-align: center;
+  color: black;
+  font-size: 6px;
+}
+
+.footer a {
+  color: #224416;
+  text-decoration: underline;
+}
+
+.page-header {
+  margin: 1ex 0 1ex 0;
+  padding: 0;
+  border-bottom: 0;
+}
+
+h1 {
+  font-family: Verdana;
+  margin-bottom: 0.5em;
+}
+
+h1, h2, h3, h4, h5 {
+  color: #396c27;
+}
+
+/*
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+    background-color: #8064A2 !important;
+}
+*/
+
+/* see http://stackoverflow.com/questions/16265123/resize-svg-when-window-is-resized-in-d3-js */
+.svg-container {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  padding-bottom: 100%; /* aspect ratio */
+  vertical-align: top;
+  overflow: hidden;
+}
+
+.svg-content-responsive {
+  display: inline-block;
+  position: absolute;
+  top: 10px;
+  left: 0;
+}
+
+/*
+ *
+ */
+
+.links line {
+  stroke: #999;
+  stroke-opacity: 0.6;
+}
+
+.nodes circle {
+  stroke: #fff;
+  stroke-width: 2px;
+}
+
+.link {
+  stroke: #aaa;
+}
+
+.node text {
+  /* stroke: #333; */
+  cursor: pointer;
+}
+
+.node circle{
+  stroke: #fff;
+  stroke-width:3px;
+  /*fill:#555; */
+}
+
+/*
+ * Own defs
+ */
+
+body {
+  padding-left: 0.1ex;
+  padding-right: 0.1ex;
+}
+
+svg {
+  margin-top: 2ex;
+}
+
+.box {
+  /*    background: #f4f4f4;*/
+  background: #f4f4f4;
+  border-color: #ffffff #AAAAAA #AAAAAA #ffffff;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 5px;
+  padding: 1em 1em 0.33em 1em;
+}
+
+.item {
+  display: inline;
+  margin: 0 1em 0 0;
+}
+
+input[type=radio] {
+  margin: 2px 1em 2px 1em;
+}
+
+input[type=text] {
+  border-color: #ffffff #AAAAAA #AAAAAA #ffffff;
+}
+
+.jd-input {
+  margin-bottom: 1em;
+}
+
+.p-warning {
+  background: #FBDBC2;
+  border-color: #f8f8f8 #AAAAAA #AAAAAA #f8f8f8;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 5px;
+  padding: 1em 1em 0.33em 1em;
+}
+
+.p-error {
+  background: #FBDBC2;
+  border-color: #f8f8f8 #AAAAAA #AAAAAA #f8f8f8;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 5px;
+  padding: 1em 1em 0.33em 1em;
+}
+
+.name-in-list {
+  margin: 0 0 3px 0;
+}
+
+.btn-search {
+  background-color: #F49249 !important;
+  color: #fff;
+  font-weight: bold;
+  border-color: #ffffff #AAAAAA #AAAAAA #ffffff;
+}
+
+.btn-remove-one {
+  background-color: #FBC2C5 !important;
+  color: #000;
+  border-color: #ffffff #AAAAAA #AAAAAA #ffffff;
+}
+
+.btn-remove-all {
+  background-color: #F8848B !important;
+  color: #fff;
+  font-weight: bold;
+  border-color: #ffffff #AAAAAA #AAAAAA #ffffff;
+}
+
+.btn-show-hide {
+  background-color: #f0f0f0 !important;
+  color: #000;
+  border-color: #ffffff #AAAAAA #AAAAAA #ffffff;
+}
+
+.btn-copy {
+  background-color: #f0f0f0 !important;
+  color: #000;
+  border-color: #ffffff #AAAAAA #AAAAAA #ffffff;
+}
+
+.btn-add {
+  background-color: #9DD88A !important;
+  color: #000;
+  border-color: #ffffff #AAAAAA #AAAAAA #ffffff;
+}
+
+.jd-names-list {
+  margin: 0.2em 0 0.2em 0;
+}
+
+.searchbox1 {
+  /* color: #2D5B1E; */
+}
+
+.searchbox2 {
+  color: #6CC54F;
+}
+
+
+.searchbox3 {
+  color: #F49249;
+}
+
+.btn-toggle {
+  background-color: #fff;
+}
+
+.XXXng-binding {
+  background-color: red;
+}

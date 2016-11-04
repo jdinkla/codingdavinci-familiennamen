@@ -1,0 +1,260 @@
+//-
+  (c) 2016, Jörn Dinkla, http://www.dinkla.net
+
+  see the file LICENSE in the root directory for license information
+
+extends ../layout
+
+block content
+
+  .row
+    .col-sm-12
+      h1= title
+
+      div
+        p Die folgenden Dateiten wurden von der deutschen Arbeitsgemeinschaft genealogischer Verbände e.V. (DAGV) zur Verfügung gestellt (siehe&nbsp;
+          a(href="https://zenodo.org/record/61683#.WBG_hSTrt7I") zenodo.org
+          |).
+        ul
+          li Die Datei&nbsp;
+            a(href="staat.html") staat.csv
+            | &nbsp; enthält die Namen der einzelnen Staaten.
+          li Die Datei&nbsp;
+            a(href="territorium.html") territorium.csv
+            | &nbsp; enthält die Namen der einzelnen Regionen innerhalb der Staaten.
+          li Die Datei&nbsp;
+            a(href="foko.html") foko.csv
+            | &nbsp; enthält die Familiennamen.
+          li Die Datei&nbsp;
+            a(href="konfession.html") konfession.csv
+            | &nbsp; enthält die Konfessionen und wird momentan nicht weiter verwendet.
+
+        p Die Datei foko.csv enthält die folgenden vier&nbsp;
+          a(href="https://en.wikipedia.org/wiki/Dimension_(data_warehouse)") Dimensionen
+          | :
+        ol
+          li Familienname
+          li Zeitraum: Start und Ende des Auftretens eines Namens
+          li Die Religionszugehörigkeit
+          li Geographie: den Ort bzw. die Postleitzahl
+
+        p.p-warning Hier ist wichtig anzumerken, dass in den Daten keine einzelnen Personen erfasst wurden und aus den Daten
+          | auch kein Stammbaum ermittelt werden kann, wie sonst oft bei Webseiten zur Namensforschung üblich.
+
+        h3 Zusätzliche Daten
+
+        p Um die Daten auf einer Karte darstellen zu können, müssen die PLZ mit geographischen Koordinaten angereichert werden (
+          a(href="https://en.wikipedia.org/wiki/Geolocation") Geolocation
+          | ). Um eine Karte von Deutschand anzeigen zu können, muss diese als Daten zur Verfügung stehen. Dieses wird
+          | ausführlich im Abschnitt&nbsp;
+          a(href="/docs/") Dokumentation
+          | &nbsp;beschrieben.
+
+  .row
+    .col-sm-12
+
+      h2 Datenqualität
+      div
+        p Im Laufe der Entwicklung wurde deutlich, dass die Daten teilweise starke Qualitätsprobleme haben.
+          | Die Daten in foko.csv wurden von unterschiedlichen Benutzern mit unterschiedlichen Konventionen eingegeben.
+          | Ortsnamen, PLZ und Religionsangaben sind nicht einheitlich.
+
+        p.p-warning Für eine wissenschaftliche Anwendung ist es notwendig, eine oder mehrere&nbsp;
+          a(href="https://de.wikipedia.org/wiki/Datenbereinigung") Datenbereinigungen
+          | &nbsp;durchzuführen. Eine Datenbereinigung ist aber zeit- und arbeitsintensiv und war nicht
+          | Gegenstand dieses Projekts.
+
+
+      h3 Geographische Daten
+      div
+        p Die Postleitzahl (PLZ) hat eine Recht grobe Auflösung. Ein einzelnes PLZ-Gebiet kann unter Umständen mehrere Orte oder Kleinstädte umfassen.
+          | Als Beispiel gehören zur Postleitzahl 26529 die Orte Leezdorf, Marienhafe, Osteel, Rechtsupweg, Upgant-Schott und Wirdum.
+          | Die Ortsnamen sind hingegen nicht eindeutig, es gibt z. B. zwei Städte mit dem Namen Frankfurt: am Main und an der Oder.
+        p Auch sind in den Daten sehr viele verschiedene Schreibweisen für Ortsnamen vorhanden. Es gibt z. B. die folgenden Einträge, die "frankfurt" enthalten
+
+        table.table.table-striped
+          tbody
+            tr
+              td Frankfurt/O.
+            tr
+              td Frankfurt
+            tr
+              td Frankfurt, Main
+            tr
+              td Frankfurt/M
+            tr
+              td Frankfurt/O
+            tr
+              td Frankfurt/M.
+            tr
+              td Frankfurt/Oder
+            tr
+              td Frankfurt/Main
+            tr
+              td Frankfurt-Rödelheim
+            tr
+              td Frankfurt, Oder
+            tr
+              td Frankfurt a.Main
+            tr
+              td Hausen=Frankfurt, Main
+            tr
+              td Frankfurt am Main
+            tr
+              td Frankfurt a. M.
+            tr
+              td Schönfeld b.Frankfurt/O.
+            tr
+              td Frankfurt M
+            tr
+              td Frankfurt b.Scheinfl
+            tr
+              td Frankfurt a.M
+            tr
+              td Berstadt/Frankfurt/M.
+            tr
+              td Falkenhagen/Frankfurt/O.
+            tr
+              td Höchst=Frankfurt, Main
+            tr
+              td Frankfurt/O.?
+            tr
+              td Isenburg/Frankfurt/M.
+            tr
+              td Frankfurt/Main IV
+            tr
+              td Frankfurt / Oder
+            tr
+              td Sachsenhausen (Frankfurt
+            tr
+              td Bornheim (Frankfurt/Main
+            tr
+              td Frankfurt-Niederrad
+            tr
+              td Frankfurt /Main
+            tr
+              td Reibzig / Frankfurt Oder
+            tr
+              td Bockenheim/Frankfurt
+            tr
+              td Fechenheim/Frankfurt
+            tr
+              td Enkheim b.Frankfurt
+            tr
+              td Frankfurt (am Main)
+            tr
+              td Frankfurt-Main
+            tr
+              td Frankfurt Oder
+            tr
+              td Frankfurt (Oder)
+            tr
+              td Frankfurt /Oder
+            tr
+              td Frankfurt Rödelheim
+            tr
+              td Frankfurt a.M.
+            tr
+              td Höchst b.Frankfurt
+            tr
+              td Frankfurt (Universität)
+            tr
+              td Eckenheim, Frankfurt am Main, , ,
+            tr
+              td Frankfurt/Main?
+            tr
+              td Frankfurt b.Markt Tasche
+            tr
+              td Frankfurt-Sachsenhausen
+            tr
+              td Frankfurt (Main)
+            tr
+              td Frankfurt-Höchst
+            tr
+              td Stadt Frankfurt
+            tr
+              td Frankfurt an der Oder
+            tr
+              td Frankfurt/ Oder
+            tr
+              td Frankfurt/ Main
+            tr
+              td Frankfurt/Höchst
+            tr
+              td Frankfurt(Oder)
+
+      p Auch hier ist eigentlich eine Datenbereinigung notwendig, aber auch nicht einfach.
+
+      p.p-warning In dieser Applikation wurden die Koordinaten (Geolocation) daher aufgrund der PLZ bestimmt.
+        | Da bei den Einträgen ausserhalb Deutschlands größtenteils keine PLZ-Angaben vorhanden sind und die
+        | Schreibweisen der Ortsnamen ebenfalls uneinheitlich, ist die Anreicherung mit Geolocations schwierig.
+        em Daher wurden in dieser App nur Daten aus Deutschland berücksichtigt.
+
+      h3 Beispiel: Goethe
+      div
+        p Die folgende Tabelle zeigt die Einträge zum Namen Goethe aus den Rohdaten:
+        .row
+          .col-sm-6
+            img.img-responsive(src="/images/DataGoethe.png")
+          .col-sm-6
+            p Hier gibt es die folgenden Probleme mit Johann Wolfgang von Goethe. Für diese eine Person sind vier
+              | Einträge vorhanden mit Daten, die teilweise unterschiedlich sind.
+            ol
+              li Grüner Pfeil: Die Namen haben unterschiedliche Schreibweisen in Groß und Kleinschrift.
+              li Dunkeltürkis: Ein Startdatum im Jahre 0.
+              li Mitteltürkis: Startdatum ist gleich dem Enddatum
+              li Helltürkis: Ein Enddatum von 9999 (unter Umständen Ok als Default)
+              li Grau: Die Religionen sind nicht immer gefüllt und auch nicht einheitlich. Goethe ist "lu" und "ev".
+              li Dunkelblau: Die Ortsinformationen fehlen.
+              li Mittelblau: Die Namen der Orte sind nicht einheitlich "Frankfurt", "Frankfurt a.Main" und "Frankfurt/ Main".
+              li Hellblau: Bei manchen Orten wird die Region angebeben "Rom /Eifel". Diese Angaben sind in den Daten nicht einheitlich.
+
+      h3 Beispiel: Althaus
+      div
+        p Die folgende Tabelle zeigt die Einträge zum Namen Althaus aus den Rohdaten:
+        .row
+          .col-sm-6
+            img.img-responsive(src="/images/DataAlthaus.png")
+          .col-sm-6
+            p Auch hier sind die Probleme ersichtlich. Es gibt "doppelte" Einträge von unterschiedlichen Submittern (Spalte sid).
+            ol
+              li Blauer Pfeil: Zwei Einträge für die gleiche Person.
+              li Roter Pfeil: Der gleiche Ort mit der gleichen PLZ mit drei verschiedenen Ortsnamen "Lütringhausen",
+                | "Rhonard b.Olpe"  und "Lütringhausen bei Olpe". Der Zusatz "bei" wird einmal ausgeschrieben und einmal
+                | abgekürzt.
+
+      p.p-warning Da für die gleiche Person mehrfache Einträge vorhanden sein können, macht es keinen Sinn, die Daten
+        | zu summieren, wie es viele andere Webseiten für die Ahnenforschung machen. Die Frage "wieviele Althaus gab es
+        | zwischen 1600 und 1800" lässt sich anhand der vorhandenen Daten nicht beantworten, weil die Daten einerseits nicht
+        | vollständig sind, aber auch weil sie doppelte enthalten.
+
+      h3 Beispiel: Familiennamen
+      div
+        p Es gibt viele Einträge, bei denen zusätzlich zum Familiennamen auch der Vorname oder andere Zusätze vorhanden sind.
+          | Es ist schwierig, diese automatisch zu entfernen, weil manche Doppelnamen auch nicht regelmäßig mit Bindestrich
+          | geschrieben wurden. Der Eintrag "schmidt an halfman" ist z. B. ein Familienname, "an halfman" sind keine typischen
+          | Vornamen. Hingegen besteht der Eintrag "schmidt anna barbara" aus Familiennamen und Vornamen.
+          | Hier ist eine Datensäuberung nicht trivial zu implementieren.
+        img.img-responsive(src="/images/DataNames.png")
+        p Dieses kann im "Explorer" einfach überprüft werden, indem man mit einem regulären Ausdruck nach einem Namen sucht, wie z. B. mit "^meier".
+
+      p.p-warning Das ist ein weiterer Grund dafür, dass das Aufsummieren pro PLZ mit den vorhanden Daten nicht
+        | funktioniert.
+
+      h3 Beispiel: Startdatum
+      div
+        p Die folgende Tabelle zeigt ein Histogramm des Startdatums: Es gibt Einträge für das Jahr 0 und Einträge für die Jahre ab 2100.
+        img.img-responsive(src="/images/DataColumnBegin.png")
+
+
+      h3 Beispiel: Religion
+      div
+        p Es gibt Einträge mit Endatum < 1483 (dem Geburtsjahr von Martinus Luther) und der Religon "ev". 1283 Einträge
+          | haben eine Religion, die nicht in der Datei "konfession.csv" vorhanden ist.
+
+  script.
+
+    d3.select("#nav_data").attr("class", "active");
+
+
+

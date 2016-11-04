@@ -1,0 +1,11 @@
+//-
+  (c) 2016, Jörn Dinkla, http://www.dinkla.net
+
+  see the file LICENSE in the root directory for license information
+
+extends layout
+
+block content
+  h1= message
+  h2= error.status
+  pre #{error.stack}
