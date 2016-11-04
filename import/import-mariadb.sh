@@ -4,9 +4,6 @@
 #
 # see the file LICENSE in the root directory for license information
 #
+# this has to run in the docker IMAGE
 
-. bin/env.sh
-
-docker stop ${FAM_APP_NAME}
-docker stop ${FAM_MARIADB_NAME}
-docker stop ${FAM_NEO4J_NAME}
+mysql --user=root --password=mariadb < /import/mariadb-create.sql

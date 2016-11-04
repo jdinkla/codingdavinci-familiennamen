@@ -6,7 +6,4 @@
 #
 
 . bin/env.sh
-
-docker stop ${FAM_APP_NAME}
-docker stop ${FAM_MARIADB_NAME}
-docker stop ${FAM_NEO4J_NAME}
+docker start ${FAM_MARIADB_NAME}

@@ -5,13 +5,16 @@
 # see the file LICENSE in the root directory for license information
 #
 
-. env.sh
+. bin/env.sh
+
+mkdir -p ${FAM_INSTALL_DIR}
 
 # uncompress the data in the import directory
-cd ${FAM_IMPORT_DIR}
-gunzip *.tsv.gz
+mkdir -p ${FAM_IMPORT_DIR}
+cp ${FAM_SRC_IMPORT_DIR}/* ${FAM_IMPORT_DIR}
+gunzip -f ${FAM_IMPORT_DIR}/*.tsv.gz
 
 # create the directories for the databases
-cd ${FAM_DATA_DIR}
+mkdir -p ${FAM_DATA_DIR}
 mkdir -p ${FAM_DATA_NEO4J_DIR}
 mkdir -p ${FAM_DATA_MARIADB_DIR}

@@ -5,21 +5,23 @@
 # see the file LICENSE in the root directory for license information
 #
 
+. bin/env.sh
 
-. env.sh
+IMAGE=mariadb:10.1.18
 
-# create the docker instance for MariaDB
-docker run -d --name ${FAM_MARIADB_NAME} --publish=3306:3306 --volume=${FAM_DATA_MARIADB_DIR}:/var/lib/mysql --volume=${FAM_IMPORT_DIR}:/import -e MYSQL_ROOT_PASSWORD=mariadb mariadb:10.1.18
+# delete the old databases
+rm -rf ${FAM_DATA_MARIADB_DIR}
+mkdir ${FAM_DATA_MARIADB_DIR}
 
-# create the tables, load the data
-sleep 10
-cd ${FAM_IMPORT_DIR}
-docker exec -it ${FAM_MARIADB_NAME} /bin/bash <<EndOfInput
-cd /import
-mysql --user=family --password=family < ./mariadb-create.sql
-EndOfInput
+# remove old 
+docker rm ${FAM_MARIADB_NAME} > /dev/null 2>&1
 
-cd ${FAM_HOME}
- 
-# stop the instance
+# create new
+docker run -d --name ${FAM_MARIADB_NAME} --publish=3306:3306 --volume=${FAM_DATA_MARIADB_DIR}:/var/lib/mysql --volume=${FAM_IMPORT_DIR}:/import -e MYSQL_ROOT_PASSWORD=mariadb ${IMAGE}
+
+echo "Sleep until database is constructed ... "
+sleep 60
+
+docker exec -it ${FAM_MARIADB_NAME} /import/import-mariadb.sh
+
 docker stop ${FAM_MARIADB_NAME}
