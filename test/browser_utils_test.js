@@ -13,6 +13,36 @@ describe('browser_utils', function() {
         assert(utils);
     });
 
+    it('getCenturies(1431, 1887)', function() {
+        var ys = utils.getCenturies(1431, 1887);
+        assert.deepEqual(ys, [1500, 1600, 1700, 1800]);
+    });
+
+    it('getCenturies(1481, 1800)', function() {
+        var ys = utils.getCenturies(1481, 1800);
+        assert.deepEqual(ys, [1500, 1600, 1700, 1800]);
+    });
+
+    it('getCenturies(1499, 1800)', function() {
+        var ys = utils.getCenturies(1499, 1800);
+        assert.deepEqual(ys, [1500, 1600, 1700, 1800]);
+    });
+
+    it('getCenturies(1500, 1800)', function() {
+        var ys = utils.getCenturies(1500, 1800);
+        assert.deepEqual(ys, [1500, 1600, 1700, 1800]);
+    });
+
+    it('getCenturies(1501, 1800)', function() {
+        var ys = utils.getCenturies(1501, 1800);
+        assert.deepEqual(ys, [1600, 1700, 1800]);
+    });
+
+    it('getCenturies(1501, 1799)', function() {
+        var ys = utils.getCenturies(1501, 1799);
+        assert.deepEqual(ys, [1600, 1700]);
+    });
+
     it('getYears(1431, 1887)', function() {
         var ys = utils.getYears(1431, 1887);
         assert.deepEqual(ys, [1431, 1500, 1600, 1700, 1800, 1887]);
@@ -25,12 +55,22 @@ describe('browser_utils', function() {
 
     it('getYears(1431, 1850)', function() {
         var ys = utils.getYears(1431, 1850);
-        assert.deepEqual(ys, [1431, 1500, 1600, 1700, 1800]);
+        assert.deepEqual(ys, [1431, 1500, 1600, 1700, 1800, 1850]);
     });
 
     it('getYears(1431, 1851)', function() {
         var ys = utils.getYears(1431, 1851);
         assert.deepEqual(ys, [1431, 1500, 1600, 1700, 1800, 1851]);
+    });
+
+    it('getYears(1597, 1834)', function() {
+        var ys = utils.getYears(1597, 1834);
+        assert.deepEqual(ys, [1597, 1700, 1800, 1834]);
+    });
+
+    it('getYears(1597, 1802)', function() {
+        var ys = utils.getYears(1597, 1802);
+        assert.deepEqual(ys, [1597, 1700, 1802]);
     });
 
     it('decode(encode(x)) == x', function() {

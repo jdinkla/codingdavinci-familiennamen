@@ -2,18 +2,18 @@
  * (c) 2016, Jörn Dinkla, http://www.dinkla.net
  *
  * see the file LICENSE in the root directory for license information
+ *
+ * see https://github.com/d3/d3-force
+ * and https://bl.ocks.org/mbostock/4062045 for examples.
  */
 
-var updateGraph = function(tag, lofn, neighbors, sizeElem) {
+var updateGraph = function(tag, lofn, neighbors, sizeElem, scale) {
 
     var enc = encodeListOfNames(lofn.getElems());
 
-    //Width and height
-    var xOffset = 20;
-    var yOffset = 400;
-    var width = document.getElementById('container').offsetWidth - xOffset;
-    var height = 600; //document.getElementById('container').offsetHeight;
-    var padding = 10;
+    var sizes = getSizes();
+    var width = scale.x * sizes.width;
+    var height = scale.y * sizes.height;
 
     deleteAllChilds(detag(tag));
 
@@ -21,10 +21,6 @@ var updateGraph = function(tag, lofn, neighbors, sizeElem) {
         .append("svg")
         .attr("width", width)
         .attr("height", height);
-
-    var color = d3.scaleOrdinal(d3.schemeCategory20);
-
-    var ld = 100;
 
     function fgFill(d) {
         return lofn.getColor(d.id);
@@ -54,7 +50,6 @@ var updateGraph = function(tag, lofn, neighbors, sizeElem) {
             .append("g")
             .attr("class", "node")
             .attr("fill", fgFill)
-            //.attr("stroke", "#fff")
             .call(d3.drag()
                 .on("start", dragstarted)
                 .on("drag", dragged)
@@ -62,12 +57,12 @@ var updateGraph = function(tag, lofn, neighbors, sizeElem) {
 
         node.append("circle")
             .attr("r", function(d) {
-            if (lofn.contains(d.id)) {
-                return sizeElem*2;
-            } else {
-                return sizeElem;
-            }
-        });
+                if (lofn.contains(d.id)) {
+                    return sizeElem*2;
+                } else {
+                    return sizeElem;
+                }
+            });
 
         node.append("text")
             .attr("dx", function (d) {

@@ -4,21 +4,25 @@
  * see the file LICENSE in the root directory for license information
  */
 
-var updateTimeline = function(tag, lofn, containerId, boxWidth, elemHeight) {
+var updateTimeline = function(tag, lofn, containerId, elemSize, scale) {
+
+    var elemDistance = 5;
 
     var enc = encodeListOfNames(lofn.getElems());
 
-    //Width and height
-    var xOffset = 20;
-    var yOffset = 400;
-    //var width = $(containerId).offsetWidth - xOffset;
-    var width = 1000;
-    // var height = $(containerId).offsetHeight;
-    var height = 1000;
-    var padding = 10;
+    var sizes = getSizes();
+    var width = scale.x * sizes.width;
+    var height = scale.y * sizes.height;
+
+    var timelineWidth = width * (10.0/12.0);
+    var xOffset = width / 12.0;
+
+    var elemOffset = elemSize.x / 2;
 
     var numNames = lofn.elems.length;
-    var elemDistance = 5;
+
+    var xScale = d3.scaleLinear()
+        .range([xOffset, timelineWidth]);
 
     var year_range = d3.scaleLinear()
         .domain([0, 2020])
@@ -28,8 +32,7 @@ var updateTimeline = function(tag, lofn, containerId, boxWidth, elemHeight) {
 
     var svg = d3.select(tag)
         .append("svg")
-        .attr("width", width)
-        .attr("height", height);
+        .attr("width", width);
 
     $(tag).collapse('show');
 
@@ -41,51 +44,42 @@ var updateTimeline = function(tag, lofn, containerId, boxWidth, elemHeight) {
         return lofn.getColor(d.name);
     };
 
-
     d3.json("/api/timeline/" + enc, function (error, timeline) {
         if (error) return console.warn(error);
 
-        svg.attr("height", numNames * elemHeight + elemHeight);
+        svg.attr("height", (numNames+1) * elemSize.y);
 
         // Calculate the time interval and adapt the year_range
         var times = timeline.map(function (d) {
             return +d.begin;
         });
-        //console.log(times);
         var minYear = d3.min(times);
         var maxYear = d3.max(times);
 
-        //console.log([minYear, maxYear]);
         year_range.domain([minYear, maxYear]);
         var years = getYears(minYear, maxYear);
-        //console.log(years);
 
-        //Set scale for x-axis
-        var xScale = d3.scaleLinear()
-            .range([padding, width - padding])
-            .domain([minYear, maxYear]);
+        xScale.domain([minYear, maxYear]);
 
-        //Define x-axis
         var xAxis = d3.axisBottom()
             .ticks(years.length)
             .tickValues(years)
             .tickFormat(formatYear)
             .scale(xScale);
 
-        // Create the timeline
         var rects = svg.selectAll("rect")
             .data(timeline)
             .enter()
             .append("rect")
             .attr("x", function (d, i) {
-                return xScale(+d.begin);
+                return xScale(+d.begin) - elemOffset;
             })
             .attr("y", function (d) {
-                return elemHeight * lofn.findIndex(d.name);
+                return elemSize.y * lofn.findIndex(d.name);
             })
-            .attr("width", boxWidth)
+            .attr("width", elemSize.x)
             .attr("height", function (d) {
-                return elemHeight - elemDistance;
+                return elemSize.y - elemDistance;
             })
             .attr("fill", fgFill);
 
@@ -96,7 +90,7 @@ var updateTimeline = function(tag, lofn, containerId, boxWidth, elemHeight) {
 
         svg.append("g")
             .attr("class", "axis")
-            .attr("transform", "translate(" + 0 + ", " + numNames * elemHeight + ")")
+            .attr("transform", "translate(" + 0 + ", " + numNames * elemSize.y + ")")
             .call(xAxis);
 
     });

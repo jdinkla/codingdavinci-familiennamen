@@ -4,6 +4,9 @@
  * see the file LICENSE in the root directory for license information
  */
 
+/*
+ see http://stackoverflow.com/questions/14492284/center-a-map-in-d3-given-a-geojson-object/14654988
+ */
 function getPandP(scale, width, height, json) {
     // create a first guess for the projection
 
@@ -36,20 +39,47 @@ function getPandP(scale, width, height, json) {
 }
 
 // returns the century years between start and end
-function getYears(start, end) {
+function getCenturies(start, end) {
+    var s = Math.ceil(start / 100);
+    var e = Math.floor(end / 100);
+
     var result = [];
 
-    result.push(+start);
-    var current = Math.ceil(start / 100);
-    var endI = end / 100;
+    for (var i=s; i<=e; i++) {
+        result.push(i*100);
+    }
+    return result;
+}
 
-    while (current < endI) {
-        result.push(current*100);
-        current++;
+// returns the century years between start and end
+function getYears(start, end) {
+    var result = [];
+    var diffLarge = 25;
+    var diffSmall = 10;
+
+    var cs = getCenturies(start, end);
+
+    var sls = [];
+    var els = [];
+
+    // start <= cs[0]
+    var diff = cs[0] - start;
+    if (diff >= diffLarge) {
+        sls = [start];
+    } else if (diff <= diffSmall) {
+        cs[0] = start; // replace first century with year
     }
-    if (current*100 - end  < 50) {
-        result.push(+end);
+
+    // end >= cs[idx]
+    var idx = cs.length - 1;
+    diff = end - cs[idx];
+    if (diff >= diffLarge) {
+        els = [end];
+    } else if (diff <= diffSmall) {
+        cs[idx] = end; // replace last century with year
     }
+
+    var result = sls.concat(cs).concat(els);
     return result;
 }
 
@@ -85,8 +115,29 @@ function detag(tag ) {
     return tag.substring(1, tag.length);
 }
 
+
+/*
+ see http://www.w3schools.com/jsref/prop_win_innerheight.asp
+ */
+function getSizes() {
+
+    var width = window.innerWidth
+        || document.documentElement.clientWidth
+        || document.body.clientWidth;
+
+    var height = window.innerHeight
+        || document.documentElement.clientHeight
+        || document.body.clientHeight;
+
+    return {
+        width: width,
+        height: height
+    };
+
+}
 if (typeof module != 'undefined') {
     module.exports = {
+        getCenturies: getCenturies,
         getYears: getYears,
         encode: encode,
         decode: decode,

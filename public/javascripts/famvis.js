@@ -12,11 +12,12 @@ angular
 
         $scope.lofn = new ListOfNames();
 
+        $scope.scale = { x: 1.0, y: 0.5 };
+
         // Sizes
         $scope.sizeMapElem = 7;
         $scope.sizeGraphElem = 5;
-        $scope.sizeTimelineX = 20;
-        $scope.sizeTimelineY = 25;
+        $scope.elemSize = { x: 20, y: 25 };
 
         $scope.sizes = [];
         $scope.sizesLarge = [];
@@ -57,8 +58,7 @@ angular
 
         $scope.mapDataFiles = [
             { text: "Bundesländer", file: '/data/d_mit_bundeslaendern.json'},
-            { text: "PLZ-Gebiete, einstellig", file: '/data/plz1.json'},
-            { text: "PLZ-Gebiete, zweistellig", file: '/data/plz2.json' } ];
+            { text: "PLZ-Gebiete, einstellig", file: '/data/plz1.json'} ];
         $scope.mapDataFile = $scope.mapDataFiles[0];
 
         $scope.neighbors = 1;
@@ -145,6 +145,7 @@ angular
                 $scope.lofn.reset();
             };
 
+            /* ----- Data ----- */
             $scope.updateData = function() {
                 if (!$scope.lofn.isEmpty()) {
                     updateTable("#table", "#table_data", $scope.lofn, $scope.neighbors);
@@ -155,10 +156,10 @@ angular
                 resetTable("#table_data");
             };
 
-
+            /* ----- Graph ----- */
             $scope.updateGraph = function() {
                 if (!$scope.lofn.isEmpty()) {
-                    updateGraph("#graph", $scope.lofn, $scope.neighbors, $scope.sizeGraphElem);
+                    updateGraph("#graph", $scope.lofn, $scope.neighbors, $scope.sizeGraphElem, $scope.scale);
                 }
             };
 
@@ -167,9 +168,10 @@ angular
             };
 
 
+            /* ----- Timeline ----- */
             $scope.updateTimeline = function() {
                 if (!$scope.lofn.isEmpty()) {
-                    updateTimeline("#timeline", $scope.lofn, '#timeline-container', $scope.sizeTimelineX, $scope.sizeTimelineY);
+                    updateTimeline("#timeline", $scope.lofn, '#timeline-container', $scope.elemSize, $scope.scale);
                 }
             };
 
@@ -178,9 +180,10 @@ angular
             };
 
 
+            /* ----- Map ----- */
             $scope.updateMap = function() {
                 if (!$scope.lofn.isEmpty()) {
-                    updateMap("#map", $scope.lofn, $scope.mapDataFile.file, $scope.sizeMapElem);
+                    updateMap("#map", $scope.lofn, $scope.mapDataFile.file, $scope.sizeMapElem, $scope.scale);
                 }
             };
 

@@ -4,29 +4,16 @@
  * see the file LICENSE in the root directory for license information
  */
 
-var updateMap = function(tag, lofn, mapDataFile, radiusOfElem) {
+var updateMap = function(tag, lofn, mapDataFile, radiusOfElem, scale) {
 
     var enc = encodeListOfNames(lofn.getElems());
 
-    //Width and height
-    var xOffset = 20;
-    var yOffset = 400;
-    //var xy = d3.min([window.innerHeight - yOffset, window.innerWidth - xOffset]);
-    var width = window.innerWidth - xOffset;
-    var height = window.innerHeight - yOffset;
-
-    /* Colors */
-    var plz_range = d3.scaleLinear()
-        .domain([0, 10000])
-        .range([0, 1.0]);
-
-    var year_range = d3.scaleLinear()
-        .domain([0, 2020])
-        .range([0.01, 1.0]);
+    var sizes = getSizes();
+    var width = scale.x * sizes.width;
+    var height = scale.y * sizes.height;
 
     var bgFill = function (d, i) {
         return d3.interpolateGreys(0.3 + i/40);
-        //return d3.schemePaired[i];
     };
 
     var fgFill = function(d) {
@@ -50,7 +37,6 @@ var updateMap = function(tag, lofn, mapDataFile, radiusOfElem) {
 
         var p = getPandP(150, width, height, json);
 
-        //Bind data and create one path per GeoJSON feature
         svg.selectAll("path")
             .data(json.features)
             .enter()
@@ -61,7 +47,6 @@ var updateMap = function(tag, lofn, mapDataFile, radiusOfElem) {
         d3.json("/api/map/" + enc, function(error, timeline) {
             if (error) return console.warn(error);
 
-            //Create a circle for each city
             var circles = svg.selectAll("circle")
                 .data(timeline)
                 .enter()
