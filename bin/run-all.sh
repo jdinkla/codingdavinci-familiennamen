@@ -9,11 +9,9 @@
 
 docker start ${FAM_MARIADB_NAME}
 docker start ${FAM_NEO4J_NAME}
-# this container is not persistent and always starting new, see the --rm flag
 
-DATE=`date +"%Y%m%d%H%M%S"`
-LOGFILE=${FAM_LOG_DIR}/${DATE}_famvis.log
+docker rm ${FAM_APP_NAME}
+docker run -d -p 80:80 --link ${FAM_NEO4J_NAME}:neo4j --link ${FAM_MARIADB_NAME}:mariadb --name ${FAM_APP_NAME} ${FAM_APP_NAME}
 
-docker run -it -p 80:80 --link ${FAM_NEO4J_NAME}:neo4j --link ${FAM_MARIADB_NAME}:mariadb --rm --name ${FAM_APP_NAME} ${FAM_APP_NAME} > ${LOGFILE} &
 
 
