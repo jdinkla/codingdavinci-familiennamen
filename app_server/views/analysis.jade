@@ -11,10 +11,14 @@ block content
     .col-sm-12
       h1= title
 
+      div#error(class="alert alert-danger hidden", role="alert")
+        strong Leider gibt es ein Problem mit der Datenbank.
+
   include include/name_selection
 
   .row
     .col-sm-12
+
       h3
         button.btn.btn-toggle(type="button", data-toggle="collapse", data-target="#toggle-data")
           span#toggle-data-icon(class="glyphicon")

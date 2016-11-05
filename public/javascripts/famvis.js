@@ -10,6 +10,8 @@ angular
     .module('FamVis')
     .controller('explorerController', function($scope, $http) {
 
+        $scope.error = "";
+
         $scope.lofn = new ListOfNames();
 
         $scope.scale = { x: 1.0, y: 0.5 };
@@ -68,18 +70,30 @@ angular
 
         $scope.neighbors = 1;
 
+        $scope.error = function(show) {
+            if (show) {
+                $('#error').removeClass("hidden");
+            } else {
+                $('#error').addClass("hidden");
+            }
+        };
+
         $scope.search = function() {
 
             $scope.searchResults = [];
             $scope.numSearchResults = 0;
 
-            // Hier Einschalten
+            $scope.error(false);
 
             var pattern = encode($scope.searchText);
             switch(+$scope.searchType) {
                 case 1:
                     $scope.startSearch();
                     $http.get("/api/name/" + pattern )
+                        .error(function () {
+                            $scope.error(true);
+                            $scope.stopSearch();
+                        })
                         .then(function(res) {
                             $scope.searchResults = res.data;
                             $scope.numSearchResults = res.data.length;
@@ -89,6 +103,10 @@ angular
                 case 2:
                     $scope.startSearch();
                     $http.get("/api/name/like/" + pattern )
+                        .error(function () {
+                            $scope.error(true);
+                            $scope.stopSearch();
+                        })
                         .then(function(res) {
                             $scope.searchResults = res.data;
                             $scope.numSearchResults = res.data.length;
@@ -98,6 +116,10 @@ angular
                 case 3:
                     $scope.startSearch();
                     $http.get("/api/name/regexp/" + pattern )
+                        .error(function () {
+                            $scope.error(true);
+                            $scope.stopSearch();
+                        })
                         .then(function(res) {
                             $scope.searchResults = res.data;
                             $scope.numSearchResults = res.data.length;
@@ -107,6 +129,10 @@ angular
                 case 4:
                     $scope.startSearch();
                     $http.get("/api/graph1/" + pattern )
+                        .error(function () {
+                            $scope.error(true);
+                            $scope.stopSearch();
+                        })
                         .then(function(res) {
                             var nodes = res.data.nodes.slice();
                             var names = nodes.map(function(n) { return n.id; });

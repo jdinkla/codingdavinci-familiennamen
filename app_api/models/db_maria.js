@@ -23,8 +23,17 @@ try {
         charset :'utf8'
     });
 
+    connection.on('error', function(err){
+        console.error(err);
+        return { status: "error", error: err };
+    });
+
+    connection.on('connect', function(){
+        console.log("connected to mariadb");
+    });
+
 } catch (err) {
-    console.error("Can't connect to MariaDB " + err);
+    console.error(err);
 }
 
 module.exports.connection = connection
