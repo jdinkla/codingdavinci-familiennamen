@@ -21,22 +21,24 @@ block content
         | Daten
       div.collapse#toggle-data
         .btn-toolbar
-          button.btn.btn-search(ng-click="updateData()", type="button") Query
+          button.btn.btn-sm.btn-search(ng-click="updateData()", type="button") Aktualisieren
+          button.btn.btn-sm.btn-remove-all(ng-click="resetData()", type="button")
+            span(title="Tabelle leeren").glyphicon.glyphicon-trash
         div#table
           table.table.table-striped
             thead
               tr
-                th id
-                th familyName
-                th begin
-                th end
-                th submitter
-                th denomination
-                th country
-                th region
-                th postalCode
-                th placeName
-                th placeURI
+                th Id
+                th Familienname
+                th Startjahr
+                th Endjahr
+                th Submitter
+                th Religion
+                th Land
+                th Region
+                th PLZ
+                th Ort
+                th Link
             tbody#table_data
 
   .row
@@ -53,8 +55,11 @@ block content
           input#numN2(type="radio", ng-model="neighbors", value="2")
           label(for="#numN2") 2
         .btn-toolbar
-          button.btn.btn-search(ng-click="updateGraph()", type="button") Query
+          button.btn.btn-sm.btn-search(ng-click="updateGraph()", type="button") Aktualisieren
+          button.btn.btn-sm.btn-remove-all(ng-click="resetGraph()")
+            span(title="Graph löschen").glyphicon.glyphicon-trash
         div#graph
+
 
   .row
     .col-sm-12#timeline-container
@@ -64,7 +69,9 @@ block content
         | Zeitreihe
       div.collapse#toggle-timeline
         .btn-toolbar
-          button.btn.btn-search(ng-click="updateTimeline()", type="button") Query
+          button.btn.btn-sm.btn-search(ng-click="updateTimeline()", type="button") Aktualisieren
+          button.btn.btn-sm.btn-remove-all(ng-click="resetTimeline()")
+            span(title="Zeitreihe löschen").glyphicon.glyphicon-trash
         div
           .col-sm-1
           .col-sm-10#timeline
@@ -82,8 +89,11 @@ block content
           label(for="mapSelect") Karte
           select#mapSelect(ng-model="mapDataFile" ng-options="x.text for x in mapDataFiles")
         .btn-toolbar
-          button.btn.btn-search(ng-click="updateMap()", type="button") Query
-        div#map
+          button.btn.btn-sm.btn-search(ng-click="updateMap()", type="button") Aktualisieren
+          button.btn.btn-sm.btn-remove-all(ng-click="resetMap()")
+            span(title="Karte löschen").glyphicon.glyphicon-trash
+    div#map
+
 
   script(src="/javascripts/color.js")
   script(src="/javascripts/update_graph.js")
@@ -151,7 +161,4 @@ block content
     setPlus(toggleGraphIcon);
     setPlus(toggleTimelineIcon);
     setPlus(toggleMapIcon);
-
-
-
 

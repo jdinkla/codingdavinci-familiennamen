@@ -24,13 +24,13 @@
           input(type="radio", ng-model="searchType", value="4", id="searchType4", ng-click="setSearchButtonText();")
           label(for="searchType4") Ähnliche Namen in Graph
         .form
-          button.btn.btn-search {{searchButtonText}}
+          button#searchButton.btn.btn-search {{searchButtonText}}
 
   .col-sm-4
     h3.searchbox2 Ergebnisse der Suche
     .row
       .col-sm-9
-        span Anzahl der Ergebnisse: {{ numSearchResults }}
+        span Anzahl: {{ numSearchResults }}
       .col-sm-3
         .btn-toolbar
           button.btn.btn-sm.btn-remove-all(ng-click="resetSearch()")

@@ -16,34 +16,44 @@ block content
     .col-sm-6
       div
         table.table.table-striped
+          thead
+            tr
+              td Datenbank
+              td Ergebnis
           tbody
             tr
-              td MariaDB
-              td#state_mariadb ?
+              td
+                a(href="/api/alive/mariadb") MariaDB
+              td#d1
+                div#mariadb
             tr
-              td Neo4J
-              td#state_neo4j ?
+              td
+                a(href="/api/alive/neo4j") Neo4J
+              td
+                div#neo4j
 
         .btn-toolbar
-          button.btn.btn-info(ng-click="check_neo()") Überprüfe Neo4J
-          button.btn.btn-info(ng-click="updateGraph($index)") Überprüfe MariaDB
+          button.btn.btn-info(onclick="check_neo4j()") Überprüfe Neo4J
+          button.btn.btn-info(onclick="check_mariadb()") Überprüfe MariaDB
+
     .col-sm-3
-
-  .row
-        p
-          Familiennamen
-            form(action="/api/admin/familiennamen", method="POST")
-              button#updateButton.btn.btn-primary.pull-right Update der Familiennamen
-
-        p
-          Status
-          ul
-            li Status MariaDB/nbsp;
-              a(href="/api/alive/mariadb") check
-
-            li Status Neo4J/nbsp;
-              a(href="/api/alive/neo4j") check
 
   script.
 
+    function format(json) {
+      return "" + json.status + " " + json.rows;
+    }
 
+    function check_neo4j() {
+      d3.json('/api/alive/neo4j', function (error, json) {
+        if (error) return console.warn(error);
+        document.getElementById('neo4j').innerHTML = format(json);
+      });
+    }
+
+    function check_mariadb() {
+      d3.json('/api/alive/mariadb', function (error, json) {
+        if (error) return console.warn(error);
+        document.getElementById('mariadb').innerHTML = format(json);
+      });
+    }

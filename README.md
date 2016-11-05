@@ -141,4 +141,7 @@ npm info using npm@2.15.9
 npm info using node@v4.6.1
 npm info preinstall famvis@0.9.0
 npm info attempt registry request try #1 at 10:21:41 AM
+...
 ```
+
+und viele weitere mehr ...

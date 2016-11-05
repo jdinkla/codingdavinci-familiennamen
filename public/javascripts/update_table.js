@@ -4,6 +4,11 @@
  * see the file LICENSE in the root directory for license information
  */
 
+var resetTable = function(dataTag) {
+    d3.select(dataTag).selectAll("tr").remove();
+}
+
+
 var updateTable = function(tag, dataTag, lofn) {
 
     var enc = encodeListOfNames(lofn.getElems());
@@ -12,7 +17,7 @@ var updateTable = function(tag, dataTag, lofn) {
         if (err) return console.warn(err);
 
         $(tag).collapse('show');
-        d3.select(dataTag).selectAll("tr").remove();
+        resetTable(dataTag);
 
         var div = d3.select(dataTag)
             .selectAll("div")

@@ -21,8 +21,23 @@ angular
             $scope.searchButtonText = $scope.searchTexts[$scope.searchType-1];
         };
 
+        $scope.startSearch = function() {
+            var elem = $('#searchButton');
+            elem.removeClass(minus);
+            elem.addClass('glyphicon-refresh');
+            elem.addClass('glyphicon-refresh-animate');
+            $scope.searchButtonText = "Suche läuft"
+        }
+
+        $scope.stopSearch = function() {
+            var elem = $('#searchButton');
+            elem.removeClass('glyphicon-refresh');
+            elem.removeClass('glyphicon-refresh-animate');
+            $scope.setSearchButtonText();
+        }
+
         $scope.searchResults = [];
-        $scope.numSearchResults = -1;
+        $scope.numSearchResults = 0;
 
         $scope.mapDataFiles = [
             { text: "Bundesländer", file: '/data/d_mit_bundeslaendern.json'},
@@ -37,30 +52,39 @@ angular
             $scope.searchResults = [];
             $scope.numSearchResults = 0;
 
+            // Hier Einschalten
+
             var pattern = encode($scope.searchText);
             switch(+$scope.searchType) {
                 case 1:
+                    $scope.startSearch();
                     $http.get("/api/name/" + pattern )
                         .then(function(res) {
                             $scope.searchResults = res.data;
                             $scope.numSearchResults = res.data.length;
+                            $scope.stopSearch();
                         });
                     break;
                 case 2:
+                    $scope.startSearch();
                     $http.get("/api/name/like/" + pattern )
                         .then(function(res) {
                             $scope.searchResults = res.data;
                             $scope.numSearchResults = res.data.length;
+                            $scope.stopSearch();
                         });
                     break;
                 case 3:
+                    $scope.startSearch();
                     $http.get("/api/name/regexp/" + pattern )
                         .then(function(res) {
                             $scope.searchResults = res.data;
                             $scope.numSearchResults = res.data.length;
+                            $scope.stopSearch();
                         });
                     break;
                 case 4:
+                    $scope.startSearch();
                     $http.get("/api/graph1/" + pattern )
                         .then(function(res) {
                             var nodes = res.data.nodes.slice();
@@ -71,6 +95,7 @@ angular
                             }
                             $scope.searchResults = names;
                             $scope.numSearchResults = names.length;
+                            $scope.stopSearch();
                         });
                     break;
                 default:
@@ -104,17 +129,27 @@ angular
                 $scope.lofn.reset();
             };
 
+            $scope.updateData = function() {
+                if (!$scope.lofn.isEmpty()) {
+                    updateTable("#table", "#table_data", $scope.lofn, $scope.neighbors);
+                }
+            };
+
+            $scope.resetData = function() {
+                resetTable("#table_data");
+            };
+
+
             $scope.updateGraph = function() {
                 if (!$scope.lofn.isEmpty()) {
                     updateGraph("#graph", $scope.lofn, $scope.neighbors);
                 }
             };
 
-            $scope.updateData = function() {
-                if (!$scope.lofn.isEmpty()) {
-                    updateTable("#table", "#table_data", $scope.lofn, $scope.neighbors);
-                }
+            $scope.resetGraph = function() {
+                deleteAllChilds("graph");
             };
+
 
             $scope.updateTimeline = function() {
                 if (!$scope.lofn.isEmpty()) {
@@ -122,10 +157,19 @@ angular
                 }
             };
 
+            $scope.resetTimeline = function() {
+                deleteAllChilds("timeline");
+            };
+
+
             $scope.updateMap = function() {
                 if (!$scope.lofn.isEmpty()) {
                     updateMap("#map", $scope.lofn, $scope.mapDataFile.file);
                 }
+            };
+
+            $scope.resetMap = function() {
+                deleteAllChilds("map");
             };
 
         };
