@@ -14,6 +14,11 @@ angular
 
         $scope.scale = { x: 1.0, y: 0.5 };
 
+        $scope.scales = [];
+        for (var i=1; i<= 20; i++) {
+            $scope.scales.push(i / 10.0);
+        }
+
         // Sizes
         $scope.sizeMapElem = 7;
         $scope.sizeGraphElem = 5;

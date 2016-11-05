@@ -103,6 +103,20 @@ block content
             span(title="Karte löschen").glyphicon.glyphicon-trash
         div#map
 
+  .row
+    .col-sm-12
+      h3
+        button.btn.btn-toggle(type="button", data-toggle="collapse", data-target="#toggle-options")
+          span#toggle-options-icon(class="glyphicon")
+        | Optionen
+      div.collapse.famvis-visual#toggle-options
+        .form.jd-options
+          label(for="scaleX") Skalierung in x
+          select#scaleX(ng-model="scale.x" ng-options="x for x in scales")
+        .form.jd-options
+          label(for="scaleY") Skalierung in y
+          select#scaleY(ng-model="scale.y" ng-options="x for x in scales")
+
 
   script(src="/javascripts/color.js")
   script(src="/javascripts/update_graph.js")
@@ -166,8 +180,18 @@ block content
       setMinus(toggleMapIcon);
     });
 
+    var toggleOptionsIcon = '#toggle-options-icon';
+    elem = $('#toggle-options');
+    elem.on('hidden.bs.collapse', function () {
+      setPlus(toggleOptionsIcon);
+    });
+    elem.on('shown.bs.collapse', function () {
+      setMinus(toggleOptionsIcon);
+    });
+
     setPlus(toggleDataIcon);
     setPlus(toggleGraphIcon);
     setPlus(toggleTimelineIcon);
     setPlus(toggleMapIcon);
+    setPlus(toggleOptionsIcon);
 
