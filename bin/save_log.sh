@@ -10,4 +10,5 @@
 DATE=`date +"%Y%m%d%H%M%S"`
 LOGFILE=${FAM_LOG_DIR}/${DATE}_famvis.log
 
-docker logs ${FAM_APP_NAME} > ${LOGFILE}
+docker logs ${FAM_APP_NAME} > ${LOGFILE} 2>&1
+
