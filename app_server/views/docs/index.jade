@@ -63,7 +63,14 @@ block content
             li Docker Container
             li läuft momentan aus AWS
 
-      p Im Folgenden werden diese Teile noch genauer erläutert.
+      p Der Code für diese Applikation ist in den folgenden Repositories als Open-Source veröffentlicht:
+
+      ul
+        li Der Sourcecode ist bei&nbsp;
+          a(href="https://github.com/jdinkla/codingdavinci-familiennamen") github
+          | &nbsp;verfügbar.
+        li Der Java-Code für die Berechnung der Ähnlichkeiten befindet sich&nbsp;
+          a(href="https://github.com/jdinkla/codingdavinci-familiennamen-graph") in einem separatem Projekt
 
   .row
     .col-sm-12
@@ -94,49 +101,41 @@ block content
             | &nbsp;umkodiert.
 
       h4 2. ETL-Prozess
-      p Mit einem ETL-Prozess ... / Pre-Processing
-
-        h5 Berechnung der Ähnlichkeiten
-        p Die Ähnlichkeiten anhand der L-Dist werden ...
-
-        h5 Import und Anreicherung
-        p Die Daten aus der foko.csv werden ...
+      p Es werden zwei Aufgaben durchgeführt:
+       ul
+        li "Join" der Koordinaten/Geolocations anhand der PLZ
+        li Berechnung der Ähnlichkeiten. Diese ist in einem&nbsp;
+         a(href="https://github.com/jdinkla/codingdavinci-familiennamen-graph") separatem Repository auf github
+          | &nbsp;dokumentiert.
 
       h4 3. Datenbanken
-      p ...
+      p Die Ähnlichkeiten werden in der Graph-Datenbank&nbsp;
+        a(href="https://neo4j.com/") Neo4J
+        | &nbsp;gespeichert und die Tabellen in&nbsp;
+        a(href="https://mariadb.org/") MariaDB
+        | .
 
       h4 4. Der Server
-      p ...
+      p Die Applikation wurde in&nbsp;
+        a(href="https://nodejs.org") node.js
+        | &nbsp;und dem&nbsp;
+        a(href="http://expressjs.com/") Express
+        | -Framework erstellt.
 
       h4 5. Der User bzw. der Client
-      p ...
-
-      h4 6. Deployment in der Cloud
-      p ...
-
-
-  .row
-    .col-sm-12
-      h2 Weitere Informationen
-      p Auf den folgenden Webseiten gibt es ebenfalls Informationen über dieses Projekt.
-        ul
-          li Die &nbsp;
-            a(href="https://hackdash.org/projects/57dd5ce5d9284f016c04745b") Projektseite
-            | &nbsp;bei&nbsp;
-            a(href="https://hackdash.org/dashboards/cdvnord") HackDash
-            | .
-          li Der Sourcecode ist bei&nbsp;
-            a(href="https://github.com/jdinkla/codingdavinci-familiennamen") github
-            | &nbsp;verfügbar.
-          li Der Java-Code für die Berechnung der Ähnlichkeiten befindet sich&nbsp;
-            a(href="https://github.com/jdinkla/codingdavinci-familiennamen-graph") in einem separatem Projekt
-            | .
+      p Der Client benutzt für die Formatierung&nbsp;
+        a(href="http://getbootstrap.com/") Bootstrap
+        | , für die Interaktion &nbsp;
+        a(href="https://angularjs.org/") AngularJS
+        | &nbsp;und für die Visualisierung&nbsp;
+        a(href="https://d3js.org/") D3.js
+        | .
 
   .row
     .col-sm-12
       h3 Lektüre
       div
-        p Beim Schreiben konsultierte Bücher ...
+        p Die folgenden Bücher habe ich beim Schreiben der App benutzt.
 
   .row
     .col-sm-3

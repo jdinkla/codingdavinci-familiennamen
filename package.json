@@ -1,6 +1,6 @@
 {
   "name": "famvis",
-  "description": "Verteilung von Familiennamen für Coding da Vinci Nord 2016",
+  "description": "Verbreitung von Familiennamen für Coding da Vinci Nord 2016",
   "version": "0.9.0",
   "private": true,
   "scripts": {

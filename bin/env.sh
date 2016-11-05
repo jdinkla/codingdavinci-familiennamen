@@ -14,8 +14,8 @@ export FAM_IMPORT_DIR=${FAM_INSTALL_DIR}/import
 
 # DATA
 export FAM_DATA_DIR=${FAM_INSTALL_DIR}/data
-export FAM_DATA_MARIADB_DIR=${FAM_DATA_DIR}/docker-mariadb-data
-export FAM_DATA_NEO4J_DIR=${FAM_DATA_DIR}/docker-neo4j-data
+export FAM_DATA_MARIADB_DIR=${FAM_DATA_DIR}/mariadb
+export FAM_DATA_NEO4J_DIR=${FAM_DATA_DIR}/neo4j
 
 export FAM_MARIADB_NAME=m1
 export FAM_NEO4J_NAME=n1

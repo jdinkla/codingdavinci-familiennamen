@@ -1,6 +1,7 @@
 tmp
 install
 init.log
+gzip.exe
 
 env.js
 env-docker.js
