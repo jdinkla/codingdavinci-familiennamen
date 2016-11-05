@@ -19,3 +19,6 @@ gunzip -f ${FAM_IMPORT_DIR}/*.tsv.gz
 mkdir -p ${FAM_DATA_DIR}
 mkdir -p ${FAM_DATA_NEO4J_DIR}
 mkdir -p ${FAM_DATA_MARIADB_DIR}
+
+# logs
+mkdir -p ${FAM_LOG_DIR}

@@ -23,3 +23,5 @@ export FAM_NEO4J_NAME=n1
 # FamVis
 export FAM_APP_NAME=f1
 export FAM_APP_DIR=${FAM_INSTALL_DIR}/app
+
+export FAM_LOG_DIR=${FAM_INSTALL_DIR}/logs
