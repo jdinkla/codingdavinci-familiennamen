@@ -4,9 +4,7 @@
  * see the file LICENSE in the root directory for license information
  */
 
-var updateGraph = function(tag, lofn, neighbors) {
-
-    console.log("updateGraph " + neighbors);
+var updateGraph = function(tag, lofn, neighbors, sizeElem) {
 
     var enc = encodeListOfNames(lofn.getElems());
 
@@ -65,14 +63,20 @@ var updateGraph = function(tag, lofn, neighbors) {
         node.append("circle")
             .attr("r", function(d) {
             if (lofn.contains(d.id)) {
-                return 10;
+                return sizeElem*2;
             } else {
-                return 5;
+                return sizeElem;
             }
         });
 
         node.append("text")
-            .attr("dx", 12)
+            .attr("dx", function (d) {
+                if (lofn.contains(d.id)) {
+                    return 7+sizeElem*2;
+                } else {
+                    return 7+sizeElem;
+                }
+            })
             .attr("dy", ".35em")
             .attr("fill", fgFill)
             .text(function(d) {
@@ -107,10 +111,6 @@ var updateGraph = function(tag, lofn, neighbors) {
                 });
 
             node.attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
-
-            /*node.attr("cx", function (d) { return d.x; })
-             .attr("cy", function (d) { return d.y; });
-             */
         }
 
         function dragstarted(d) {

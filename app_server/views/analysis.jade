@@ -19,7 +19,7 @@ block content
         button.btn.btn-toggle(type="button", data-toggle="collapse", data-target="#toggle-data")
           span#toggle-data-icon(class="glyphicon")
         | Daten
-      div.collapse#toggle-data
+      div.collapse.famvis-visual#toggle-data
         .btn-toolbar
           button.btn.btn-sm.btn-search(ng-click="updateData()", type="button") Aktualisieren
           button.btn.btn-sm.btn-remove-all(ng-click="resetData()", type="button")
@@ -47,13 +47,16 @@ block content
         button.btn.btn-toggle(type="button", data-toggle="collapse", data-target="#toggle-graph")
           span#toggle-graph-icon(class="glyphicon")
         | Graph
-      div.collapse#toggle-graph
+      div.collapse.famvis-visual#toggle-graph
         .form.jd-options
           p Anzahl der Nachbarn
           input#numN1(type="radio", ng-model="neighbors", value="1")
-          label(for="#numN1") 1
+          label(for="numN1") 1
           input#numN2(type="radio", ng-model="neighbors", value="2")
-          label(for="#numN2") 2
+          label(for="numN2") 2
+        .form.jd-options
+          label(for="graphSizeSelect") Größe der Elemente
+          select#graphSizeSelect(ng-model="sizeGraphElem" ng-options="x for x in sizes")
         .btn-toolbar
           button.btn.btn-sm.btn-search(ng-click="updateGraph()", type="button") Aktualisieren
           button.btn.btn-sm.btn-remove-all(ng-click="resetGraph()")
@@ -67,7 +70,13 @@ block content
         button.btn.btn-toggle(type="button", data-toggle="collapse", data-target="#toggle-timeline")
           span#toggle-timeline-icon(class="glyphicon")
         | Zeitreihe
-      div.collapse#toggle-timeline
+      div.collapse.famvis-visual#toggle-timeline
+        .form.jd-options
+          label(for="timelineElemX") Breite
+          select#timelineElemX(ng-model="sizeTimelineX" ng-options="x for x in sizesLarge")
+        .form.jd-options
+          label(for="timelineElemY") Höhe
+          select#timelineElemY(ng-model="sizeTimelineY" ng-options="x for x in sizesLarge")
         .btn-toolbar
           button.btn.btn-sm.btn-search(ng-click="updateTimeline()", type="button") Aktualisieren
           button.btn.btn-sm.btn-remove-all(ng-click="resetTimeline()")
@@ -84,10 +93,13 @@ block content
         button.btn.btn-toggle(type="button", data-toggle="collapse", data-target="#toggle-map")
           span#toggle-map-icon(class="glyphicon")
         | Karte
-      div.collapse#toggle-map
+      div.collapse.famvis-visual#toggle-map
         .form.jd-options
           label(for="mapSelect") Karte
           select#mapSelect(ng-model="mapDataFile" ng-options="x.text for x in mapDataFiles")
+        .form.jd-options
+          label(for="mapSizeSelect") Größe der Elemente
+          select#mapSizeSelect(ng-model="sizeMapElem" ng-options="x for x in sizes")
         .btn-toolbar
           button.btn.btn-sm.btn-search(ng-click="updateMap()", type="button") Aktualisieren
           button.btn.btn-sm.btn-remove-all(ng-click="resetMap()")

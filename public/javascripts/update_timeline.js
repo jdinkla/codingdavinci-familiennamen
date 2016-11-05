@@ -4,7 +4,7 @@
  * see the file LICENSE in the root directory for license information
  */
 
-var updateTimeline = function(tag, lofn, containerId) {
+var updateTimeline = function(tag, lofn, containerId, boxWidth, elemHeight) {
 
     var enc = encodeListOfNames(lofn.getElems());
 
@@ -17,10 +17,7 @@ var updateTimeline = function(tag, lofn, containerId) {
     var height = 1000;
     var padding = 10;
 
-    var boxWidth = 20;
-
     var numNames = lofn.elems.length;
-    var elemHeight = 25;
     var elemDistance = 5;
 
     var year_range = d3.scaleLinear()
@@ -102,26 +99,6 @@ var updateTimeline = function(tag, lofn, containerId) {
             .attr("transform", "translate(" + 0 + ", " + numNames * elemHeight + ")")
             .call(xAxis);
 
-        /*
-        // transform dictionary
-        var namesJSON = [];
-        for (var key in names) {
-            namesJSON.push({name: key, id: names[key]});
-        }
-
-        d3.select("#legend")
-            .selectAll("div")
-            .data(namesJSON)
-            .enter()
-            .append("div")
-            .classed("item", true)
-            .style("color", function (d) {
-                return namesColors(names[d.name]);
-            })
-            .text(function (d) {
-                return d.name;
-            });
-           */
     });
 
 }

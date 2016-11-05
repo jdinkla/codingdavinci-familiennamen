@@ -265,6 +265,20 @@ input[type=text] {
   background-color: red;
 }
 
+.jd-options label {
+  margin-right: 1em;
+}
+
+.famvis-visual {
+  margin-left: 2em;
+}
+
+/*
+ see http://stackoverflow.com/questions/2781549/removing-input-background-colour-for-chrome-autocomplete
+ */
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px white inset;
+}
 
 /*
  taken from http://www.bootply.com/128062
@@ -284,3 +298,4 @@ input[type=text] {
   from { transform: scale(1) rotate(0deg);}
   to { transform: scale(1) rotate(360deg);}
 }
+

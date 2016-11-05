@@ -12,6 +12,22 @@ angular
 
         $scope.lofn = new ListOfNames();
 
+        // Sizes
+        $scope.sizeMapElem = 7;
+        $scope.sizeGraphElem = 5;
+        $scope.sizeTimelineX = 20;
+        $scope.sizeTimelineY = 25;
+
+        $scope.sizes = [];
+        $scope.sizesLarge = [];
+        for (var i=1; i<=20; i++) {
+            $scope.sizes.push(i);
+        }
+        for (var i=5; i<=50; i+= 5) {
+            $scope.sizesLarge.push(i);
+        }
+
+        // Search
         $scope.searchText = "";
         $scope.searchType = 1;
 
@@ -142,7 +158,7 @@ angular
 
             $scope.updateGraph = function() {
                 if (!$scope.lofn.isEmpty()) {
-                    updateGraph("#graph", $scope.lofn, $scope.neighbors);
+                    updateGraph("#graph", $scope.lofn, $scope.neighbors, $scope.sizeGraphElem);
                 }
             };
 
@@ -153,7 +169,7 @@ angular
 
             $scope.updateTimeline = function() {
                 if (!$scope.lofn.isEmpty()) {
-                    updateTimeline("#timeline", $scope.lofn, '#timeline-container');
+                    updateTimeline("#timeline", $scope.lofn, '#timeline-container', $scope.sizeTimelineX, $scope.sizeTimelineY);
                 }
             };
 
@@ -164,7 +180,7 @@ angular
 
             $scope.updateMap = function() {
                 if (!$scope.lofn.isEmpty()) {
-                    updateMap("#map", $scope.lofn, $scope.mapDataFile.file);
+                    updateMap("#map", $scope.lofn, $scope.mapDataFile.file, $scope.sizeMapElem);
                 }
             };
 

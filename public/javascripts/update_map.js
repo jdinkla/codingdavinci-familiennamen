@@ -4,11 +4,9 @@
  * see the file LICENSE in the root directory for license information
  */
 
-var updateMap = function(tag, lofn, mapDataFile) {
+var updateMap = function(tag, lofn, mapDataFile, radiusOfElem) {
 
     var enc = encodeListOfNames(lofn.getElems());
-
-    var radius = 6;
 
     //Width and height
     var xOffset = 20;
@@ -74,7 +72,7 @@ var updateMap = function(tag, lofn, mapDataFile) {
                 .attr("cy", function (d) {
                     return p.projection([d.lon, d.lat])[1];
                 })
-                .attr("r", radius)
+                .attr("r", radiusOfElem)
                 .attr("fill", fgFill)
                 .style("opacity", fgOpacity);
 
