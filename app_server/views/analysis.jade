@@ -12,7 +12,10 @@ block content
       h1= title
 
       div#error(class="alert alert-danger hidden", role="alert")
-        strong Leider gibt es ein Problem mit der Datenbank.
+        strong Leider gibt es ein Problem mit der Datenbank. Bitte versuchen Sie es noch einmal.
+
+      div#warning(class="alert alert-warning hidden", role="alert")
+        strong#warning-text Es ist ein Fehler aufgetreten.
 
   include include/name_selection
 

@@ -94,6 +94,15 @@ describe('browser_utils', function() {
         assert.equal(utils.detag("#tag"), "tag");
     });
 
+    it('getAlphaNumChars', function() {
+        assert.equal(utils.getAlphaNumChars("_%()*."), "");
+        assert.equal(utils.getAlphaNumChars("_a%()b*."), "ab");
+        assert.equal(utils.getAlphaNumChars(""), "");
+        assert.equal(utils.getAlphaNumChars("der%"), "der");
+
+    });
+
+
 });
 
 

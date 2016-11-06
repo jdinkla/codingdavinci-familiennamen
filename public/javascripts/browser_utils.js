@@ -135,6 +135,14 @@ function getSizes() {
     };
 
 }
+
+// used for checking like and regexps
+function getAlphaNumChars(str) {
+    return str.replace( /[^a-zA-Z0-9]/g , '');
+}
+
+
+
 if (typeof module != 'undefined') {
     module.exports = {
         getCenturies: getCenturies,
@@ -144,6 +152,7 @@ if (typeof module != 'undefined') {
         encodeListOfNames: encodeListOfNames,
         decodeListOfNames: decodeListOfNames,
         deleteAllChilds: deleteAllChilds,
-        detag: detag
+        detag: detag,
+        getAlphaNumChars: getAlphaNumChars
     };
 }

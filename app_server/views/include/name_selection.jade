@@ -16,10 +16,10 @@
           label(for="searchType1") Exakt
         .form
           input(type="radio", ng-model="searchType", value="2", id="searchType2", ng-click="setSearchButtonText();")
-          label(for="searchType2") Like-Muster
+          label(for="searchType2", title="Mit einem Like-Muster kann man nach mehreren Namen suchen. Das Zeichen _ (underscore) ist ein Muster für ein beliebiges einzelnes Zeichen. Das Zeichen % für beliebig viele. Zum Beispiel sucht m_i_r% nach maier, meierhofer, usw.") Like-Muster
         .form
           input(type="radio", ng-model="searchType", value="3", id="searchType3", ng-click="setSearchButtonText();")
-          label(for="searchType3") Regulärer Ausdruck
+          label(for="searchType3", title="Ein regulärer Ausdruck kann man nach mehreren Namen suchen. Z. B. steht ein Punkt für ein beliebiges einfaches Zeichen, .* für eine beliebig Lange Kette von Zeichen. [aei]{1,2} gibt ein oder zwei a, e oder i an. Reguläre Ausdrücke sind ausdrucksstark und recht einfach zu lernen.") Regulärer Ausdruck
         .form
           input(type="radio", ng-model="searchType", value="4", id="searchType4", ng-click="setSearchButtonText();")
           label(for="searchType4") Ähnliche Namen in Graph

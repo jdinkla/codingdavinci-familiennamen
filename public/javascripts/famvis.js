@@ -10,11 +10,14 @@ angular
     .module('FamVis')
     .controller('explorerController', function($scope, $http) {
 
+        var minimalCharsinLike = 3;
+        var minimalCharsinRegExp = 4;
+
         $scope.error = "";
 
         $scope.lofn = new ListOfNames();
 
-        $scope.scale = { x: 1.0, y: 0.5 };
+        $scope.scale = { x: 1.0, y: 0.7 };
 
         $scope.scales = [];
         for (var i=1; i<= 20; i++) {
@@ -78,12 +81,25 @@ angular
             }
         };
 
+        $scope.warning = function(show, text) {
+            if (show) {
+                $('#warning').removeClass("hidden");
+                if (text) {
+                    document.getElementById('warning-text').innerText = text;
+                }
+            } else {
+                $('#warning').addClass("hidden");
+            }
+        };
+
+
         $scope.search = function() {
 
             $scope.searchResults = [];
             $scope.numSearchResults = 0;
 
             $scope.error(false);
+            $scope.warning(false);
 
             var pattern = encode($scope.searchText);
             switch(+$scope.searchType) {
@@ -101,30 +117,38 @@ angular
                         });
                     break;
                 case 2:
-                    $scope.startSearch();
-                    $http.get("/api/name/like/" + pattern )
-                        .error(function () {
-                            $scope.error(true);
-                            $scope.stopSearch();
-                        })
-                        .then(function(res) {
-                            $scope.searchResults = res.data;
-                            $scope.numSearchResults = res.data.length;
-                            $scope.stopSearch();
-                        });
+                    if (getAlphaNumChars($scope.searchText).length < minimalCharsinLike) {
+                        $scope.warning(true, "Ein Like-Muster muss mindestens " + minimalCharsinLike + " normale Zeichen beinhalten.")
+                    } else {
+                        $scope.startSearch();
+                        $http.get("/api/name/like/" + pattern )
+                            .error(function () {
+                                $scope.error(true);
+                                $scope.stopSearch();
+                            })
+                            .then(function(res) {
+                                $scope.searchResults = res.data;
+                                $scope.numSearchResults = res.data.length;
+                                $scope.stopSearch();
+                            });
+                    }
                     break;
                 case 3:
-                    $scope.startSearch();
-                    $http.get("/api/name/regexp/" + pattern )
-                        .error(function () {
-                            $scope.error(true);
-                            $scope.stopSearch();
-                        })
-                        .then(function(res) {
-                            $scope.searchResults = res.data;
-                            $scope.numSearchResults = res.data.length;
-                            $scope.stopSearch();
-                        });
+                    if (getAlphaNumChars($scope.searchText).length < minimalCharsinRegExp) {
+                        $scope.warning(true, "Ein regulärer Ausdruck muss mindestens" + minimalCharsinRegExp + " normale Zeichen beinhalten.")
+                    } else {
+                        $scope.startSearch();
+                        $http.get("/api/name/regexp/" + pattern)
+                            .error(function () {
+                                $scope.error(true);
+                                $scope.stopSearch();
+                            })
+                            .then(function (res) {
+                                $scope.searchResults = res.data;
+                                $scope.numSearchResults = res.data.length;
+                                $scope.stopSearch();
+                            });
+                    }
                     break;
                 case 4:
                     $scope.startSearch();
