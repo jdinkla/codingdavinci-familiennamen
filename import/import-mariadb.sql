@@ -22,27 +22,11 @@ CREATE TABLE foko_d_geo
     lat DOUBLE NOT NULL,
     ort VARCHAR(256) NOT NULL
 );
+
 CREATE INDEX foko_d_geo_familyname ON foko_d_geo (familyName);
 
 LOAD DATA INFILE "/import/family_foko_d_geo.tsv"
 INTO TABLE foko_d_geo
-COLUMNS TERMINATED BY '\t'
-LINES TERMINATED BY '\n';
-
-COMMIT;
-
-CREATE TABLE plz
-(
-    id INT(11) NOT NULL,
-    plz VARCHAR(5) NOT NULL,
-    lon DOUBLE NOT NULL,
-    lat DOUBLE NOT NULL,
-    ort VARCHAR(256) NOT NULL
-);
-CREATE UNIQUE INDEX plz_unique ON plz (plz);
-
-LOAD DATA INFILE "/import/family_plz.tsv"
-INTO TABLE plz
 COLUMNS TERMINATED BY '\t'
 LINES TERMINATED BY '\n';
 
