@@ -1,4 +1,4 @@
-CREATE SCHEMA `family` CHARACTER SET utf8 COLLATE utf8_general_ci;
+CREATE SCHEMA `family` CHARACTER SET utf8 COLLATE utf8_german2_ci;
 CREATE USER 'family'@'localhost' IDENTIFIED BY 'family';
 GRANT ALL ON family.* TO 'family' IDENTIFIED BY 'family';
 COMMIT;
