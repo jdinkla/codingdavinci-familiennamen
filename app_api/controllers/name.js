@@ -21,21 +21,26 @@ function handle(res, err, rows) {
 var preparedStatement = con.prepare('\
 SELECT DISTINCT familyname \
 FROM foko_d_geo \
-WHERE familyname = :familyname \
-AND begin > 1000');
+WHERE familyname = (:familyname COLLATE utf8_bin) \
+AND begin > 1000 ');
 
 function exact(req, res) {
     var pattern = req.params.familyname;
-    con.query(preparedStatement({ familyname: pattern }), function (err, rows) {
-        handle(res, err, rows);
-    });
+    if (pattern) {
+        con.query(preparedStatement({ familyname: pattern }), function (err, rows) {
+            handle(res, err, rows);
+        });
+    } else {
+        utils.sendJsonResponse(res, 400, "Pattern ist undefined");
+    }
 };
 
 var preparedStatementLike = con.prepare('\
 SELECT DISTINCT familyname \
 FROM foko_d_geo \
 WHERE familyName LIKE :pattern \
-AND begin > 1000');
+AND begin > 1000 \
+ORDER BY familyname COLLATE utf8_german2_ci');
 
 function like(req, res) {
     var pattern = req.params.pattern;
@@ -52,7 +57,8 @@ var preparedStatementRegExp = con.prepare('\
 SELECT DISTINCT familyname \
 FROM foko_d_geo \
 WHERE familyName REGEXP :pattern \
-AND begin > 1000');
+AND begin > 1000 \
+ORDER BY familyname COLLATE utf8_german2_ci');
 
 function regexp(req, res) {
     var pattern = req.params.pattern;
