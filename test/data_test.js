@@ -6,56 +6,65 @@
 
 var assert = require('assert');
 var name = require('../app_api/controllers/timeline');
+var utils = require('../public/javascripts/browser_utils');
 var chai = require('chai');
 var chaiHttp = require('chai-http');
 var server = require('../app');
-var should = chai.should();
 var _ = require('underscore');
 
+var should = chai.should();
 chai.use(chaiHttp);
 
 describe('data', function() {
 
     it('müller', function (done) {
+        var enc = utils.encode('müller');
         chai.request(server)
-            .get('/api/foko/müller')
+            .get('/api/foko/' + enc)
             .end(function (err, res) {
                 res.should.have.status(200);
                 res.body.should.be.a('array');
-                res.body.every( x => x.name.should.be.eql("müller") );
+                res.body.length.should.be.above(0);
+                res.body.every( x => x.familyName.should.be.eql("müller") );
                 done();
             });
     });
 
     it('mueller', function (done) {
+        var enc = utils.encode('mueller');
         chai.request(server)
-            .get('/api/foko/mueller')
+            .get('/api/foko/' + enc)
             .end(function (err, res) {
                 res.should.have.status(200);
                 res.body.should.be.a('array');
-                res.body.every( x => x.name.should.be.eql("mueller") );
+                res.body.length.should.be.above(0);
+                res.body.every( x => x.familyName.should.be.eql("mueller") );
                 done();
             });
     });
 
     it('muller', function (done) {
+        var enc = utils.encode('muller');
         chai.request(server)
-            .get('/api/foko/muller')
+            .get('/api/foko/' + enc)
             .end(function (err, res) {
                 res.should.have.status(200);
                 res.body.should.be.a('array');
-                res.body.every( x => x.name.should.be.eql("muller") );
+                res.body.length.should.be.above(0);
+                res.body.every( x => x.familyName.should.be.eql("muller") );
                 done();
             });
     });
 
     it('müller, mueller', function (done) {
+        var enc = utils.encodeListOfNames(['müller', 'mueller']);
         chai.request(server)
-            .get('/api/foko/müller,mueller')
+            .get('/api/foko/' + enc)
             .end(function (err, res) {
                 res.should.have.status(200);
                 res.body.should.be.a('array');
-                res.body.every( x => x.name.should.be.oneOf("müller", "mueller") );
+                res.body.length.should.be.above(0);
+                res.body.every( x => x.familyName.should.be.oneOf(["müller", "mueller"]) );
                 done();
             });
     });

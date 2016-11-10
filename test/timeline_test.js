@@ -6,6 +6,7 @@
 
 var assert = require('assert');
 var name = require('../app_api/controllers/timeline');
+var utils = require('../public/javascripts/browser_utils');
 var chai = require('chai');
 var chaiHttp = require('chai-http');
 var server = require('../app');
@@ -17,45 +18,53 @@ chai.use(chaiHttp);
 describe('timeline', function() {
 
     it('müller', function (done) {
+        var enc = utils.encode('müller');
         chai.request(server)
-            .get('/api/timeline/müller')
+            .get('/api/timeline/' + enc)
             .end(function (err, res) {
                 res.should.have.status(200);
                 res.body.should.be.a('array');
+                res.body.length.should.be.above(0);
                 res.body.every( x => x.name.should.be.eql("müller") );
                 done();
             });
     });
 
     it('mueller', function (done) {
+        var enc = utils.encode('mueller');
         chai.request(server)
-            .get('/api/timeline/mueller')
+            .get('/api/timeline/' + enc)
             .end(function (err, res) {
                 res.should.have.status(200);
                 res.body.should.be.a('array');
+                res.body.length.should.be.above(0);
                 res.body.every( x => x.name.should.be.eql("mueller") );
                 done();
             });
     });
 
     it('muller', function (done) {
+        var enc = utils.encode('muller');
         chai.request(server)
-            .get('/api/timeline/muller')
+            .get('/api/timeline/' + enc)
             .end(function (err, res) {
                 res.should.have.status(200);
                 res.body.should.be.a('array');
+                res.body.length.should.be.above(0);
                 res.body.every( x => x.name.should.be.eql("muller") );
                 done();
             });
     });
 
     it('müller, mueller', function (done) {
+        var enc = utils.encodeListOfNames(['müller', 'mueller']);
         chai.request(server)
-            .get('/api/timeline/müller,mueller')
+            .get('/api/timeline/' + enc)
             .end(function (err, res) {
                 res.should.have.status(200);
                 res.body.should.be.a('array');
-                res.body.every( x => x.name.should.be.oneOf("müller", "mueller") );
+                res.body.length.should.be.above(0);
+                res.body.every( x => x.name.should.be.oneOf(["müller", "mueller"]) );
                 done();
             });
     });

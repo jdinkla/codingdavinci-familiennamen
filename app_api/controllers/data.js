@@ -22,10 +22,12 @@ function foko(req, res) {
     if (!req.params || !req.params.names) {
         return utils.sendJsonResponse(res, 400, "Missing parameter 'names'");
     }
-    var names = _.map(req.params.names, x => "" + x + " COLLATE utf8_bin");
+    var names = req.params.names;
     var decoded = butils.decodeListOfNames(names);
     c.query(preparedStatementData({ names: decoded }), function (err, rows) {
-        utils.handle(res, err, rows);
+        // work around the umlaut problems in MariaDB
+        var rows2 = _.filter(rows, x => _.contains(decoded, x.familyName));
+        utils.handle(res, err, rows2);
     });
 };
 

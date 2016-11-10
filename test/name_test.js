@@ -6,6 +6,7 @@
 
 var assert = require('assert');
 var name = require('../app_api/controllers/name');
+var utils = require('../public/javascripts/browser_utils');
 var chai = require('chai');
 var chaiHttp = require('chai-http');
 var server = require('../app');
@@ -25,8 +26,9 @@ describe('name', function() {
     });
 
     it('exact patttern in db', function (done) {
+        var enc = utils.encode('d');
         chai.request(server)
-            .get('/api/name/d')
+            .get('/api/name/' + enc)
             .end(function (err, res) {
                 res.should.have.status(200);
                 res.body.should.be.a('array');
@@ -36,8 +38,9 @@ describe('name', function() {
     });
 
     it('exact patttern not in db', function (done) {
+        var enc = utils.encode('thisnameisnotinthedb');
         chai.request(server)
-            .get('/api/name/thisnameisnotinthedb')
+            .get('/api/name/' + enc)
             .end(function (err, res) {
                 res.should.have.status(200);
                 res.body.should.be.a('array');
@@ -47,99 +50,117 @@ describe('name', function() {
     });
 
     it('exact patttern müller', function (done) {
+        var enc = utils.encode('müller');
         chai.request(server)
-            .get('/api/name/müller')
+            .get('/api/name/' + enc)
             .end(function (err, res) {
                 res.should.have.status(200);
                 res.body.should.be.a('array');
+                res.body.length.should.be.above(0);
                 res.body[0].should.be.eql('müller');
                 done();
             });
     });
 
     it('exact patttern mueller', function (done) {
+        var enc = utils.encode('mueller');
         chai.request(server)
-            .get('/api/name/mueller')
+            .get('/api/name/' + enc)
             .end(function (err, res) {
                 res.should.have.status(200);
                 res.body.should.be.a('array');
+                res.body.length.should.be.above(0);
                 res.body[0].should.be.eql('mueller');
                 done();
             });
     });
 
     it('exact patttern muller', function (done) {
+        var enc = utils.encode('muller');
         chai.request(server)
-            .get('/api/name/muller')
+            .get('/api/name/' + enc)
             .end(function (err, res) {
                 res.should.have.status(200);
                 res.body.should.be.a('array');
+                res.body.length.should.be.above(0);
                 res.body[0].should.be.eql('muller');
                 done();
             });
     });
 
     it('like patttern müller', function (done) {
+        var enc = utils.encode('müller');
         chai.request(server)
-            .get('/api/name/like/müller')
+            .get('/api/name/like/' + enc)
             .end(function (err, res) {
                 res.should.have.status(200);
                 res.body.should.be.a('array');
+                res.body.length.should.be.above(0);
                 res.body[0].should.be.eql('müller');
                 done();
             });
     });
 
     it('like patttern mueller', function (done) {
+        var enc = utils.encode('mueller');
         chai.request(server)
-            .get('/api/name/like/mueller')
+            .get('/api/name/like/' + enc)
             .end(function (err, res) {
                 res.should.have.status(200);
                 res.body.should.be.a('array');
+                res.body.length.should.be.above(0);
                 res.body[0].should.be.eql('mueller');
                 done();
             });
     });
 
     it('like patttern muller', function (done) {
+        var enc = utils.encode('muller');
         chai.request(server)
-            .get('/api/name/like/muller')
+            .get('/api/name/like/' + enc)
             .end(function (err, res) {
                 res.should.have.status(200);
                 res.body.should.be.a('array');
+                res.body.length.should.be.above(0);
                 res.body[0].should.be.eql('muller');
                 done();
             });
     });
 
     it('regexp patttern müller', function (done) {
+        var enc = utils.encode('^müller$');
         chai.request(server)
-            .get('/api/name/regexp/%5Em%C3%BCller%24')
+            .get('/api/name/regexp/' + enc)
             .end(function (err, res) {
                 res.should.have.status(200);
                 res.body.should.be.a('array');
+                res.body.length.should.be.above(0);
                 res.body[0].should.be.eql('müller');
                 done();
             });
     });
 
     it('regexp patttern mueller', function (done) {
+        var enc = utils.encode('^mueller$');
         chai.request(server)
-            .get('/api/name/regexp/%5Emueller%24')
+            .get('/api/name/regexp/' + enc)
             .end(function (err, res) {
                 res.should.have.status(200);
                 res.body.should.be.a('array');
+                res.body.length.should.be.above(0);
                 res.body[0].should.be.eql('mueller');
                 done();
             });
     });
 
     it('regexp patttern muller', function (done) {
+        var enc = utils.encode('^muller$');
         chai.request(server)
-            .get('/api/name/regexp/%5Emuller%24')
+            .get('/api/name/regexp/' + enc)
             .end(function (err, res) {
                 res.should.have.status(200);
                 res.body.should.be.a('array');
+                res.body.length.should.be.above(0);
                 res.body[0].should.be.eql('muller');
                 done();
             });
