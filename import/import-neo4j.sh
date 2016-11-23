@@ -8,8 +8,6 @@
 
 NEO4JDIR=/var/lib/neo4j
 
-curl -H "Content-Type: application/json" -X POST -d '{"password":"gra91PH"}' -u neo4j:neo4j http://localhost:7474/user/neo4j/password
-
 cp /import/familiennamen.tsv ${NEO4JDIR}/import
 cp /import/edges.tsv ${NEO4JDIR}/import
 
