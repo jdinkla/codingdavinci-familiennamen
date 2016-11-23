@@ -27,7 +27,6 @@ sleep 30
 curl -H "Content-Type: application/json" -X POST -d '{"password":"gra91PH"}' -u neo4j:neo4j http://0.0.0.0:7474/user/neo4j/password
 
 # import data
-sleep 5
 docker exec -it ${FAM_NEO4J_NAME} /import/import-neo4j.sh
 
 docker stop ${FAM_NEO4J_NAME}
