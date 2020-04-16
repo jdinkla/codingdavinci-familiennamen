@@ -1,0 +1,25 @@
+version: "3"
+
+services:
+
+  mariadb:
+    image: mariadb:10.1.18
+    container_name: mariadb
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./install/import:/import
+    environment:
+      - MYSQL_ROOT_PASSWORD=mariadb
+
+  neo4j:
+    image: neo4j:3.0.6
+    container_name: neo4j
+    ports:
+      - "7474:7474"
+      - "7687:7687"
+    volumes:
+      - ./install/data:/data
+      - ./install/import:/import
+
+    
