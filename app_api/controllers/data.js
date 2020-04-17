@@ -9,9 +9,7 @@ var utils = require('../../public/javascripts/node_utils')
 var butils = require('../../public/javascripts/browser_utils')
 var _ = require('underscore');
 
-var c = mdb.connection;
-
-var preparedStatementData = c.prepare('\
+var preparedStatementData = mdb.prepare('\
 SELECT id, familyName, begin, end, submitter, denomination, country, region, postalCode, placeName, placeURI, TRUNCATE(lon, 3) as lon, TRUNCATE(lat, 3) as lat, ort \
 FROM foko_d_geo \
 WHERE familyName IN (:names) \
@@ -24,7 +22,7 @@ function foko(req, res) {
     }
     var names = req.params.names;
     var decoded = butils.decodeListOfNames(names);
-    c.query(preparedStatementData({ names: decoded }), function (err, rows) {
+    mdb.query(preparedStatementData({ names: decoded }), function (err, rows) {
         // work around the umlaut problems in MariaDB
         var rows2 = _.filter(rows, x => _.contains(decoded, x.familyName));
         utils.handle(res, err, rows2);

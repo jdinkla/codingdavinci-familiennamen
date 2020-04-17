@@ -8,12 +8,10 @@ var mdb = require('../models/db_maria');
 var neo4j = require('../models/db_neo4j');
 var utils = require('../../public/javascripts/node_utils');
 
-var c = mdb.connection;
-
-var preparedStatement = c.prepare('SELECT COUNT(*) as NUM FROM foko_d_geo');
+var statement = 'SELECT COUNT(*) as NUM FROM foko_d_geo';
 
 module.exports.mariadb = function(req, res) {
-    c.query(preparedStatement(), function (err, rows) {
+    mdb.query(statement, function (err, rows) {
         if (err) {
             return utils.sendJsonResponse(res, 404, { status: "error", error: err });
         } else {

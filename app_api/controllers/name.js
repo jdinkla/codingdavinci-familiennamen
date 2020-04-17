@@ -6,7 +6,6 @@
 
 var mdb = require('../models/db_maria');
 var utils = require('../../public/javascripts/node_utils')
-var con = mdb.connection;
 var _ = require('underscore');
 
 function handle(res, err, rows) {
@@ -18,7 +17,7 @@ function handle(res, err, rows) {
     }
 }
 
-var preparedStatement = con.prepare('\
+var preparedStatement = mdb.prepare('\
 SELECT DISTINCT familyname \
 FROM foko_d_geo \
 WHERE familyname = (:familyname COLLATE utf8_bin) \
@@ -27,7 +26,7 @@ AND begin > 1000 ');
 function exact(req, res) {
     var pattern = req.params.familyname;
     if (pattern) {
-        con.query(preparedStatement({ familyname: pattern }), function (err, rows) {
+        mdb.query(preparedStatement({ familyname: pattern }), function (err, rows) {
             handle(res, err, rows);
         });
     } else {
@@ -35,7 +34,7 @@ function exact(req, res) {
     }
 };
 
-var preparedStatementLike = con.prepare('\
+var preparedStatementLike = mdb.prepare('\
 SELECT DISTINCT familyname \
 FROM foko_d_geo \
 WHERE familyName LIKE :pattern \
@@ -47,13 +46,13 @@ function like(req, res) {
     if (pattern.length < 4) {
         utils.sendJsonResponse(res, 400, "Pattern has to have a minimal length of 4 characters");
     } else {
-        con.query(preparedStatementLike({ pattern: pattern }), function (err, rows) {
+        mdb.query(preparedStatementLike({ pattern: pattern }), function (err, rows) {
             handle(res, err, rows);
         });
     }
 };
 
-var preparedStatementRegExp = con.prepare('\
+var preparedStatementRegExp = mdb.prepare('\
 SELECT DISTINCT familyname \
 FROM foko_d_geo \
 WHERE familyName REGEXP :pattern \
@@ -65,7 +64,7 @@ function regexp(req, res) {
     if (pattern.length < 4) {
         utils.sendJsonResponse(res, 400, "Pattern has to have a minimal length of 4 characters");
     } else {
-        con.query(preparedStatementRegExp({ pattern: pattern }), function (err, rows) {
+        mdb.query(preparedStatementRegExp({ pattern: pattern }), function (err, rows) {
             handle(res, err, rows);
         });
     }
