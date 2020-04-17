@@ -9,6 +9,7 @@ var utils = require('../../public/javascripts/node_utils')
 var _ = require('underscore');
 
 function handle(res, err, rows) {
+    console.log('handle ', res, err, rows)
     if (err) {
         utils.error(res, err);
     } else {
@@ -17,16 +18,18 @@ function handle(res, err, rows) {
     }
 }
 
-var preparedStatement = mdb.prepare('\
+var statement = '\
 SELECT DISTINCT familyname \
 FROM foko_d_geo \
-WHERE familyname = (:familyname COLLATE utf8_bin) \
-AND begin > 1000 ');
+WHERE familyname = ? \
+AND begin > 1000';
 
 function exact(req, res) {
-    var pattern = req.params.familyname;
+    var pattern = req.params.familyname
+    console.log('exact', pattern);
     if (pattern) {
-        mdb.query(preparedStatement({ familyname: pattern }), function (err, rows) {
+        mdb.query(statement, [pattern], function (err, rows) {
+            console.log('exact handle', rows);
             handle(res, err, rows);
         });
     } else {
@@ -34,37 +37,37 @@ function exact(req, res) {
     }
 };
 
-var preparedStatementLike = mdb.prepare('\
+var likeStatement = '\
 SELECT DISTINCT familyname \
 FROM foko_d_geo \
-WHERE familyName LIKE :pattern \
+WHERE familyName LIKE ? \
 AND begin > 1000 \
-ORDER BY familyname COLLATE utf8_german2_ci');
+ORDER BY familyname COLLATE utf8_german2_ci';
 
 function like(req, res) {
     var pattern = req.params.pattern;
     if (pattern.length < 4) {
         utils.sendJsonResponse(res, 400, "Pattern has to have a minimal length of 4 characters");
     } else {
-        mdb.query(preparedStatementLike({ pattern: pattern }), function (err, rows) {
+        mdb.query(likeStatement, [pattern], function (err, rows) {
             handle(res, err, rows);
         });
     }
 };
 
-var preparedStatementRegExp = mdb.prepare('\
+var regexpStatement = '\
 SELECT DISTINCT familyname \
 FROM foko_d_geo \
 WHERE familyName REGEXP :pattern \
 AND begin > 1000 \
-ORDER BY familyname COLLATE utf8_german2_ci');
+ORDER BY familyname COLLATE utf8_german2_ci';
 
 function regexp(req, res) {
     var pattern = req.params.pattern;
     if (pattern.length < 4) {
         utils.sendJsonResponse(res, 400, "Pattern has to have a minimal length of 4 characters");
     } else {
-        mdb.query(preparedStatementRegExp({ pattern: pattern }), function (err, rows) {
+        mdb.query(regexpStatement, [pattern], function (err, rows) {
             handle(res, err, rows);
         });
     }

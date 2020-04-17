@@ -21,11 +21,11 @@ module.exports = mockExports
 var useMariaSQL = true
 
 if (useMariaSQL) {
-    var mdb = require( 'mariasql' );
+    const mdb = require('mariadb/callback');
     console.log("using mariadb host '" + host + "'");
     var connection;
     try {
-        connection = new mdb({
+        connection = mdb.createConnection({
             host: host,
             user: user,
             password: pwd,
@@ -48,10 +48,11 @@ if (useMariaSQL) {
 
     var mariaSqlExports = {
         query: function (statement, callback) {
-            return connection.query(connection.prepare(statement), callback)
+            console.log('query ', statement)
+            connection.query(statement, callback)
         }, 
         prepare: function (statement) {
-            return connection.prepare(statement)
+            return (params) => statement
         }
     }
     
