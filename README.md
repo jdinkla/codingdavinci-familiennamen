@@ -1,8 +1,10 @@
 # Verbreitung von Familiennamen
 
+__[Anmerkung: April 2020. Dieses Projekt wird momentan nicht weiter gepflegt. In der JavaScript-Welt ist viel passiert und die benutzen Bibliotheken veraltet.]__
+
 Ein Projekt im Rahmen des Kultur-Hackathons
 ["Coding da Vinci Nord" 2016](https://codingdavinci.de). Siehe auch die Projektseite [Eintrag](https://hackdash.org/projects/57dd5ce5d9284f016c04745b)
-bei (HackDash)[https://hackdash.org/dashboards/cdvnord].
+bei (HackDash)[https://hackdash.org/dashboards/cdvnord] oder den [Artikel in meinem Blog](https://jdinkla.github.io/software-development/2016/11/10/web-app-fuer-die-visualisierung-der-verbreitung-von-familiennamen.html).
 
 Auf Basis der von der Deutschen Arbeitsgemeinschaft Genealogischer Verbände (DAGV) 
 erstellten Daten über Familiennamen wurde eine Web-Applikation erstellt, mit der die Daten analysiert und
