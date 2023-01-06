@@ -19,7 +19,7 @@
     "express": "^4.16.4",
     "jade": "~1.11.0",
     "mariasql": "^0.2.6",
-    "mocha": "^6.0.2",
+    "mocha": "^10.2.0",
     "morgan": "^1.9.1",
     "neo4j-driver": "^1.0.3",
     "serve-favicon": "^2.5.0",
