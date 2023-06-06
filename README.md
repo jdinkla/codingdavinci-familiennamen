@@ -1,6 +1,6 @@
 # Verbreitung von Familiennamen
 
-__[Anmerkung: April 2020. Dieses Projekt wird momentan nicht weiter gepflegt. In der JavaScript-Welt ist viel passiert und die benutzen Bibliotheken veraltet.]__
+__[Anmerkung: April 2020. Dieses Projekt wird momentan nicht weiter gepflegt. In der JavaScript-Welt ist viel passiert und die benutzen Bibliotheken veraltet. Für einige der benutzen Bibliotheken gibt es Sicherheitswarnungen. Daher bitte den Code nicht produktiv in öffentlichen Systemen benutzen.]__
 
 Ein Projekt im Rahmen des Kultur-Hackathons
 ["Coding da Vinci Nord" 2016](https://codingdavinci.de). Siehe auch die Projektseite [Eintrag](https://hackdash.org/projects/57dd5ce5d9284f016c04745b)
