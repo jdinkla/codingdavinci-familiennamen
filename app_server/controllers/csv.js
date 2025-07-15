@@ -4,22 +4,30 @@
  * see the file LICENSE in the root directory for license information
  */
 
-module.exports.index = function(req, res){
+export const index = (req, res) => {
     res.render('data/index', { title: 'Die Daten' });
 };
 
-module.exports.konfession = function(req, res){
+export const konfession = (req, res) => {
     res.render('data/konfession', { title: 'konfession.csv' });
 };
 
-module.exports.staat = function(req, res){
+export const staat = (req, res) => {
     res.render('data/staat', { title: 'staat.csv' });
 };
 
-module.exports.territorium = function(req, res){
+export const territorium = (req, res) => {
     res.render('data/territorium', { title: 'territorium.csv' });
 };
 
-module.exports.foko = function(req, res){
+export const foko = (req, res) => {
     res.render('data/foko', { title: 'foko.csv' });
+};
+
+export default {
+    index,
+    konfession,
+    staat,
+    territorium,
+    foko
 };

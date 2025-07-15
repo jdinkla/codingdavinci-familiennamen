@@ -4,37 +4,37 @@
  * see the file LICENSE in the root directory for license information
  */
 
-function admin(req, res){
+export const admin = (req, res) => {
     res.render('admin/index', { title: 'Administration' });
-}
+};
 
-function analysis(req, res){
+export const analysis = (req, res) => {
     res.render('analysis',
         { title: 'Namen-Explorer', ngApp: 'FamVis', ngController: 'explorerController'});
-}
+};
 
-function docs(req, res){
+export const docs = (req, res) => {
     res.render('docs/index', { title: 'Dokumentation' });
-}
+};
 
-function index(req, res){
+export const index = (req, res) => {
     res.render('index', { title: 'Verbreitung von Familennamen' });
-}
+};
 
-function imprint(req, res){
+export const imprint = (req, res) => {
     res.render('imprint', { title: 'Impressum' });
-}
+};
 
-function visualization(req, res){
+export const visualization = (req, res) => {
     res.render('visualization',
         { title: 'Visualisierung', ngApp: 'FamVis', ngController: 'explorerController' });
-}
+};
 
-module.exports = {
-    index: index,
-    analysis: analysis,
-    docs: docs,
-    visualization: visualization,
-    imprint: imprint,
-    admin: admin
+export default {
+    index,
+    analysis,
+    docs,
+    visualization,
+    imprint,
+    admin
 };

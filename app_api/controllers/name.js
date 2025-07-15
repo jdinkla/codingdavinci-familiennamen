@@ -4,75 +4,92 @@
  * see the file LICENSE in the root directory for license information
  */
 
-var mdb = require('../models/db_maria');
-var utils = require('../../public/javascripts/node_utils')
-var _ = require('underscore');
+import mdb from '../models/db_maria.js';
+import utils from '../../public/javascripts/node_utils.js';
+import _ from 'lodash';
 
-function handle(res, err, rows) {
+const handle = (res, err, rows) => {
     if (err) {
         utils.error(res, err);
     } else {
-        var names = _.map(rows, function(e) { return e.familyname ;});
+        const names = _.map(rows, e => e.familyname);
         utils.success(res, names);
     }
-}
+};
 
-var preparedStatement = mdb.prepare('\
-SELECT DISTINCT familyname \
-FROM foko_d_geo \
-WHERE familyname = (:familyname COLLATE utf8_bin) \
-AND begin > 1000 ');
+const preparedStatement = mdb.prepare(`
+SELECT DISTINCT familyname 
+FROM foko_d_geo 
+WHERE familyname = (:familyname COLLATE utf8_bin) 
+AND begin > 1000`);
 
-function exact(req, res) {
-    var pattern = req.params.familyname;
-    if (pattern) {
-        mdb.query(preparedStatement({ familyname: pattern }), function (err, rows) {
-            handle(res, err, rows);
-        });
-    } else {
-        utils.sendJsonResponse(res, 400, "Pattern ist undefined");
+export const exact = async (req, res) => {
+    try {
+        const pattern = req.params.familyname;
+        if (pattern) {
+            const statement = preparedStatement({ familyname: pattern });
+            const rows = await mdb.queryAsync(statement.sql, statement.params);
+            const names = _.map(rows, e => e.familyname);
+            utils.success(res, names);
+        } else {
+            utils.sendJsonResponse(res, 400, "Pattern ist undefined");
+        }
+    } catch (err) {
+        console.error('Name exact search error:', err);
+        utils.error(res, err);
     }
 };
 
-var preparedStatementLike = mdb.prepare('\
-SELECT DISTINCT familyname \
-FROM foko_d_geo \
-WHERE familyName LIKE :pattern \
-AND begin > 1000 \
-ORDER BY familyname COLLATE utf8_german2_ci');
+const preparedStatementLike = mdb.prepare(`
+SELECT DISTINCT familyname 
+FROM foko_d_geo 
+WHERE familyName LIKE :pattern 
+AND begin > 1000 
+ORDER BY familyname COLLATE utf8_german2_ci`);
 
-function like(req, res) {
-    var pattern = req.params.pattern;
-    if (pattern.length < 4) {
-        utils.sendJsonResponse(res, 400, "Pattern has to have a minimal length of 4 characters");
-    } else {
-        mdb.query(preparedStatementLike({ pattern: pattern }), function (err, rows) {
-            handle(res, err, rows);
-        });
+export const like = async (req, res) => {
+    try {
+        const pattern = req.params.pattern;
+        if (pattern.length < 4) {
+            utils.sendJsonResponse(res, 400, "Pattern has to have a minimal length of 4 characters");
+        } else {
+            const statement = preparedStatementLike({ pattern: pattern });
+            const rows = await mdb.queryAsync(statement.sql, statement.params);
+            const names = _.map(rows, e => e.familyname);
+            utils.success(res, names);
+        }
+    } catch (err) {
+        console.error('Name like search error:', err);
+        utils.error(res, err);
     }
 };
 
-var preparedStatementRegExp = mdb.prepare('\
-SELECT DISTINCT familyname \
-FROM foko_d_geo \
-WHERE familyName REGEXP :pattern \
-AND begin > 1000 \
-ORDER BY familyname COLLATE utf8_german2_ci');
+const preparedStatementRegExp = mdb.prepare(`
+SELECT DISTINCT familyname 
+FROM foko_d_geo 
+WHERE familyName REGEXP :pattern 
+AND begin > 1000 
+ORDER BY familyname COLLATE utf8_german2_ci`);
 
-function regexp(req, res) {
-    var pattern = req.params.pattern;
-    if (pattern.length < 4) {
-        utils.sendJsonResponse(res, 400, "Pattern has to have a minimal length of 4 characters");
-    } else {
-        mdb.query(preparedStatementRegExp({ pattern: pattern }), function (err, rows) {
-            handle(res, err, rows);
-        });
+export const regexp = async (req, res) => {
+    try {
+        const pattern = req.params.pattern;
+        if (pattern.length < 4) {
+            utils.sendJsonResponse(res, 400, "Pattern has to have a minimal length of 4 characters");
+        } else {
+            const statement = preparedStatementRegExp({ pattern: pattern });
+            const rows = await mdb.queryAsync(statement.sql, statement.params);
+            const names = _.map(rows, e => e.familyname);
+            utils.success(res, names);
+        }
+    } catch (err) {
+        console.error('Name regexp search error:', err);
+        utils.error(res, err);
     }
 };
 
-
-module.exports = {
-    exact: exact,
-    like: like,
-    regexp: regexp
+export default {
+    exact,
+    like,
+    regexp
 };

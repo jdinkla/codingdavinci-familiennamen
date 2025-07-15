@@ -1,6 +1,6 @@
 # Verbreitung von Familiennamen
 
-__[Anmerkung: April 2020. Dieses Projekt wird momentan nicht weiter gepflegt. In der JavaScript-Welt ist viel passiert und die benutzen Bibliotheken veraltet. Für einige der benutzen Bibliotheken gibt es Sicherheitswarnungen. Daher bitte den Code nicht produktiv in öffentlichen Systemen benutzen.]__
+__[Update: Januar 2025. Dieses Projekt wurde auf moderne JavaScript-Standards und aktuelle Bibliotheken aktualisiert. Die Sicherheitswarnungen wurden behoben und das Projekt verwendet jetzt Node.js 18+, moderne ES-Module und aktuelle Datenbankverbindungen.]__
 
 Ein Projekt im Rahmen des Kultur-Hackathons
 ["Coding da Vinci Nord" 2016](https://codingdavinci.de). Siehe auch die Projektseite [Eintrag](https://hackdash.org/projects/57dd5ce5d9284f016c04745b)
@@ -60,90 +60,57 @@ sind laut der Datei LICENSE.txt lizensiert unter "Creative Commons Attribution-S
 
 #### Installation
 
-Die Installation wurde bisher nur unter Linux und Mac getestet. Theoretisch müsste sie unter Windows auch unter einer Unix-Emulation, wie z. B. [cygwin](https://www.cygwin.com/) durchführbar sein. 
-Es ist in der Regel aber einfacher eine virtuelle Machine mit Linux aufzusetzen, z. B. mit [virtualbox](https://www.virtualbox.org/).   
+Die Installation funktioniert unter Linux, Mac und Windows mit Docker.
 
-Für die Installation werden benötigt:
-
+**Voraussetzungen:**
+* [Node.js 18+](https://nodejs.org) (für lokale Entwicklung)
+* [Docker](https://www.docker.com/) und Docker Compose
 * [git](https://git-scm.com/)
-* [docker](https://www.docker.com/)
-* [gzip bzw. gunzip](https://www.docker.com/)
 
-Zuerst müssen die Sourcen heruntergeladen werden:
+**Schnellstart mit Docker:**
 
 ```bash
-$ git clone https://github.com/jdinkla/codingdavinci-familiennamen.git
-$ cd codingdavinci-familiennamen
+# Repository klonen
+git clone https://github.com/jdinkla/codingdavinci-familiennamen.git
+cd codingdavinci-familiennamen
+
+# Mit Docker Compose starten (empfohlen)
+docker-compose up -d
+
+# Warten bis alle Services bereit sind, dann öffnen:
+# http://localhost:3000
 ```
 
-Die Installation erfolgt auf Linux und Mac dann mit
+**Lokale Entwicklung:**
 
 ```bash
-$ bin/init.sh
+# Dependencies installieren
+npm install
+
+# Entwicklungsserver starten
+npm run dev
+
+# Tests ausführen
+npm test
+
+# Code linting
+npm run lint
 ```
 
-Hier muss man ein wenig Geduld haben, die Importe in die Datenbank können je nach Computer schon ein paar Minuten dauern (aber weniger als 10 Minuten insgesamt auf jeden Fall).
+**Verfügbare Services:**
+* Web-Applikation: http://localhost:3000
+* Neo4j Browser: http://localhost:7474 (neo4j/gra91PH)
+* MariaDB: localhost:3306 (family/family)
 
-Hiermit werden die Docker-Container erstellt. Anschließend kann die Applikation mit
-
+**Stoppen:**
 ```bash
-$ bin/run-all.sh
+docker-compose down
 ```
 
-gestartet und mit 
-
-```bash
-$ bin/stop-all.sh
-```
-
-wieder gestoppt werden.
-
-Anmerkung: Die Installation kann sehr viel Ausgaben erzeugen. Sie fängt mit den folgenden Zeilen an:  
-
-```
-Step 1. create directories
-Step 2. create MariaDB
-1a0f74c4a163d4067ae60480de83c27618ed064629e50a647b8cc39d7c3e3620
-Sleep until database is constructed ...
-m1
-Step 3. create Neo4J
-dc47a921529f504f45031f5c3a29f4356e44d5a270e6aa30669fd4cda7e55b63
-Sleep until database is constructed ...
-n1
-Step 4. create web app
-Sending build context to Docker daemon 140.9 MB
-Step 1 : FROM node:4.6.1
-4.6.1: Pulling from library/node
-
-43c265008fae: Pull complete
-af36d2c7a148: Pull complete
-143e9d501644: Pull complete
-df720fc8e4f1: Pull complete
-eae19baa28ff: Pull complete
-9004de327d6a: Pull complete
-edff8d0602bc: Pull complete
-Digest: sha256:d719f1aec07c614e40dadba2fc4091eca5e6988d192275aabefb151555e6005b
-Status: Downloaded newer image for node:4.6.1
- ---> 72b8da4a0d13
-Step 2 : RUN mkdir -p /famvis
- ---> Running in 9be28c1646cd
- ---> 29999d7f8107
-Removing intermediate container 9be28c1646cd
-Step 3 : WORKDIR /famvis
- ---> Running in bb19454dc4a5
- ---> 65525074612b
-Removing intermediate container bb19454dc4a5
-Step 4 : COPY package.json /famvis
- ---> 0c659450e2f7
-Removing intermediate container 5d34304d5c7c
-Step 5 : RUN npm install
- ---> Running in 1a5bd618d461
-npm info it worked if it ends with ok
-npm info using npm@2.15.9
-npm info using node@v4.6.1
-npm info preinstall famvis@0.9.0
-npm info attempt registry request try #1 at 10:21:41 AM
-...
-```
-
-und viele weitere mehr ...
+**Modernisierungen:**
+* Node.js 18+ mit ES-Modulen
+* Moderne Datenbankverbindungen (mariadb, neo4j-driver v5)
+* Pug statt Jade Template Engine
+* Lodash statt Underscore
+* Docker Health Checks
+* Verbesserte Sicherheit und Performance

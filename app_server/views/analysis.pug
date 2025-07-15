@@ -1,0 +1,204 @@
+//-
+  (c) 2016, Jörn Dinkla, http://www.dinkla.net
+
+  see the file LICENSE in the root directory for license information
+
+extends layout_angular
+
+block content
+
+  .row
+    .col-sm-12
+      h1= title
+
+      div#error(class="alert alert-danger hidden", role="alert")
+        strong Leider gibt es ein Problem mit der Datenbank. Bitte versuchen Sie es noch einmal.
+
+      div#warning(class="alert alert-warning hidden", role="alert")
+        strong#warning-text Es ist ein Fehler aufgetreten.
+
+  include include/name_selection
+
+  .row
+    .col-sm-12
+
+      h3
+        button.btn.btn-toggle(type="button", data-toggle="collapse", data-target="#toggle-data")
+          span#toggle-data-icon(class="glyphicon")
+        | Daten
+      div.collapse.famvis-visual#toggle-data
+        .btn-toolbar
+          button.btn.btn-sm.btn-search(ng-click="updateData()", type="button") Aktualisieren
+          button.btn.btn-sm.btn-remove-all(ng-click="resetData()", type="button")
+            span(title="Tabelle leeren").glyphicon.glyphicon-trash
+        div#table
+          table.table.table-striped
+            thead
+              tr
+                th Id
+                th Familienname
+                th Startjahr
+                th Endjahr
+                th Submitter
+                th Religion
+                th Land
+                th Region
+                th PLZ
+                th Ort
+                th Link
+            tbody#table_data
+
+  .row
+    .col-sm-12
+      h3
+        button.btn.btn-toggle(type="button", data-toggle="collapse", data-target="#toggle-graph")
+          span#toggle-graph-icon(class="glyphicon")
+        | Graph
+      div.collapse.famvis-visual#toggle-graph
+        .form.jd-options
+          p Anzahl der Nachbarn
+          input#numN1(type="radio", ng-model="neighbors", value="1")
+          label(for="numN1") 1
+          input#numN2(type="radio", ng-model="neighbors", value="2")
+          label(for="numN2") 2
+        .form.jd-options
+          label(for="graphSizeSelect") Größe der Elemente
+          select#graphSizeSelect(ng-model="sizeGraphElem" ng-options="x for x in sizes")
+        .btn-toolbar
+          button.btn.btn-sm.btn-search(ng-click="updateGraph()", type="button") Aktualisieren
+          button.btn.btn-sm.btn-remove-all(ng-click="resetGraph()")
+            span(title="Graph löschen").glyphicon.glyphicon-trash
+        div#graph
+
+
+  .row
+    .col-sm-12#timeline-container
+      h3
+        button.btn.btn-toggle(type="button", data-toggle="collapse", data-target="#toggle-timeline")
+          span#toggle-timeline-icon(class="glyphicon")
+        | Zeitreihe
+      div.collapse.famvis-visual#toggle-timeline
+        .form.jd-options
+          label(for="timelineElemX") Breite
+          select#timelineElemX(ng-model="elemSize.x" ng-options="x for x in sizesLarge")
+        .form.jd-options
+          label(for="timelineElemY") Höhe
+          select#timelineElemY(ng-model="elemSize.y" ng-options="x for x in sizesLarge")
+        .btn-toolbar
+          button.btn.btn-sm.btn-search(ng-click="updateTimeline()", type="button") Aktualisieren
+          button.btn.btn-sm.btn-remove-all(ng-click="resetTimeline()")
+            span(title="Zeitreihe löschen").glyphicon.glyphicon-trash
+        div#timeline
+
+
+  .row
+    .col-sm-12
+      h3
+        button.btn.btn-toggle(type="button", data-toggle="collapse", data-target="#toggle-map")
+          span#toggle-map-icon(class="glyphicon")
+        | Karte
+      div.collapse.famvis-visual#toggle-map
+        .form.jd-options
+          label(for="mapSelect") Karte
+          select#mapSelect(ng-model="mapDataFile" ng-options="x.text for x in mapDataFiles")
+        .form.jd-options
+          label(for="mapSizeSelect") Größe der Elemente
+          select#mapSizeSelect(ng-model="sizeMapElem" ng-options="x for x in sizes")
+        .btn-toolbar
+          button.btn.btn-sm.btn-search(ng-click="updateMap()", type="button") Aktualisieren
+          button.btn.btn-sm.btn-remove-all(ng-click="resetMap()")
+            span(title="Karte löschen").glyphicon.glyphicon-trash
+        div#map
+
+  .row
+    .col-sm-12
+      h3
+        button.btn.btn-toggle(type="button", data-toggle="collapse", data-target="#toggle-options")
+          span#toggle-options-icon(class="glyphicon")
+        | Optionen
+      div.collapse.famvis-visual#toggle-options
+        .form.jd-options
+          label(for="scaleX") Skalierung in x
+          select#scaleX(ng-model="scale.x" ng-options="x for x in scales")
+        .form.jd-options
+          label(for="scaleY") Skalierung in y
+          select#scaleY(ng-model="scale.y" ng-options="x for x in scales")
+
+
+  script(src="/javascripts/color.js")
+  script(src="/javascripts/update_graph.js")
+  script(src="/javascripts/update_table.js")
+  script(src="/javascripts/update_timeline.js")
+  script(src="/javascripts/update_map.js")
+  script(src="/javascripts/list_of_names.js")
+
+  script.
+
+    d3.select("#nav_analysis").attr("class", "active");
+
+    var plus = 'glyphicon-plus-sign';
+    var minus = 'glyphicon-minus-sign';
+
+    function setPlus(tag) {
+      var elem = $(tag);
+      elem.removeClass(minus);
+      elem.addClass(plus);
+    }
+
+    function setMinus(tag) {
+      var elem = $(tag);
+      elem.removeClass(plus);
+      elem.addClass(minus);
+    }
+
+    var toggleDataIcon = '#toggle-data-icon';
+    var elem = $('#toggle-data');
+    elem.on('hidden.bs.collapse', function () {
+      setPlus(toggleDataIcon);
+    });
+    elem.on('shown.bs.collapse', function () {
+      setMinus(toggleDataIcon);
+    });
+
+    var toggleGraphIcon = '#toggle-graph-icon';
+    elem = $('#toggle-graph');
+    elem.on('hidden.bs.collapse', function () {
+      setPlus(toggleGraphIcon);
+    });
+    elem.on('shown.bs.collapse', function () {
+      setMinus(toggleGraphIcon);
+    });
+
+    var toggleTimelineIcon = '#toggle-timeline-icon';
+    elem = $('#toggle-timeline');
+    elem.on('hidden.bs.collapse', function () {
+      setPlus(toggleTimelineIcon);
+    });
+    elem.on('shown.bs.collapse', function () {
+      setMinus(toggleTimelineIcon);
+    });
+
+    var toggleMapIcon = '#toggle-map-icon';
+    elem = $('#toggle-map');
+    elem.on('hidden.bs.collapse', function () {
+      setPlus(toggleMapIcon);
+    });
+    elem.on('shown.bs.collapse', function () {
+      setMinus(toggleMapIcon);
+    });
+
+    var toggleOptionsIcon = '#toggle-options-icon';
+    elem = $('#toggle-options');
+    elem.on('hidden.bs.collapse', function () {
+      setPlus(toggleOptionsIcon);
+    });
+    elem.on('shown.bs.collapse', function () {
+      setMinus(toggleOptionsIcon);
+    });
+
+    setPlus(toggleDataIcon);
+    setPlus(toggleGraphIcon);
+    setPlus(toggleTimelineIcon);
+    setPlus(toggleMapIcon);
+    setPlus(toggleOptionsIcon);
+

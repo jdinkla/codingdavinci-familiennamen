@@ -4,59 +4,88 @@
  * see the file LICENSE in the root directory for license information
  */
 
-var host = process.env.FAMVIS_MARIADB_HOST || "127.0.0.1";
-var user = process.env.FAMVIS_MARIADB_USER || "family";
-var pwd = process.env.FAMVIS_MARIADB_PWD || "family";
+import mariadb from 'mariadb';
 
-mockExports = {
-    query: function (statement, callback) {
-        callback(null, [])
-    },
-    prepare: function (statement) {
-        return (params) => statement
-    }
-}
-module.exports = mockExports
+const host = process.env.FAMVIS_MARIADB_HOST || "127.0.0.1";
+const user = process.env.FAMVIS_MARIADB_USER || "family";
+const password = process.env.FAMVIS_MARIADB_PWD || "family";
 
-var useMariaSQL = true
+console.log(`using mariadb host '${host}'`);
 
-if (useMariaSQL) {
-    var mdb = require( 'mariasql' );
-    console.log("using mariadb host '" + host + "'");
-    var connection;
+// Create connection pool
+const pool = mariadb.createPool({
+    host: host,
+    user: user,
+    password: password,
+    database: 'family',
+    charset: 'utf8mb4',
+    connectionLimit: 10,
+    acquireTimeout: 60000,
+    timeout: 60000
+});
+
+// Modern async/await wrapper for queries
+export const query = async (sql, params = []) => {
+    let conn;
     try {
-        connection = new mdb({
-            host: host,
-            user: user,
-            password: pwd,
-            db: 'family',
-            charset :'utf8'
-        });
-    
-        connection.on('error', function(err){
-            console.error(err);
-            return { status: "error", error: err };
-        });
-    
-        connection.on('connect', function(){
-            console.log("connected to mariadb");
-        });
-    
+        conn = await pool.getConnection();
+        const rows = await conn.query(sql, params);
+        return rows;
     } catch (err) {
-        console.error(err);
+        console.error('Database query error:', err);
+        throw err;
+    } finally {
+        if (conn) conn.release();
+    }
+};
+
+// Callback-style wrapper for backward compatibility
+export const queryCallback = (sql, params, callback) => {
+    if (typeof params === 'function') {
+        callback = params;
+        params = [];
     }
 
-    var mariaSqlExports = {
-        query: function (statement, callback) {
-            return connection.query(connection.prepare(statement), callback)
-        }, 
-        prepare: function (statement) {
-            return connection.prepare(statement)
+    query(sql, params)
+        .then(rows => callback(null, rows))
+        .catch(err => callback(err));
+};
+
+// Prepare statement helper
+export const prepare = (sql) => {
+    return (params) => {
+        // Simple parameter replacement for named parameters
+        let preparedSql = sql;
+        if (params && typeof params === 'object') {
+            for (const [key, value] of Object.entries(params)) {
+                const placeholder = `:${key}`;
+                if (Array.isArray(value)) {
+                    const placeholders = value.map(() => '?').join(',');
+                    preparedSql = preparedSql.replace(placeholder, placeholders);
+                } else {
+                    preparedSql = preparedSql.replace(placeholder, '?');
+                }
+            }
         }
+        return { sql: preparedSql, params: Object.values(params || {}).flat() };
+    };
+};
+
+// Legacy callback-style query method for backward compatibility
+export const legacyQuery = (statement, callback) => {
+    if (typeof statement === 'object' && statement.sql) {
+        queryCallback(statement.sql, statement.params, callback);
+    } else {
+        queryCallback(statement, [], callback);
     }
-    
-    module.exports = mariaSqlExports
-}
+};
+
+export default {
+    query: legacyQuery,
+    queryAsync: query,
+    prepare,
+    pool
+};
 
 
 

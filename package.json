@@ -1,0 +1,36 @@
+{
+  "name": "famvis",
+  "description": "Verbreitung von Familiennamen für Coding da Vinci Nord 2016",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node ./bin/www.js",
+    "dev": "nodemon ./bin/www.js",
+    "test": "mocha test/**/*.js --timeout 10000",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  },
+  "dependencies": {
+    "cookie-parser": "^1.4.6",
+    "debug": "^4.3.4",
+    "express": "^4.18.2",
+    "lodash": "^4.17.21",
+    "mariadb": "^3.2.2",
+    "morgan": "^1.10.0",
+    "neo4j-driver": "^5.15.0",
+    "pug": "^3.0.2",
+    "serve-favicon": "^2.5.0"
+  },
+  "devDependencies": {
+    "chai": "^4.3.10",
+    "chai-http": "^4.4.0",
+    "eslint": "^8.56.0",
+    "mocha": "^10.2.0",
+    "nodemon": "^3.0.2"
+  }
+}

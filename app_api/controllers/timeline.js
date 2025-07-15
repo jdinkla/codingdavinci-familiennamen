@@ -4,29 +4,42 @@
  * see the file LICENSE in the root directory for license information
  */
 
-var mdb = require('../models/db_maria');
-var utils = require('../../public/javascripts/node_utils')
-var butils = require('../../public/javascripts/browser_utils')
-var _ = require('underscore');
+import mdb from '../models/db_maria.js';
+import utils from '../../public/javascripts/node_utils.js';
+import butils from '../../public/javascripts/browser_utils.js';
+import _ from 'lodash';
 
-var preparedStatementMany = mdb.prepare('\
-SELECT id, familyName name, begin, end, country, postalCode plz, ort, placeUri \
-FROM foko_d_geo \
-WHERE familyName IN (:names) \
-AND begin >= 1000 \
-ORDER BY familyName COLLATE utf8_german2_ci, begin, end;');
+const preparedStatementMany = mdb.prepare(`
+SELECT id, familyName name, begin, end, country, postalCode plz, ort, placeUri 
+FROM foko_d_geo 
+WHERE familyName IN (:names) 
+AND begin >= 1000 
+ORDER BY familyName COLLATE utf8_german2_ci, begin, end;`);
 
-module.exports.many = function(req, res) {
-    if (!req.params || !req.params.names) {
-        return utils.sendJsonResponse(res, 400, "Missing parameter 'names'");
-    }
-    var names = req.params.names;
-    var decoded = butils.decodeListOfNames(names);
-    mdb.query(preparedStatementMany({ names: decoded }), function (err, rows) {
+export const many = async (req, res) => {
+    try {
+        if (!req.params || !req.params.names) {
+            return utils.sendJsonResponse(res, 400, "Missing parameter 'names'");
+        }
+        
+        const names = req.params.names;
+        const decoded = butils.decodeListOfNames(names);
+        const statement = preparedStatementMany({ names: decoded });
+        
+        const rows = await mdb.queryAsync(statement.sql, statement.params);
+        
         // work around the umlaut problems in MariaDB
-        var rows2 = _.filter(rows, x => _.contains(decoded, x.name));
-        utils.handle(res,  err, rows2);
-    });
+        const filteredRows = _.filter(rows, x => _.includes(decoded, x.name));
+        
+        utils.sendJsonResponse(res, 200, filteredRows);
+    } catch (err) {
+        console.error('Timeline controller error:', err);
+        utils.sendJsonResponse(res, 500, { error: 'Internal server error' });
+    }
+};
+
+export default {
+    many
 };
 
 

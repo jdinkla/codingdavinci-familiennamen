@@ -4,10 +4,11 @@
  * see the file LICENSE in the root directory for license information
  */
 
-var express = require('express');
-var router = express.Router();
-var ctrlMain = require('../controllers/main');
-var ctrlCsv = require('../controllers/csv');
+import express from 'express';
+import ctrlMain from '../controllers/main.js';
+import ctrlCsv from '../controllers/csv.js';
+
+const router = express.Router();
 
 router.get('/', ctrlMain.index);
 router.get('/admin', ctrlMain.admin);
@@ -21,5 +22,5 @@ router.get('/docs', ctrlMain.docs);
 router.get('/imprint', ctrlMain.imprint);
 router.get('/impressum', ctrlMain.imprint);
 
-module.exports = router;
+export default router;
 

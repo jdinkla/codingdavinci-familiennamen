@@ -143,16 +143,31 @@ function getAlphaNumChars(str) {
 
 
 
-if (typeof module != 'undefined') {
-    module.exports = {
-        getCenturies: getCenturies,
-        getYears: getYears,
-        encode: encode,
-        decode: decode,
-        encodeListOfNames: encodeListOfNames,
-        decodeListOfNames: decodeListOfNames,
-        deleteAllChilds: deleteAllChilds,
-        detag: detag,
-        getAlphaNumChars: getAlphaNumChars
-    };
-}
+// ES Module exports
+export {
+    getCenturies,
+    getYears,
+    encode,
+    decode,
+    encodeListOfNames,
+    decodeListOfNames,
+    deleteAllChilds,
+    detag,
+    getAlphaNumChars,
+    getPandP,
+    getSizes
+};
+
+export default {
+    getCenturies,
+    getYears,
+    encode,
+    decode,
+    encodeListOfNames,
+    decodeListOfNames,
+    deleteAllChilds,
+    detag,
+    getAlphaNumChars,
+    getPandP,
+    getSizes
+};
