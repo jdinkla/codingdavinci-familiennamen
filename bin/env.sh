@@ -18,7 +18,6 @@ export FAM_DATA_MARIADB_DIR=${FAM_DATA_DIR}/mariadb
 export FAM_DATA_NEO4J_DIR=${FAM_DATA_DIR}/neo4j
 
 export FAM_MARIADB_NAME=m1
-export FAM_NEO4J_NAME=n1
 
 # FamVis
 export FAM_APP_NAME=f1
