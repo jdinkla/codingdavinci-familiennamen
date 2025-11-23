@@ -83,12 +83,16 @@ function getYears(start, end) {
     return result;
 }
 
+// Import shared encoding utilities
+// Note: In browser context, we use the local implementations below
+// In Node.js context, import from src/shared/utils/encoding.js
+
 function encode(str) {
     return encodeURI(str).replace(/\(/g, "%28").replace(/\)/g, "%29");
 }
 
 function decode(str) {
-    return decodeURI(str).replace(/%28/g, '(').replace(/%29/g, ')')
+    return decodeURI(str).replace(/%28/g, '(').replace(/%29/g, ')');
 }
 
 // returns a string with tab separated names

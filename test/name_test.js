@@ -5,7 +5,6 @@
  */
 
 var assert = require('assert');
-var name = require('../app_api/controllers/name');
 var utils = require('../public/javascripts/browser_utils');
 var chai = require('chai');
 var chaiHttp = require('chai-http');
