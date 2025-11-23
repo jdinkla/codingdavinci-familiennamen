@@ -1,116 +1,131 @@
-# Verbreitung von Familiennamen
+# Distribution of Family Names
 
-__[Update: Januar 2025. Dieses Projekt wurde auf moderne JavaScript-Standards und aktuelle Bibliotheken aktualisiert. Die Sicherheitswarnungen wurden behoben und das Projekt verwendet jetzt Node.js 18+, moderne ES-Module und aktuelle Datenbankverbindungen.]__
+A project created during the cultural hackathon
+["Coding da Vinci Nord" 2016](https://codingdavinci.de). See also the project page [Entry](https://hackdash.org/projects/57dd5ce5d9284f016c04745b)
+at [HackDash](https://hackdash.org/dashboards/cdvnord) or the [article in my blog](https://jdinkla.github.io/software-development/2016/11/10/web-app-fuer-die-visualisierung-der-verbreitung-von-familiennamen.html).
 
-Ein Projekt im Rahmen des Kultur-Hackathons
-["Coding da Vinci Nord" 2016](https://codingdavinci.de). Siehe auch die Projektseite [Eintrag](https://hackdash.org/projects/57dd5ce5d9284f016c04745b)
-bei (HackDash)[https://hackdash.org/dashboards/cdvnord] oder den [Artikel in meinem Blog](https://jdinkla.github.io/software-development/2016/11/10/web-app-fuer-die-visualisierung-der-verbreitung-von-familiennamen.html).
+Based on data about family names created by the German Working Group of Genealogical Associations (DAGV),
+a web application was developed that allows the data to be analyzed and visualized.
 
-Auf Basis der von der Deutschen Arbeitsgemeinschaft Genealogischer Verbände (DAGV) 
-erstellten Daten über Familiennamen wurde eine Web-Applikation erstellt, mit der die Daten analysiert und
-visuell dargestellt werden können.
+The application has the following functional areas:
 
-Die Applikation hat die folgenden Arbeitsbereiche:
+* Data
+    * Display of raw data
+    * Description of enrichment data used for maps and postal codes
+    * Data issues
+        * Description of problems encountered
+        * Data quality
+* Analysis
+    * Search the data by name
+        * Exact search
+        * Search with LIKE pattern
+        * Search with regular expression
+        * Search for similar names using the Levenshtein metric
+* Visualization
+    * Geographic on a map of Germany
+    * Temporal on a timeline
+    * Similarities between names using a network/graph based on the Levenshtein metric
 
-* Daten
-    * Anzeigen der Rohdaten
-    * Beschreibung der zur Anreicherung genutzten Daten für Karten und PLZ
-    * Probleme der Daten
-        * Beschreibung der aufgetretenen Probleme
-        * Datenqualität 
-* Analyse
-    * Suche in den Daten nach dem Namen
-        * exakte Suche
-        * Suche mit LIKE-Muster 
-        * Suche mit regulärem Ausdruck
-        * Suche ähnlicher Namen anhand der Levenshtein-Metrik
-* Visualisierung
-    * Geographisch auf einer Deutschlandkarte
-    * Zeitlich auf einer Zeitachse
-    * Ähnlichkeiten von Namen anhand eines Netzwerks / Graphen anhand der Levenshtein-Metrik
-    
-Als Beispiel kann man sich alle Datensätze anzeigen lassen, die die Zeichenkette "meier" beinhalten. 
-Hier werden beispielsweise auch die Namen "Bachmeier" und "Meierhof" zurückgegeben.
+As an example, you can display all records that contain the string "meier".
+For instance, this will also return names like "Bachmeier" and "Meierhof".
 
-In der Visualisierung kann man sich die geographische und die zeitliche Verteilung anzeigen lassen.
+In the visualization, you can view the geographic and temporal distribution.
 
-Auf einer Deutschlandkarte werden die Namen in unterschiedlichen Farben und Helligkeiten dargestellt. 
-Mit Hilfe einer Zeitleiste lässt sich die Entstehung der Namen untersuchen.
+On a map of Germany, names are displayed in different colors and brightness levels.
+Using a timeline, you can examine the origin of names.
 
-#### Technik
+#### Technology
 
-Die Applikation wurde mit den folgenden Mitteln erstellt:
+The application was built using the following tools:
 
 * Browser: [d3.js](https://d3js.org/), [Angular](https://angularjs.org/), [Bootstrap](http://getbootstrap.com/)
-* Web-Server: [node.js](https://nodejs.org), [express](http://expressjs.com/)
-* Datenbanken: [MariaDB](https://mariadb.org/) für die Tabellen, [Neo4J](https://neo4j.com/) für den Graphen
+* Web Server: [node.js](https://nodejs.org), [express](http://expressjs.com/)
+* Databases: [MariaDB](https://mariadb.org/) for tables, [Neo4J](https://neo4j.com/) for the graph
 
-Die Ähnlichkeiten von Namen werden mit der [Levenshtein-Metrik](https://de.wikipedia.org/wiki/Levenshtein-Distanz) berechnet. 
-Anhand eines Netzwerks/Graphs kann man die Ähnlichkeiten untersuchen. 
-Die Berechnung dieser Metrik ist schon ein rechenintensives Problem für die ca. 260.000 Namen, die für 
-Deutschland in den Daten vorhanden sind. Aus diesem Grund wurde die Berechnung separat mit paralllen Java 8 Streams durchgeführt. 
-Mit JavaScript würde eine Berechnung sehr viel länger dauern.
+Name similarities are calculated using the [Levenshtein metric](https://en.wikipedia.org/wiki/Levenshtein_distance).
+Similarities can be examined using a network/graph.
+The calculation of this metric is computationally intensive for the approximately 260,000 names
+available for Germany in the dataset. For this reason, the calculation was performed separately using parallel Java 8 Streams.
+A calculation with JavaScript would take much longer.
 
-Der Java Code befindet sich in einem [separatem Projekt](https://github.com/jdinkla/codingdavinci-familiennamen-graph).
+The Java code is located in a [separate project](https://github.com/jdinkla/codingdavinci-familiennamen-graph).
 
-#### Daten
+#### Data
 
-Die [Daten der deutschen Arbeitsgemeinschaft genealogischer Verbände e.V. (DAGV)](https://zenodo.org/record/61683#.WBG_hSTrt7I)
-sind laut der Datei LICENSE.txt lizensiert unter "Creative Commons Attribution-ShareAlike 4.0 International".
+The [data from the German Working Group of Genealogical Associations e.V. (DAGV)](https://zenodo.org/record/61683#.WBG_hSTrt7I)
+is licensed under "Creative Commons Attribution-ShareAlike 4.0 International" according to the LICENSE.txt file.
 
 #### Installation
 
-Die Installation funktioniert unter Linux, Mac und Windows mit Docker.
+Installation works on Linux, Mac, and Windows with Docker.
 
-**Voraussetzungen:**
-* [Node.js 18+](https://nodejs.org) (für lokale Entwicklung)
-* [Docker](https://www.docker.com/) und Docker Compose
+**Prerequisites:**
+* [just](https://github.com/casey/just) - A command runner 
+* [Node.js 18+](https://nodejs.org) (for local development)
+* [Docker](https://www.docker.com/) and Docker Compose
 * [git](https://git-scm.com/)
 
-**Schnellstart mit Docker:**
+**Quick Start with Docker:**
 
 ```bash
-# Repository klonen
+# Clone repository
 git clone https://github.com/jdinkla/codingdavinci-familiennamen.git
 cd codingdavinci-familiennamen
 
-# Mit Docker Compose starten (empfohlen)
-docker-compose up -d
-
-# Warten bis alle Services bereit sind, dann öffnen:
-# http://localhost:3000
+# Start all services (recommended)
+just up
 ```
 
-**Lokale Entwicklung:**
+**Database Import:**
+
+After starting the services, import the data into the databases:
 
 ```bash
-# Dependencies installieren
-npm install
+# Import data into MariaDB
+just import-mariadb
 
-# Entwicklungsserver starten
-npm run dev
+# Import data into Neo4j
+just import-neo4j
+```
 
-# Tests ausführen
-npm test
+**Local Development:**
+
+```bash
+# Install dependencies
+just install
+
+# Start development server
+just dev
+
+# Run tests
+just test
 
 # Code linting
-npm run lint
+just lint
 ```
 
-**Verfügbare Services:**
-* Web-Applikation: http://localhost:3000
-* Neo4j Browser: http://localhost:7474 (neo4j/gra91PH)
-* MariaDB: localhost:3306 (family/family)
+**Available Services:**
+* Web Application: http://localhost:3000 (open with `just web`)
+* Neo4j Browser: http://localhost:7474 (open with `just neo4j`, credentials: neo4j/neo4jLocalPwd)
+* MariaDB: localhost:3306 (credentials: family/family)
 
-**Stoppen:**
+**Common Commands:**
+
 ```bash
-docker-compose down
+# View all available commands
+just help
+
+# Start services
+just up
+
+# Stop services
+just down
+
+# Open web application in browser
+just web
+
+# Open Neo4j browser
+just neo4j
 ```
 
-**Modernisierungen:**
-* Node.js 18+ mit ES-Modulen
-* Moderne Datenbankverbindungen (mariadb, neo4j-driver v5)
-* Pug statt Jade Template Engine
-* Lodash statt Underscore
-* Docker Health Checks
-* Verbesserte Sicherheit und Performance
+Remark: This repository was updated in 2025 with various AI tools.
