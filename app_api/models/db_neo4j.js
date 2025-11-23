@@ -8,7 +8,7 @@ import neo4j from 'neo4j-driver';
 
 const con = process.env.FAMVIS_NEO4J_CONNECTION || "localhost:7687";
 const user = process.env.FAMVIS_NEO4J_USER || "neo4j";
-const pwd = process.env.FAMVIS_NEO4J_PWD || "gra91PH";
+const pwd = process.env.FAMVIS_NEO4J_PWD || "neo4jLocalPwd";
 
 console.log(`using neo4j connection: '${con}'`);
 
