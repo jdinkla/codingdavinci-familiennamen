@@ -13,7 +13,8 @@ const statement = 'SELECT COUNT(*) as NUM FROM foko_d_geo';
 export const mariadb = async (req, res) => {
     try {
         const rows = await mdb.queryAsync(statement);
-        utils.sendJsonResponse(res, 200, { status: "ok", rows: rows[0].NUM });
+        const count = Number(rows[0].NUM);
+        utils.sendJsonResponse(res, 200, { status: "ok", rows: count });
     } catch (err) {
         console.error('MariaDB health check error:', err);
         utils.sendJsonResponse(res, 404, { status: "error", error: err.message });
@@ -37,7 +38,8 @@ export const mariadbLegacy = (req, res) => {
         if (err) {
             return utils.sendJsonResponse(res, 404, { status: "error", error: err });
         } else {
-            return utils.sendJsonResponse(res, 200, { status: "ok", rows: rows[0].NUM });
+            const count = Number(rows[0].NUM);
+            return utils.sendJsonResponse(res, 200, { status: "ok", rows: count });
         }
     });
 };
