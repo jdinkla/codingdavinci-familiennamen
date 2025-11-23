@@ -11,4 +11,4 @@ CALL {
   MATCH (n:Familyname {name: line[0]})
   MATCH (m:Familyname {name: line[1]})
   CREATE (n)-[:LEVENSHTEIN1]->(m)
-} IN TRANSACTIONS OF 1000 ROWS;
+} IN TRANSACTIONS OF 500 ROWS;

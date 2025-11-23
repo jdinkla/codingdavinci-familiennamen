@@ -11,4 +11,4 @@ NEO4JDIR=/var/lib/neo4j
 cp /import/familiennamen.tsv ${NEO4JDIR}/import
 cp /import/edges.tsv ${NEO4JDIR}/import
 
-${NEO4JDIR}/bin/neo4j-shell < /import/import-neo4j.cypher
+${NEO4JDIR}/bin/cypher-shell -u neo4j -p neo4jLocalPwd -f /import/import-neo4j.cypher
