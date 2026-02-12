@@ -19,7 +19,7 @@
     "cookie-parser": "^1.4.6",
     "debug": "^4.3.4",
     "express": "^4.18.2",
-    "lodash": "^4.17.21",
+    "lodash": "^4.17.23",
     "mariadb": "^3.2.2",
     "morgan": "^1.10.0",
     "neo4j-driver": "^5.15.0",
