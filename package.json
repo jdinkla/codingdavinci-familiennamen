@@ -1,36 +1,42 @@
 {
-  "name": "famvis",
-  "description": "Verbreitung von Familiennamen für Coding da Vinci Nord 2016",
-  "version": "1.0.0",
+  "name": "familiennamen",
+  "version": "2.0.0",
   "private": true,
   "type": "module",
-  "scripts": {
-    "start": "node ./bin/www.js",
-    "dev": "nodemon ./bin/www.js",
-    "test": "mocha test/**/*.js --timeout 10000",
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
-  },
+  "workspaces": [
+    "packages/shared",
+    "server",
+    "client"
+  ],
   "engines": {
-    "node": ">=18.0.0",
-    "npm": ">=8.0.0"
+    "node": ">=22.0.0"
   },
-  "dependencies": {
-    "cookie-parser": "^1.4.6",
-    "debug": "^4.3.4",
-    "express": "^4.18.2",
-    "lodash": "^4.17.21",
-    "mariadb": "^3.2.2",
-    "morgan": "^1.10.0",
-    "neo4j-driver": "^5.15.0",
-    "pug": "^3.0.2",
-    "serve-favicon": "^2.5.0"
+  "scripts": {
+    "dev": "concurrently -k -n server,client -c blue,green \"PORT=3001 npm run dev -w server\" \"npm run dev -w client\"",
+    "build": "npm run build -w server && npm run build -w client",
+    "test": "vitest run --coverage",
+    "test:watch": "vitest",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "typecheck": "npm run typecheck -w packages/shared && npm run typecheck -w server && npm run typecheck -w client",
+    "import": "npm run import -w server"
   },
   "devDependencies": {
-    "chai": "^4.3.10",
-    "chai-http": "^4.4.0",
-    "eslint": "^8.56.0",
-    "mocha": "^10.2.0",
-    "nodemon": "^3.0.2"
+    "@eslint/js": "^10.0.1",
+    "@vitest/coverage-v8": "^4.1.9",
+    "concurrently": "^10.0.3",
+    "eslint": "^10.6.0",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "eslint-plugin-react-refresh": "^0.5.3",
+    "globals": "^17.7.0",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.62.0",
+    "vitest": "^4.1.9"
+  },
+  "allowScripts": {
+    "better-sqlite3@12.11.1": true,
+    "esbuild@0.28.1": true,
+    "esbuild@0.27.7": true,
+    "fsevents@2.3.3": true
   }
 }

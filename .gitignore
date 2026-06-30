@@ -66,6 +66,17 @@ fabric.properties
 # *.ipr
 
 
+### Vite/TS build output ###
+dist
+.vite
+
+### SQLite ###
+*.db
+*.db-journal
+*.db-shm
+*.db-wal
+server/data/*
+
 ### Node ###
 # Logs
 logs

@@ -1,33 +1,48 @@
-FROM node:18-alpine
+# syntax=docker/dockerfile:1
 
-RUN mkdir -p /famvis
-WORKDIR /famvis
+FROM node:22-slim AS base
+WORKDIR /app
 
-# Copy package files
-COPY package*.json ./
-RUN npm ci --only=production
+# ---- deps: install everything (incl. devDependencies) needed to build ----
+FROM base AS deps
+COPY package.json package-lock.json ./
+COPY packages/shared/package.json packages/shared/package.json
+COPY server/package.json server/package.json
+COPY client/package.json client/package.json
+RUN npm ci
 
-# Environment variables
-ENV FAMVIS_NEO4J_CONNECTION=neo4j:7687
-ENV FAMVIS_NEO4J_USER=neo4j
-ENV FAMVIS_NEO4J_PWD=neo4jLocalPwd
-
-ENV FAMVIS_MARIADB_HOST=mariadb
-ENV FAMVIS_MARIADB_USER=family
-ENV FAMVIS_MARIADB_PWD=family
-
-ENV PORT=80
-ENV NODE_ENV=production
-
-# Copy application code
+# ---- build: compile server + client, bake the SQLite DB from committed data ----
+FROM deps AS build
 COPY . .
+RUN npm run build -w server
+RUN npm run build -w client
+RUN npm run import -w server
 
-# Create non-root user for security
-RUN addgroup -g 1001 -S nodejs
-RUN adduser -S famvis -u 1001
-RUN chown -R famvis:nodejs /famvis
+# ---- runtime: minimal image, production dependencies only ----
+FROM base AS runtime
+ENV NODE_ENV=production
+COPY package.json package-lock.json ./
+COPY packages/shared/package.json packages/shared/package.json
+COPY server/package.json server/package.json
+COPY client/package.json client/package.json
+RUN npm ci --omit=dev
+
+COPY --from=build /app/server/dist ./server/dist
+COPY --from=build /app/server/data ./server/data
+COPY --from=build /app/client/dist ./client/dist
+COPY healthcheck.js ./healthcheck.js
+
+RUN groupadd --system nodejs \
+  && useradd --system --gid nodejs --create-home famvis \
+  && chown -R famvis:nodejs /app
 USER famvis
 
-EXPOSE $PORT
+ENV PORT=80
+ENV FAMVIS_SQLITE_PATH=/app/server/data/familiennamen.db
+ENV FAMVIS_CLIENT_DIST=/app/client/dist
+EXPOSE 80
 
-CMD [ "npm", "start" ]
+HEALTHCHECK --interval=10s --timeout=5s --start-period=10s --retries=3 \
+  CMD ["node", "healthcheck.js"]
+
+CMD ["node", "server/dist/index.js"]

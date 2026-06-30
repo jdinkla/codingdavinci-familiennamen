@@ -1,0 +1,518 @@
+[
+  {
+    "Kürzel": "A",
+    "Staat": "Österreich"
+  },
+  {
+    "Kürzel": "AFG",
+    "Staat": "Afghanistan"
+  },
+  {
+    "Kürzel": "AFR",
+    "Staat": "Afrika (als Kontinent)"
+  },
+  {
+    "Kürzel": "AG",
+    "Staat": "Antigua und Barbuda"
+  },
+  {
+    "Kürzel": "AL",
+    "Staat": "Albanien"
+  },
+  {
+    "Kürzel": "AND",
+    "Staat": "Andorra"
+  },
+  {
+    "Kürzel": "ANG",
+    "Staat": "Angola"
+  },
+  {
+    "Kürzel": "ANT",
+    "Staat": "Antillen"
+  },
+  {
+    "Kürzel": "ARM",
+    "Staat": "Armenien"
+  },
+  {
+    "Kürzel": "AUS",
+    "Staat": "Australien"
+  },
+  {
+    "Kürzel": "AX",
+    "Staat": "Åland"
+  },
+  {
+    "Kürzel": "AXA",
+    "Staat": "Anguilla"
+  },
+  {
+    "Kürzel": "AZ",
+    "Staat": "Aserbaidschan"
+  },
+  {
+    "Kürzel": "B",
+    "Staat": "Belgien"
+  },
+  {
+    "Kürzel": "BD",
+    "Staat": "Bangladesch"
+  },
+  {
+    "Kürzel": "BDS",
+    "Staat": "Barbados"
+  },
+  {
+    "Kürzel": "BF",
+    "Staat": "Burkina Faso"
+  },
+  {
+    "Kürzel": "BG",
+    "Staat": "Bulgarien"
+  },
+  {
+    "Kürzel": "BHT",
+    "Staat": "Bhutan"
+  },
+  {
+    "Kürzel": "BIH",
+    "Staat": "Bosnien-Herzegowina"
+  },
+  {
+    "Kürzel": "BJ",
+    "Staat": "Benin"
+  },
+  {
+    "Kürzel": "BOL",
+    "Staat": "Bolivien"
+  },
+  {
+    "Kürzel": "BR",
+    "Staat": "Brasilien"
+  },
+  {
+    "Kürzel": "BRN",
+    "Staat": "Bahrain"
+  },
+  {
+    "Kürzel": "BRU",
+    "Staat": "Brunei"
+  },
+  {
+    "Kürzel": "BS",
+    "Staat": "Bahamas"
+  },
+  {
+    "Kürzel": "BY",
+    "Staat": "Weißrußland"
+  },
+  {
+    "Kürzel": "BZ",
+    "Staat": "Belize"
+  },
+  {
+    "Kürzel": "C",
+    "Staat": "Kuba"
+  },
+  {
+    "Kürzel": "CDN",
+    "Staat": "Kanada"
+  },
+  {
+    "Kürzel": "CH",
+    "Staat": "Schweiz"
+  },
+  {
+    "Kürzel": "CL",
+    "Staat": "Sri Lanka"
+  },
+  {
+    "Kürzel": "CO",
+    "Staat": "Kolumbien"
+  },
+  {
+    "Kürzel": "CR",
+    "Staat": "Costa Rica"
+  },
+  {
+    "Kürzel": "CY",
+    "Staat": "Zypern"
+  },
+  {
+    "Kürzel": "CZ",
+    "Staat": "Tschechische Republik"
+  },
+  {
+    "Kürzel": "D",
+    "Staat": "Deutschland"
+  },
+  {
+    "Kürzel": "DK",
+    "Staat": "Dänemark"
+  },
+  {
+    "Kürzel": "DOM",
+    "Staat": "Dominikanische Republik"
+  },
+  {
+    "Kürzel": "DR",
+    "Staat": "Deutsches Reich"
+  },
+  {
+    "Kürzel": "DZ",
+    "Staat": "Algerien"
+  },
+  {
+    "Kürzel": "E",
+    "Staat": "Spanien"
+  },
+  {
+    "Kürzel": "EAT",
+    "Staat": "Tansania"
+  },
+  {
+    "Kürzel": "EC",
+    "Staat": "Equador"
+  },
+  {
+    "Kürzel": "ER",
+    "Staat": "Eritrea"
+  },
+  {
+    "Kürzel": "ES",
+    "Staat": "El Salvador"
+  },
+  {
+    "Kürzel": "EST",
+    "Staat": "Estland"
+  },
+  {
+    "Kürzel": "ET",
+    "Staat": "Ägypten"
+  },
+  {
+    "Kürzel": "ETH",
+    "Staat": "Äthiopien"
+  },
+  {
+    "Kürzel": "F",
+    "Staat": "Frankreich"
+  },
+  {
+    "Kürzel": "FIN",
+    "Staat": "Finnland"
+  },
+  {
+    "Kürzel": "FJI",
+    "Staat": "Fidschi-Inseln"
+  },
+  {
+    "Kürzel": "FL",
+    "Staat": "Liechtenstein"
+  },
+  {
+    "Kürzel": "GB",
+    "Staat": "Großbritannien"
+  },
+  {
+    "Kürzel": "GCA",
+    "Staat": "Guatemala"
+  },
+  {
+    "Kürzel": "GE",
+    "Staat": "Georgien"
+  },
+  {
+    "Kürzel": "GR",
+    "Staat": "Griechenland"
+  },
+  {
+    "Kürzel": "GUS",
+    "Staat": "GUS"
+  },
+  {
+    "Kürzel": "H",
+    "Staat": "Ungarn"
+  },
+  {
+    "Kürzel": "HK",
+    "Staat": "Hongkong"
+  },
+  {
+    "Kürzel": "HR",
+    "Staat": "Kroatien"
+  },
+  {
+    "Kürzel": "I",
+    "Staat": "Italien"
+  },
+  {
+    "Kürzel": "IL",
+    "Staat": "Israel"
+  },
+  {
+    "Kürzel": "IND",
+    "Staat": "Indien"
+  },
+  {
+    "Kürzel": "IR",
+    "Staat": "Iran"
+  },
+  {
+    "Kürzel": "IRL",
+    "Staat": "Irland"
+  },
+  {
+    "Kürzel": "IS",
+    "Staat": "Island"
+  },
+  {
+    "Kürzel": "J",
+    "Staat": "Japan"
+  },
+  {
+    "Kürzel": "JA",
+    "Staat": "Jamaika"
+  },
+  {
+    "Kürzel": "KAZ",
+    "Staat": "Kasachstan"
+  },
+  {
+    "Kürzel": "KGZ",
+    "Staat": "Kirgisistan"
+  },
+  {
+    "Kürzel": "L",
+    "Staat": "Luxemburg"
+  },
+  {
+    "Kürzel": "LBY",
+    "Staat": "Libyen"
+  },
+  {
+    "Kürzel": "LT",
+    "Staat": "Litauen"
+  },
+  {
+    "Kürzel": "LV",
+    "Staat": "Lettland"
+  },
+  {
+    "Kürzel": "M",
+    "Staat": "Malta"
+  },
+  {
+    "Kürzel": "MA",
+    "Staat": "Marokko"
+  },
+  {
+    "Kürzel": "MAL",
+    "Staat": "Malaysia"
+  },
+  {
+    "Kürzel": "MC",
+    "Staat": "Monaco"
+  },
+  {
+    "Kürzel": "MD",
+    "Staat": "Moldawien"
+  },
+  {
+    "Kürzel": "MEX",
+    "Staat": "Mexiko"
+  },
+  {
+    "Kürzel": "MK",
+    "Staat": "Mazedonien"
+  },
+  {
+    "Kürzel": "MS",
+    "Staat": "Mauritius"
+  },
+  {
+    "Kürzel": "MYA",
+    "Staat": "Myanmar (Burma)"
+  },
+  {
+    "Kürzel": "N",
+    "Staat": "Norwegen"
+  },
+  {
+    "Kürzel": "NAM",
+    "Staat": "Namibia (Südwest-Afrika)"
+  },
+  {
+    "Kürzel": "NL",
+    "Staat": "Niederlande"
+  },
+  {
+    "Kürzel": "NZ",
+    "Staat": "Neuseeland"
+  },
+  {
+    "Kürzel": "P",
+    "Staat": "Portugal"
+  },
+  {
+    "Kürzel": "PAL",
+    "Staat": "Palau"
+  },
+  {
+    "Kürzel": "PE",
+    "Staat": "Peru"
+  },
+  {
+    "Kürzel": "PL",
+    "Staat": "Polen"
+  },
+  {
+    "Kürzel": "PRI",
+    "Staat": "Puerto Rico"
+  },
+  {
+    "Kürzel": "PY",
+    "Staat": "Paraquay"
+  },
+  {
+    "Kürzel": "RA",
+    "Staat": "Argentinien"
+  },
+  {
+    "Kürzel": "RC",
+    "Staat": "Nationalchina"
+  },
+  {
+    "Kürzel": "RCA",
+    "Staat": "Zentralafrikanische Republik"
+  },
+  {
+    "Kürzel": "RCH",
+    "Staat": "Chile"
+  },
+  {
+    "Kürzel": "RFC",
+    "Staat": "Kamerun"
+  },
+  {
+    "Kürzel": "RH",
+    "Staat": "Haiti"
+  },
+  {
+    "Kürzel": "RI",
+    "Staat": "Indonesien"
+  },
+  {
+    "Kürzel": "RL",
+    "Staat": "Republik Libanon"
+  },
+  {
+    "Kürzel": "RO",
+    "Staat": "Rumänien"
+  },
+  {
+    "Kürzel": "ROK",
+    "Staat": "Südkorea"
+  },
+  {
+    "Kürzel": "ROU",
+    "Staat": "Uruguay"
+  },
+  {
+    "Kürzel": "RP",
+    "Staat": "Philippinen"
+  },
+  {
+    "Kürzel": "RU",
+    "Staat": "Burundi"
+  },
+  {
+    "Kürzel": "RUS",
+    "Staat": "Rußland"
+  },
+  {
+    "Kürzel": "S",
+    "Staat": "Schweden"
+  },
+  {
+    "Kürzel": "SGP",
+    "Staat": "Singapur"
+  },
+  {
+    "Kürzel": "SK",
+    "Staat": "Slowakische Republik"
+  },
+  {
+    "Kürzel": "SLE",
+    "Staat": "Sierra Leone"
+  },
+  {
+    "Kürzel": "SLO",
+    "Staat": "Slowenien"
+  },
+  {
+    "Kürzel": "SME",
+    "Staat": "Suriname"
+  },
+  {
+    "Kürzel": "SN",
+    "Staat": "Senegal"
+  },
+  {
+    "Kürzel": "SRB",
+    "Staat": "Serbien"
+  },
+  {
+    "Kürzel": "SU",
+    "Staat": "Sowjetunion"
+  },
+  {
+    "Kürzel": "SYR",
+    "Staat": "Syrien"
+  },
+  {
+    "Kürzel": "T",
+    "Staat": "Thailand"
+  },
+  {
+    "Kürzel": "TN",
+    "Staat": "Tunesien"
+  },
+  {
+    "Kürzel": "TR",
+    "Staat": "Türkei"
+  },
+  {
+    "Kürzel": "UA",
+    "Staat": "Ukraine"
+  },
+  {
+    "Kürzel": "USA",
+    "Staat": "USA"
+  },
+  {
+    "Kürzel": "UZB",
+    "Staat": "Usbekistan"
+  },
+  {
+    "Kürzel": "VN",
+    "Staat": "Vietnam"
+  },
+  {
+    "Kürzel": "VRC",
+    "Staat": "China"
+  },
+  {
+    "Kürzel": "YU",
+    "Staat": "Jugoslawien"
+  },
+  {
+    "Kürzel": "YV",
+    "Staat": "Venezuela"
+  },
+  {
+    "Kürzel": "ZA",
+    "Staat": "Südafrika"
+  }
+]

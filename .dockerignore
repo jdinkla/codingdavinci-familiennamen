@@ -1,9 +1,21 @@
 Dockerfile
+docker-compose.yml
 .git
-build.sh
 .gitignore
-docs
-import
-node_modules
-test
+.idea
 README.md
+AGENTS.md
+docs
+node_modules
+**/dist
+**/coverage
+server/data
+
+# legacy pre-migration app, deleted from the repo in Phase 4 cleanup; listed
+# here too in case this is built against an older commit
+app.js
+app_api
+app_server
+bin
+public
+test

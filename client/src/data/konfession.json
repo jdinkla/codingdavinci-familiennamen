@@ -1,0 +1,126 @@
+[
+  {
+    "Kürzel": "ak",
+    "Konfession": "alt-katholisch"
+  },
+  {
+    "Kürzel": "ap",
+    "Konfession": "apostolisch"
+  },
+  {
+    "Kürzel": "ba",
+    "Konfession": "baptistisch"
+  },
+  {
+    "Kürzel": "bd",
+    "Konfession": "buddhistisch"
+  },
+  {
+    "Kürzel": "ca",
+    "Konfession": "calvinistisch"
+  },
+  {
+    "Kürzel": "ce",
+    "Konfession": "anglikanisch (Church of England)"
+  },
+  {
+    "Kürzel": "di",
+    "Konfession": "Dissident"
+  },
+  {
+    "Kürzel": "ev",
+    "Konfession": "evangelisch"
+  },
+  {
+    "Kürzel": "fr",
+    "Konfession": "französisch-reformiert"
+  },
+  {
+    "Kürzel": "gf",
+    "Konfession": "Quäker"
+  },
+  {
+    "Kürzel": "go",
+    "Konfession": "griechisch-orthodox"
+  },
+  {
+    "Kürzel": "ht",
+    "Konfession": "Heilige der letzten Tage"
+  },
+  {
+    "Kürzel": "is",
+    "Konfession": "islamisch"
+  },
+  {
+    "Kürzel": "jd",
+    "Konfession": "jüdisch"
+  },
+  {
+    "Kürzel": "ka",
+    "Konfession": "katholisch"
+  },
+  {
+    "Kürzel": "lt",
+    "Konfession": "evangelisch-augsburgisch"
+  },
+  {
+    "Kürzel": "lu",
+    "Konfession": "lutherisch"
+  },
+  {
+    "Kürzel": "me",
+    "Konfession": "mennonitisch"
+  },
+  {
+    "Kürzel": "ml",
+    "Konfession": "moslemisch"
+  },
+  {
+    "Kürzel": "mt",
+    "Konfession": "methodistisch"
+  },
+  {
+    "Kürzel": "na",
+    "Konfession": "neuapostolisch"
+  },
+  {
+    "Kürzel": "ob",
+    "Konfession": "ohne Bekenntnis"
+  },
+  {
+    "Kürzel": "ox",
+    "Konfession": "orthodox"
+  },
+  {
+    "Kürzel": "pr",
+    "Konfession": "presbyterianisch"
+  },
+  {
+    "Kürzel": "rf",
+    "Konfession": "reformiert"
+  },
+  {
+    "Kürzel": "rk",
+    "Konfession": "römisch-katholisch"
+  },
+  {
+    "Kürzel": "ro",
+    "Konfession": "russisch-orthodox"
+  },
+  {
+    "Kürzel": "so",
+    "Konfession": "sonstige"
+  },
+  {
+    "Kürzel": "un",
+    "Konfession": "evangelisch-uniert"
+  },
+  {
+    "Kürzel": "wr",
+    "Konfession": "wallonisch-reformiert"
+  },
+  {
+    "Kürzel": "zj",
+    "Konfession": "Zeugen Johovas"
+  }
+]

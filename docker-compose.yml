@@ -1,63 +1,15 @@
 services:
-  mariadb:
-    image: mariadb:10.11
-    container_name: mariadb
-    ports:
-      - "3306:3306"
-    volumes:
-      - mariadb_data:/var/lib/mysql
-      - ./import:/import
-    environment:
-      - MYSQL_ROOT_PASSWORD=mariadb
-      - MYSQL_DATABASE=family
-      - MYSQL_USER=family
-      - MYSQL_PASSWORD=family
-    restart: unless-stopped
-    healthcheck:
-      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
-      start_period: 10s
-      interval: 10s
-      timeout: 5s
-      retries: 3
-
-  neo4j:
-    image: neo4j:5.15-community
-    container_name: neo4j
-    ports:
-      - "7474:7474"
-      - "7687:7687"
-    volumes:
-      - neo4j_data:/data
-      - neo4j_logs:/logs
-      - ./import:/import
-    environment:
-      - NEO4J_AUTH=neo4j/neo4jLocalPwd
-      - NEO4J_PLUGINS=["apoc"]
-      - NEO4J_dbms_security_procedures_unrestricted=apoc.*
-      - NEO4J_server_memory_heap_initial__size=2G
-      - NEO4J_server_memory_heap_max__size=2G
-    restart: unless-stopped
-    healthcheck:
-      test: ["CMD", "cypher-shell", "-u", "neo4j", "-p", "neo4jLocalPwd", "RETURN 1"]
-      interval: 10s
-      timeout: 10s
-      retries: 5
-
   famvis:
     build: .
     container_name: famvis
     ports:
       - "3000:80"
-    depends_on:
-      mariadb:
-        condition: service_healthy
-      neo4j:
-        condition: service_healthy
     environment:
       - NODE_ENV=production
     restart: unless-stopped
-
-volumes:
-  mariadb_data:
-  neo4j_data:
-  neo4j_logs:
+    healthcheck:
+      test: ["CMD", "node", "healthcheck.js"]
+      interval: 10s
+      timeout: 5s
+      start_period: 10s
+      retries: 3

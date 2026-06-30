@@ -3,40 +3,41 @@
 help:
     @just --list
 
-
-
-up:
-    @docker compose up -d
-
-down:
-    @docker compose down
-
 install:
     @npm install
-
-test:
-    @npm test
-
-lint:
-    @npm run lint
 
 dev:
     @npm run dev
 
-import-mariadb:
-    @docker exec -it mariadb /import/import-mariadb.sh
+build:
+    @npm run build
 
-import-neo4j:
-    @docker exec -it neo4j /import/import-neo4j.sh
+test:
+    @npm test
 
-delete-neo4j NEO4J_PWD:
-    @docker exec -it neo4j cypher-shell -u neo4j -p {{NEO4J_PWD}} "MATCH (n:Familyname) DETACH DELETE n"
+test-watch:
+    @npm run test:watch
 
-web:
+lint:
+    @npm run lint
+
+lint-fix:
+    @npm run lint:fix
+
+typecheck:
+    @npm run typecheck
+
+# (re)build the SQLite database from the committed import/*.tsv.gz files
+import:
+    @npm run import
+
+# Build and start the container (uses the standalone docker-compose binary, for colima setups)
+up:
+    @docker-compose up -d --build
+
+down:
+    @docker-compose down
+
+# Ensures the container is up, then opens it in the browser.
+open: up
     open http://localhost:3000
-
-neo4j:
-    open http://localhost:7474
-
-mariadb:
-    open http://localhost:3306

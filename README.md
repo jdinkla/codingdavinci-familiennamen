@@ -36,11 +36,13 @@ Using a timeline, you can examine the origin of names.
 
 #### Technology
 
-The application was built using the following tools:
+The application was fully modernized in 2026. Current stack:
 
-* Browser: [d3.js](https://d3js.org/), [Angular](https://angularjs.org/), [Bootstrap](http://getbootstrap.com/)
-* Web Server: [node.js](https://nodejs.org), [express](http://expressjs.com/)
-* Databases: [MariaDB](https://mariadb.org/) for tables, [Neo4J](https://neo4j.com/) for the graph
+* Browser: [React](https://react.dev/), [React Router](https://reactrouter.com/), [Tailwind CSS](https://tailwindcss.com/), [d3.js](https://d3js.org/)
+* Web Server: [Node.js](https://nodejs.org), [Express](https://expressjs.com/), [TypeScript](https://www.typescriptlang.org/)
+* Database: a single embedded [SQLite](https://www.sqlite.org/) database (via [better-sqlite3](https://github.com/WiseLibs/better-sqlite3)), holding both the relational data and the precomputed name-similarity graph
+* Build tooling: [Vite](https://vite.dev/), [tsup](https://tsup.egoist.dev/), npm workspaces
+* Testing: [Vitest](https://vitest.dev/), [Supertest](https://github.com/ladjs/supertest), [React Testing Library](https://testing-library.com/react)
 
 Name similarities are calculated using the [Levenshtein metric](https://en.wikipedia.org/wiki/Levenshtein_distance).
 Similarities can be examined using a network/graph.
@@ -49,20 +51,32 @@ available for Germany in the dataset. For this reason, the calculation was perfo
 A calculation with JavaScript would take much longer.
 
 The Java code is located in a [separate project](https://github.com/jdinkla/codingdavinci-familiennamen-graph).
+This app imports its precomputed output (a static edge list); it does not recompute it.
 
 #### Data
 
 The [data from the German Working Group of Genealogical Associations e.V. (DAGV)](https://zenodo.org/record/61683#.WBG_hSTrt7I)
 is licensed under "Creative Commons Attribution-ShareAlike 4.0 International" according to the LICENSE.txt file.
 
+#### Repository layout
+
+npm workspaces monorepo:
+
+```
+packages/shared/   Shared TypeScript API types + query-string helpers (no build step)
+server/            Express + better-sqlite3 backend
+client/            React + Vite frontend
+import/            Source data (*.tsv.gz) the SQLite database is built from
+```
+
 #### Installation
 
 Installation works on Linux, Mac, and Windows with Docker.
 
 **Prerequisites:**
-* [just](https://github.com/casey/just) - A command runner 
-* [Node.js 18+](https://nodejs.org) (for local development)
-* [Docker](https://www.docker.com/) and Docker Compose
+* [just](https://github.com/casey/just) - A command runner
+* [Node.js 22+](https://nodejs.org) (for local development)
+* [Docker](https://www.docker.com/) (for containerized deployment)
 * [git](https://git-scm.com/)
 
 **Quick Start with Docker:**
@@ -72,20 +86,9 @@ Installation works on Linux, Mac, and Windows with Docker.
 git clone https://github.com/jdinkla/codingdavinci-familiennamen.git
 cd codingdavinci-familiennamen
 
-# Start all services (recommended)
+# Build and start (the SQLite database is built from the committed
+# import/*.tsv.gz files as part of the image build — no separate import step)
 just up
-```
-
-**Database Import:**
-
-After starting the services, import the data into the databases:
-
-```bash
-# Import data into MariaDB
-just import-mariadb
-
-# Import data into Neo4j
-just import-neo4j
 ```
 
 **Local Development:**
@@ -94,20 +97,24 @@ just import-neo4j
 # Install dependencies
 just install
 
-# Start development server
+# Build the local SQLite database from import/*.tsv.gz
+just import
+
+# Start the dev server (backend + frontend, both in watch mode)
 just dev
 
-# Run tests
+# Run tests (with coverage)
 just test
 
-# Code linting
+# Type-check everything
+just typecheck
+
+# Lint
 just lint
 ```
 
 **Available Services:**
-* Web Application: http://localhost:3000 (open with `just web`)
-* Neo4j Browser: http://localhost:7474 (open with `just neo4j`, credentials: neo4j/neo4jLocalPwd)
-* MariaDB: localhost:3306 (credentials: family/family)
+* Web Application: http://localhost:3000 (open with `just open`)
 
 **Common Commands:**
 
@@ -115,17 +122,18 @@ just lint
 # View all available commands
 just help
 
-# Start services
+# Build production artifacts (server + client)
+just build
+
+# Start the Docker container
 just up
 
-# Stop services
+# Stop the Docker container
 just down
 
-# Open web application in browser
-just web
-
-# Open Neo4j browser
-just neo4j
+# Open the web application in browser (starts the container first if needed)
+just open
 ```
 
-Remark: This repository was updated in 2025 with various AI tools.
+Remark: This repository was modernized in 2025-2026 with various AI tools — first an ES-modules/Docker
+pass in 2025, then a full TypeScript/React/SQLite rewrite in 2026.

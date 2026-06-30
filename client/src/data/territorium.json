@@ -1,0 +1,2864 @@
+[
+  {
+    "Staat": "A",
+    "Kürzel": "BGL",
+    "Territorium": "Burgenland",
+    "URI": "http://gov.genealogy.net/object_215342"
+  },
+  {
+    "Staat": "A",
+    "Kürzel": "KAE",
+    "Territorium": "Kärnten",
+    "URI": "http://gov.genealogy.net/object_215343"
+  },
+  {
+    "Staat": "A",
+    "Kürzel": "NOE",
+    "Territorium": "Niederösterreich",
+    "URI": "http://gov.genealogy.net/object_215341"
+  },
+  {
+    "Staat": "A",
+    "Kürzel": "OOE",
+    "Territorium": "Oberösterreich",
+    "URI": "http://gov.genealogy.net/object_215344"
+  },
+  {
+    "Staat": "A",
+    "Kürzel": "SBG",
+    "Territorium": "Salzburg",
+    "URI": "http://gov.genealogy.net/object_215345"
+  },
+  {
+    "Staat": "A",
+    "Kürzel": "STM",
+    "Territorium": "Steiermark",
+    "URI": "http://gov.genealogy.net/object_215346"
+  },
+  {
+    "Staat": "A",
+    "Kürzel": "TIR",
+    "Territorium": "Tirol",
+    "URI": "http://gov.genealogy.net/object_215347"
+  },
+  {
+    "Staat": "A",
+    "Kürzel": "VBG",
+    "Territorium": "Vorarlberg",
+    "URI": "http://gov.genealogy.net/object_215348"
+  },
+  {
+    "Staat": "A",
+    "Kürzel": "WIE",
+    "Territorium": "Wien",
+    "URI": "http://gov.genealogy.net/object_215349"
+  },
+  {
+    "Staat": "AUS",
+    "Kürzel": "ACT",
+    "Territorium": "Australian Capital Territory",
+    "URI": "http://gov.genealogy.net/object_1023944"
+  },
+  {
+    "Staat": "AUS",
+    "Kürzel": "NSW",
+    "Territorium": "New South Wales",
+    "URI": "http://gov.genealogy.net/object_1023937"
+  },
+  {
+    "Staat": "AUS",
+    "Kürzel": "NT",
+    "Territorium": "Northern Territory",
+    "URI": "http://gov.genealogy.net/object_1023941"
+  },
+  {
+    "Staat": "AUS",
+    "Kürzel": "QLD",
+    "Territorium": "Queensland",
+    "URI": "http://gov.genealogy.net/object_1023936"
+  },
+  {
+    "Staat": "AUS",
+    "Kürzel": "SA",
+    "Territorium": "South Australia",
+    "URI": "http://gov.genealogy.net/object_1023939"
+  },
+  {
+    "Staat": "AUS",
+    "Kürzel": "TAS",
+    "Territorium": "Tasmanien",
+    "URI": "http://gov.genealogy.net/object_1023940"
+  },
+  {
+    "Staat": "AUS",
+    "Kürzel": "VIC",
+    "Territorium": "Victoria",
+    "URI": "http://gov.genealogy.net/object_1023938"
+  },
+  {
+    "Staat": "AUS",
+    "Kürzel": "WA",
+    "Territorium": "Western Australia",
+    "URI": "http://gov.genealogy.net/object_1023935"
+  },
+  {
+    "Staat": "B",
+    "Kürzel": "ATW",
+    "Territorium": "Antwerpen",
+    "URI": "http://gov.genealogy.net/object_259041"
+  },
+  {
+    "Staat": "B",
+    "Kürzel": "BBT",
+    "Territorium": "Brabant",
+    "URI": "http://gov.genealogy.net/object_260480"
+  },
+  {
+    "Staat": "B",
+    "Kürzel": "BLX",
+    "Territorium": "Luxemburg (B-Provinz)",
+    "URI": "http://gov.genealogy.net/object_261620"
+  },
+  {
+    "Staat": "B",
+    "Kürzel": "HNT",
+    "Territorium": "Hainaut",
+    "URI": "http://gov.genealogy.net/object_260619"
+  },
+  {
+    "Staat": "B",
+    "Kürzel": "LBG",
+    "Territorium": "Limburg",
+    "URI": "http://gov.genealogy.net/object_259237"
+  },
+  {
+    "Staat": "B",
+    "Kürzel": "LGE",
+    "Territorium": "Liege",
+    "URI": "http://gov.genealogy.net/object_261150"
+  },
+  {
+    "Staat": "B",
+    "Kürzel": "OVL",
+    "Territorium": "Ostflandern",
+    "URI": "http://gov.genealogy.net/object_259494"
+  },
+  {
+    "Staat": "B",
+    "Kürzel": "VLG",
+    "Territorium": "Flandern",
+    "URI": "http://gov.genealogy.net/object_258579"
+  },
+  {
+    "Staat": "B",
+    "Kürzel": "WAL",
+    "Territorium": "Wallonien",
+    "URI": "http://gov.genealogy.net/object_258581"
+  },
+  {
+    "Staat": "B",
+    "Kürzel": "WVL",
+    "Territorium": "Westflandern",
+    "URI": "http://gov.genealogy.net/object_260167"
+  },
+  {
+    "Staat": "BR",
+    "Kürzel": "AC",
+    "Territorium": "Acre",
+    "URI": "http://gov.genealogy.net/object_375803"
+  },
+  {
+    "Staat": "BR",
+    "Kürzel": "AL",
+    "Territorium": "Alagoas",
+    "URI": "http://gov.genealogy.net/object_375794"
+  },
+  {
+    "Staat": "BR",
+    "Kürzel": "AM",
+    "Territorium": "Amazonas",
+    "URI": "http://gov.genealogy.net/object_375805"
+  },
+  {
+    "Staat": "BR",
+    "Kürzel": "AP",
+    "Territorium": "Amapá",
+    "URI": "http://gov.genealogy.net/object_375804"
+  },
+  {
+    "Staat": "BR",
+    "Kürzel": "BA",
+    "Territorium": "Bahia",
+    "URI": "http://gov.genealogy.net/object_375795"
+  },
+  {
+    "Staat": "BR",
+    "Kürzel": "CE",
+    "Territorium": "Ceará",
+    "URI": "http://gov.genealogy.net/object_375796"
+  },
+  {
+    "Staat": "BR",
+    "Kürzel": "DF",
+    "Territorium": "Distrito Federal do Brasil",
+    "URI": "http://gov.genealogy.net/object_375790"
+  },
+  {
+    "Staat": "BR",
+    "Kürzel": "ES",
+    "Territorium": "Espírito Santo",
+    "URI": "http://gov.genealogy.net/object_375810"
+  },
+  {
+    "Staat": "BR",
+    "Kürzel": "GO",
+    "Territorium": "Goiás",
+    "URI": "http://gov.genealogy.net/object_375791"
+  },
+  {
+    "Staat": "BR",
+    "Kürzel": "MA",
+    "Territorium": "Maranhão",
+    "URI": "http://gov.genealogy.net/object_375797"
+  },
+  {
+    "Staat": "BR",
+    "Kürzel": "MG",
+    "Territorium": "Minas Gerais",
+    "URI": "http://gov.genealogy.net/object_375811"
+  },
+  {
+    "Staat": "BR",
+    "Kürzel": "MS",
+    "Territorium": "Mato Grosso do Sul",
+    "URI": "http://gov.genealogy.net/object_375793"
+  },
+  {
+    "Staat": "BR",
+    "Kürzel": "MT",
+    "Territorium": "Mato Grosso",
+    "URI": "http://gov.genealogy.net/object_375792"
+  },
+  {
+    "Staat": "BR",
+    "Kürzel": "PA",
+    "Territorium": "Pará",
+    "URI": "http://gov.genealogy.net/object_375806"
+  },
+  {
+    "Staat": "BR",
+    "Kürzel": "PB",
+    "Territorium": "Paraíba",
+    "URI": "http://gov.genealogy.net/object_375798"
+  },
+  {
+    "Staat": "BR",
+    "Kürzel": "PE",
+    "Territorium": "Pernambuco",
+    "URI": "http://gov.genealogy.net/object_375799"
+  },
+  {
+    "Staat": "BR",
+    "Kürzel": "PI",
+    "Territorium": "Piauí",
+    "URI": "http://gov.genealogy.net/object_375800"
+  },
+  {
+    "Staat": "BR",
+    "Kürzel": "PR",
+    "Territorium": "Paraná",
+    "URI": "http://gov.genealogy.net/object_375814"
+  },
+  {
+    "Staat": "BR",
+    "Kürzel": "RJ",
+    "Territorium": "Rio de Janeiro",
+    "URI": "http://gov.genealogy.net/object_375812"
+  },
+  {
+    "Staat": "BR",
+    "Kürzel": "RN",
+    "Territorium": "Rio Grande do Norte",
+    "URI": "http://gov.genealogy.net/object_375801"
+  },
+  {
+    "Staat": "BR",
+    "Kürzel": "RO",
+    "Territorium": "Rondônia",
+    "URI": "http://gov.genealogy.net/object_375807"
+  },
+  {
+    "Staat": "BR",
+    "Kürzel": "RR",
+    "Territorium": "Roraima",
+    "URI": "http://gov.genealogy.net/object_375808"
+  },
+  {
+    "Staat": "BR",
+    "Kürzel": "RS",
+    "Territorium": "Rio Grande do Sul",
+    "URI": "http://gov.genealogy.net/object_375815"
+  },
+  {
+    "Staat": "BR",
+    "Kürzel": "SC",
+    "Territorium": "Santa Catarina",
+    "URI": "http://gov.genealogy.net/object_375816"
+  },
+  {
+    "Staat": "BR",
+    "Kürzel": "SE",
+    "Territorium": "Sergipe",
+    "URI": "http://gov.genealogy.net/object_375802"
+  },
+  {
+    "Staat": "BR",
+    "Kürzel": "SP",
+    "Territorium": "São Paulo",
+    "URI": "http://gov.genealogy.net/object_375813"
+  },
+  {
+    "Staat": "BR",
+    "Kürzel": "TO",
+    "Territorium": "Tocantins",
+    "URI": "http://gov.genealogy.net/object_375809"
+  },
+  {
+    "Staat": "CDN",
+    "Kürzel": "AB",
+    "Territorium": "Alberta",
+    "URI": "http://gov.genealogy.net/object_277507"
+  },
+  {
+    "Staat": "CDN",
+    "Kürzel": "BC",
+    "Territorium": "British Columbia",
+    "URI": "http://gov.genealogy.net/object_277506"
+  },
+  {
+    "Staat": "CDN",
+    "Kürzel": "MB",
+    "Territorium": "Manitoba",
+    "URI": "http://gov.genealogy.net/object_277509"
+  },
+  {
+    "Staat": "CDN",
+    "Kürzel": "NB",
+    "Territorium": "New Brunswick",
+    "URI": "http://gov.genealogy.net/object_277512"
+  },
+  {
+    "Staat": "CDN",
+    "Kürzel": "NF",
+    "Territorium": "Newfoundland",
+    "URI": "http://gov.genealogy.net/object_277515"
+  },
+  {
+    "Staat": "CDN",
+    "Kürzel": "NS",
+    "Territorium": "Nova Scotia",
+    "URI": "http://gov.genealogy.net/object_277514"
+  },
+  {
+    "Staat": "CDN",
+    "Kürzel": "NT",
+    "Territorium": "Northwest Territories",
+    "URI": "http://gov.genealogy.net/object_277504"
+  },
+  {
+    "Staat": "CDN",
+    "Kürzel": "ON",
+    "Territorium": "Ontario",
+    "URI": "http://gov.genealogy.net/object_277510"
+  },
+  {
+    "Staat": "CDN",
+    "Kürzel": "PE",
+    "Territorium": "Prince Edward Island",
+    "URI": "http://gov.genealogy.net/object_277513"
+  },
+  {
+    "Staat": "CDN",
+    "Kürzel": "QE",
+    "Territorium": "Quebec",
+    "URI": "http://gov.genealogy.net/object_277511"
+  },
+  {
+    "Staat": "CDN",
+    "Kürzel": "SK",
+    "Territorium": "Saskatchewan",
+    "URI": "http://gov.genealogy.net/object_277508"
+  },
+  {
+    "Staat": "CDN",
+    "Kürzel": "YN",
+    "Territorium": "Yukon",
+    "URI": "http://gov.genealogy.net/object_277500"
+  },
+  {
+    "Staat": "CH",
+    "Kürzel": "AG",
+    "Territorium": "Aargau",
+    "URI": "http://gov.genealogy.net/CH_adm19"
+  },
+  {
+    "Staat": "CH",
+    "Kürzel": "AI",
+    "Territorium": "Appenzell I-Rh",
+    "URI": "http://gov.genealogy.net/CH_adm16"
+  },
+  {
+    "Staat": "CH",
+    "Kürzel": "AR",
+    "Territorium": "Appenzell A-Rh",
+    "URI": "http://gov.genealogy.net/CH_adm15"
+  },
+  {
+    "Staat": "CH",
+    "Kürzel": "BE",
+    "Territorium": "Bern",
+    "URI": "http://gov.genealogy.net/CH_adm02"
+  },
+  {
+    "Staat": "CH",
+    "Kürzel": "BL",
+    "Territorium": "Basel Land",
+    "URI": "http://gov.genealogy.net/CH_adm13"
+  },
+  {
+    "Staat": "CH",
+    "Kürzel": "BS",
+    "Territorium": "Basel Stadt",
+    "URI": "http://gov.genealogy.net/CH_adm12"
+  },
+  {
+    "Staat": "CH",
+    "Kürzel": "FR",
+    "Territorium": "Freiburg",
+    "URI": "http://gov.genealogy.net/CH_adm10"
+  },
+  {
+    "Staat": "CH",
+    "Kürzel": "GE",
+    "Territorium": "Genf",
+    "URI": "http://gov.genealogy.net/CH_adm25"
+  },
+  {
+    "Staat": "CH",
+    "Kürzel": "GL",
+    "Territorium": "Glarus",
+    "URI": "http://gov.genealogy.net/CH_adm08"
+  },
+  {
+    "Staat": "CH",
+    "Kürzel": "GR",
+    "Territorium": "Graubünden",
+    "URI": "http://gov.genealogy.net/CH_adm18"
+  },
+  {
+    "Staat": "CH",
+    "Kürzel": "JU",
+    "Territorium": "Jura",
+    "URI": "http://gov.genealogy.net/CH_adm26"
+  },
+  {
+    "Staat": "CH",
+    "Kürzel": "LU",
+    "Territorium": "Luzern",
+    "URI": "http://gov.genealogy.net/CH_adm03"
+  },
+  {
+    "Staat": "CH",
+    "Kürzel": "NE",
+    "Territorium": "Neuenburg",
+    "URI": "http://gov.genealogy.net/CH_adm24"
+  },
+  {
+    "Staat": "CH",
+    "Kürzel": "NW",
+    "Territorium": "Nidwalden",
+    "URI": "http://gov.genealogy.net/CH_adm07"
+  },
+  {
+    "Staat": "CH",
+    "Kürzel": "OW",
+    "Territorium": "Obwalden",
+    "URI": "http://gov.genealogy.net/CH_adm06"
+  },
+  {
+    "Staat": "CH",
+    "Kürzel": "SG",
+    "Territorium": "Sankt Gallen",
+    "URI": "http://gov.genealogy.net/CH_adm17"
+  },
+  {
+    "Staat": "CH",
+    "Kürzel": "SH",
+    "Territorium": "Schaffhausen",
+    "URI": "http://gov.genealogy.net/CH_adm14"
+  },
+  {
+    "Staat": "CH",
+    "Kürzel": "SO",
+    "Territorium": "Solothurn",
+    "URI": "http://gov.genealogy.net/CH_adm11"
+  },
+  {
+    "Staat": "CH",
+    "Kürzel": "SZ",
+    "Territorium": "Schwyz",
+    "URI": "http://gov.genealogy.net/CH_adm05"
+  },
+  {
+    "Staat": "CH",
+    "Kürzel": "TG",
+    "Territorium": "Turgau",
+    "URI": "http://gov.genealogy.net/CH_adm20"
+  },
+  {
+    "Staat": "CH",
+    "Kürzel": "TI",
+    "Territorium": "Tessin",
+    "URI": "http://gov.genealogy.net/CH_adm21"
+  },
+  {
+    "Staat": "CH",
+    "Kürzel": "UR",
+    "Territorium": "Uri",
+    "URI": "http://gov.genealogy.net/CH_adm04"
+  },
+  {
+    "Staat": "CH",
+    "Kürzel": "VD",
+    "Territorium": "Waadt",
+    "URI": "http://gov.genealogy.net/CH_adm22"
+  },
+  {
+    "Staat": "CH",
+    "Kürzel": "VS",
+    "Territorium": "Wallis",
+    "URI": "http://gov.genealogy.net/CH_adm23"
+  },
+  {
+    "Staat": "CH",
+    "Kürzel": "ZG",
+    "Territorium": "Zug",
+    "URI": "http://gov.genealogy.net/CH_adm09"
+  },
+  {
+    "Staat": "CH",
+    "Kürzel": "ZH",
+    "Territorium": "Zürich",
+    "URI": "http://gov.genealogy.net/CH_adm01"
+  },
+  {
+    "Staat": "CZ",
+    "Kürzel": "BÖH",
+    "Territorium": "Böhmen",
+    "URI": "http://gov.genealogy.net/adm_368374"
+  },
+  {
+    "Staat": "CZ",
+    "Kürzel": "JC",
+    "Territorium": "Südböhmische Region",
+    "URI": "http://gov.genealogy.net/object_284318"
+  },
+  {
+    "Staat": "CZ",
+    "Kürzel": "JM",
+    "Territorium": "Südmährische Region",
+    "URI": "http://gov.genealogy.net/object_284319"
+  },
+  {
+    "Staat": "CZ",
+    "Kürzel": "KA",
+    "Territorium": "Region Karlsbad",
+    "URI": "http://gov.genealogy.net/object_284320"
+  },
+  {
+    "Staat": "CZ",
+    "Kürzel": "KR",
+    "Territorium": "Region Königgrätz",
+    "URI": "http://gov.genealogy.net/object_284321"
+  },
+  {
+    "Staat": "CZ",
+    "Kürzel": "LI",
+    "Territorium": "Region Reichenberg",
+    "URI": "http://gov.genealogy.net/object_284322"
+  },
+  {
+    "Staat": "CZ",
+    "Kürzel": "MÄH",
+    "Territorium": "Mähren",
+    "URI": "http://gov.genealogy.net/adm_368373"
+  },
+  {
+    "Staat": "CZ",
+    "Kürzel": "MO",
+    "Territorium": "Region Mährisch-Schlesien",
+    "URI": "http://gov.genealogy.net/object_284323"
+  },
+  {
+    "Staat": "CZ",
+    "Kürzel": "OL",
+    "Territorium": "Region Olmütz",
+    "URI": "http://gov.genealogy.net/object_284324"
+  },
+  {
+    "Staat": "CZ",
+    "Kürzel": "PA",
+    "Territorium": "Region Pardubice",
+    "URI": "http://gov.genealogy.net/object_284325"
+  },
+  {
+    "Staat": "CZ",
+    "Kürzel": "PL",
+    "Territorium": "Region Pilsen",
+    "URI": "http://gov.genealogy.net/object_284326"
+  },
+  {
+    "Staat": "CZ",
+    "Kürzel": "PR",
+    "Territorium": "Hauptstadt Prag",
+    "URI": "http://gov.genealogy.net/object_284317"
+  },
+  {
+    "Staat": "CZ",
+    "Kürzel": "ST",
+    "Territorium": "Mittelböhmische Region",
+    "URI": "http://gov.genealogy.net/object_284327"
+  },
+  {
+    "Staat": "CZ",
+    "Kürzel": "SUD",
+    "Territorium": "Sudeten",
+    "URI": "http://gov.genealogy.net/adm_368380"
+  },
+  {
+    "Staat": "CZ",
+    "Kürzel": "US",
+    "Territorium": "Region Aussig",
+    "URI": "http://gov.genealogy.net/object_284328"
+  },
+  {
+    "Staat": "CZ",
+    "Kürzel": "VY",
+    "Territorium": "Region Hochland",
+    "URI": "http://gov.genealogy.net/object_284329"
+  },
+  {
+    "Staat": "CZ",
+    "Kürzel": "ZL",
+    "Territorium": "Region Zlín",
+    "URI": "http://gov.genealogy.net/object_284330"
+  },
+  {
+    "Staat": "D",
+    "Kürzel": "BB",
+    "Territorium": "Brandenburg",
+    "URI": "http://gov.genealogy.net/adm_369120"
+  },
+  {
+    "Staat": "D",
+    "Kürzel": "BE",
+    "Territorium": "Berlin",
+    "URI": "http://gov.genealogy.net/adm_369110"
+  },
+  {
+    "Staat": "D",
+    "Kürzel": "BW",
+    "Territorium": "Baden-Württemberg",
+    "URI": "http://gov.genealogy.net/adm_369080"
+  },
+  {
+    "Staat": "D",
+    "Kürzel": "BY",
+    "Territorium": "Bayern",
+    "URI": "http://gov.genealogy.net/adm_369090"
+  },
+  {
+    "Staat": "D",
+    "Kürzel": "HB",
+    "Territorium": "Bremen",
+    "URI": "http://gov.genealogy.net/adm_369040"
+  },
+  {
+    "Staat": "D",
+    "Kürzel": "HE",
+    "Territorium": "Hessen",
+    "URI": "http://gov.genealogy.net/adm_369060"
+  },
+  {
+    "Staat": "D",
+    "Kürzel": "HH",
+    "Territorium": "Hamburg",
+    "URI": "http://gov.genealogy.net/adm_369020"
+  },
+  {
+    "Staat": "D",
+    "Kürzel": "MFR",
+    "Territorium": "Mittelfranken",
+    "URI": "http://gov.genealogy.net/adm_369095"
+  },
+  {
+    "Staat": "D",
+    "Kürzel": "MV",
+    "Territorium": "Mecklenburg-Vorpommern",
+    "URI": "http://gov.genealogy.net/adm_369130"
+  },
+  {
+    "Staat": "D",
+    "Kürzel": "NBY",
+    "Territorium": "Niederbayern",
+    "URI": "http://gov.genealogy.net/adm_369092"
+  },
+  {
+    "Staat": "D",
+    "Kürzel": "NI",
+    "Territorium": "Niedersachsen",
+    "URI": "http://gov.genealogy.net/adm_369030"
+  },
+  {
+    "Staat": "D",
+    "Kürzel": "NW",
+    "Territorium": "Nordrhein-Westfalen",
+    "URI": "http://gov.genealogy.net/adm_369050"
+  },
+  {
+    "Staat": "D",
+    "Kürzel": "OBY",
+    "Territorium": "Oberbayern",
+    "URI": "http://gov.genealogy.net/adm_369091"
+  },
+  {
+    "Staat": "D",
+    "Kürzel": "OFR",
+    "Territorium": "Oberfranken",
+    "URI": "http://gov.genealogy.net/adm_369094"
+  },
+  {
+    "Staat": "D",
+    "Kürzel": "OPF",
+    "Territorium": "Oberpfalz",
+    "URI": "http://gov.genealogy.net/adm_369093"
+  },
+  {
+    "Staat": "D",
+    "Kürzel": "RP",
+    "Territorium": "Rheinland-Pfalz",
+    "URI": "http://gov.genealogy.net/adm_369070"
+  },
+  {
+    "Staat": "D",
+    "Kürzel": "SH",
+    "Territorium": "Schleswig-Holstein",
+    "URI": "http://gov.genealogy.net/adm_369010"
+  },
+  {
+    "Staat": "D",
+    "Kürzel": "SL",
+    "Territorium": "Saarland",
+    "URI": "http://gov.genealogy.net/adm_369100"
+  },
+  {
+    "Staat": "D",
+    "Kürzel": "SN",
+    "Territorium": "Sachsen",
+    "URI": "http://gov.genealogy.net/object_218149"
+  },
+  {
+    "Staat": "D",
+    "Kürzel": "ST",
+    "Territorium": "Sachsen-Anhalt",
+    "URI": "http://gov.genealogy.net/adm_369150"
+  },
+  {
+    "Staat": "D",
+    "Kürzel": "SWA",
+    "Territorium": "Schwaben",
+    "URI": "http://gov.genealogy.net/adm_369097"
+  },
+  {
+    "Staat": "D",
+    "Kürzel": "TH",
+    "Territorium": "Thüringen",
+    "URI": "http://gov.genealogy.net/adm_369160"
+  },
+  {
+    "Staat": "D",
+    "Kürzel": "UFR",
+    "Territorium": "Unterfranken",
+    "URI": "http://gov.genealogy.net/adm_369096"
+  },
+  {
+    "Staat": "DK",
+    "Kürzel": "HR",
+    "Territorium": "Hovedstaden (Hauptstadt-Region & Bornholm)",
+    "URI": "http://gov.genealogy.net/object_335551"
+  },
+  {
+    "Staat": "DK",
+    "Kürzel": "MJ",
+    "Territorium": "Midtjylland (Mittel-Jütland)",
+    "URI": "http://gov.genealogy.net/object_335552"
+  },
+  {
+    "Staat": "DK",
+    "Kürzel": "NJ",
+    "Territorium": "Nordjylland (Nord-Jütland)",
+    "URI": "http://gov.genealogy.net/object_335553"
+  },
+  {
+    "Staat": "DK",
+    "Kürzel": "SD",
+    "Territorium": "Syddanmark (Süd-Dänemark)",
+    "URI": "http://gov.genealogy.net/object_291477"
+  },
+  {
+    "Staat": "DK",
+    "Kürzel": "SL",
+    "Territorium": "Sjælland (Seeland)",
+    "URI": "http://gov.genealogy.net/object_335554"
+  },
+  {
+    "Staat": "EST",
+    "Kürzel": "HA",
+    "Territorium": "Harju",
+    "URI": "http://gov.genealogy.net/object_290164"
+  },
+  {
+    "Staat": "EST",
+    "Kürzel": "HI",
+    "Territorium": "Hiiu",
+    "URI": ""
+  },
+  {
+    "Staat": "EST",
+    "Kürzel": "IV",
+    "Territorium": "Ost-Wierland",
+    "URI": ""
+  },
+  {
+    "Staat": "EST",
+    "Kürzel": "JA",
+    "Territorium": "Jerwen",
+    "URI": "http://gov.genealogy.net/object_290165"
+  },
+  {
+    "Staat": "EST",
+    "Kürzel": "JO",
+    "Territorium": "Laisholm",
+    "URI": ""
+  },
+  {
+    "Staat": "EST",
+    "Kürzel": "LA",
+    "Territorium": "Wieck",
+    "URI": "http://gov.genealogy.net/object_290874"
+  },
+  {
+    "Staat": "EST",
+    "Kürzel": "LV",
+    "Territorium": "West-Wierland",
+    "URI": ""
+  },
+  {
+    "Staat": "EST",
+    "Kürzel": "PA",
+    "Territorium": "Pernau",
+    "URI": "http://gov.genealogy.net/object_290167"
+  },
+  {
+    "Staat": "EST",
+    "Kürzel": "PO",
+    "Territorium": "Pölwa",
+    "URI": ""
+  },
+  {
+    "Staat": "EST",
+    "Kürzel": "RA",
+    "Territorium": "Rappel",
+    "URI": ""
+  },
+  {
+    "Staat": "EST",
+    "Kürzel": "SA",
+    "Territorium": "Saare",
+    "URI": ""
+  },
+  {
+    "Staat": "EST",
+    "Kürzel": "TA",
+    "Territorium": "Dorpat",
+    "URI": "http://gov.genealogy.net/adm_157900"
+  },
+  {
+    "Staat": "EST",
+    "Kürzel": "VA",
+    "Territorium": "Walk",
+    "URI": ""
+  },
+  {
+    "Staat": "EST",
+    "Kürzel": "VI",
+    "Territorium": "Fellin",
+    "URI": "http://gov.genealogy.net/object_290162"
+  },
+  {
+    "Staat": "EST",
+    "Kürzel": "VO",
+    "Territorium": "Werro",
+    "URI": "http://gov.genealogy.net/object_290168"
+  },
+  {
+    "Staat": "F",
+    "Kürzel": "AG",
+    "Territorium": "Antilles-Guyane",
+    "URI": "http://gov.genealogy.net/object_357062"
+  },
+  {
+    "Staat": "F",
+    "Kürzel": "AL",
+    "Territorium": "l'Alsace",
+    "URI": "http://gov.genealogy.net/object_266450"
+  },
+  {
+    "Staat": "F",
+    "Kürzel": "AQ",
+    "Territorium": "l'Aquitaine",
+    "URI": "http://gov.genealogy.net/object_357046"
+  },
+  {
+    "Staat": "F",
+    "Kürzel": "AU",
+    "Territorium": "l'Auvergne",
+    "URI": "http://gov.genealogy.net/object_357047"
+  },
+  {
+    "Staat": "F",
+    "Kürzel": "BO",
+    "Territorium": "la Bourgogne",
+    "URI": "http://gov.genealogy.net/BURUNDJN27MA"
+  },
+  {
+    "Staat": "F",
+    "Kürzel": "BR",
+    "Territorium": "la Bretagne",
+    "URI": "http://gov.genealogy.net/object_277459"
+  },
+  {
+    "Staat": "F",
+    "Kürzel": "CA",
+    "Territorium": "Champagne-Ardennes",
+    "URI": "http://gov.genealogy.net/object_357048"
+  },
+  {
+    "Staat": "F",
+    "Kürzel": "CE",
+    "Territorium": "le Centre",
+    "URI": "http://gov.genealogy.net/object_390617"
+  },
+  {
+    "Staat": "F",
+    "Kürzel": "CO",
+    "Territorium": "la Corse",
+    "URI": "http://gov.genealogy.net/object_357049"
+  },
+  {
+    "Staat": "F",
+    "Kürzel": "FC",
+    "Territorium": "la Franche-Comté",
+    "URI": "http://gov.genealogy.net/object_294638"
+  },
+  {
+    "Staat": "F",
+    "Kürzel": "HR",
+    "Territorium": "Département Haut-Rhin",
+    "URI": "http://gov.genealogy.net/object_266455"
+  },
+  {
+    "Staat": "F",
+    "Kürzel": "IF",
+    "Territorium": "Ile-de-France",
+    "URI": "http://gov.genealogy.net/object_357051"
+  },
+  {
+    "Staat": "F",
+    "Kürzel": "LI",
+    "Territorium": "le Limousin",
+    "URI": "http://gov.genealogy.net/object_357052"
+  },
+  {
+    "Staat": "F",
+    "Kürzel": "LO",
+    "Territorium": "la Lorraine",
+    "URI": "http://gov.genealogy.net/object_266456"
+  },
+  {
+    "Staat": "F",
+    "Kürzel": "LR",
+    "Territorium": "Languedoc-Roussillon",
+    "URI": "http://gov.genealogy.net/object_357053"
+  },
+  {
+    "Staat": "F",
+    "Kürzel": "MP",
+    "Territorium": "Midi-Pyrénées",
+    "URI": "http://gov.genealogy.net/object_357054"
+  },
+  {
+    "Staat": "F",
+    "Kürzel": "NB",
+    "Territorium": "la Basse-Normandie",
+    "URI": "http://gov.genealogy.net/object_357055"
+  },
+  {
+    "Staat": "F",
+    "Kürzel": "NH",
+    "Territorium": "la Haute-Normandie",
+    "URI": "http://gov.genealogy.net/object_357056"
+  },
+  {
+    "Staat": "F",
+    "Kürzel": "NO",
+    "Territorium": "le Nord",
+    "URI": "http://gov.genealogy.net/object_277776"
+  },
+  {
+    "Staat": "F",
+    "Kürzel": "PA",
+    "Territorium": "Provence-Côte d'Azur",
+    "URI": "http://gov.genealogy.net/object_357057"
+  },
+  {
+    "Staat": "F",
+    "Kürzel": "PC",
+    "Territorium": "Poitou-Charentes",
+    "URI": "http://gov.genealogy.net/object_357058"
+  },
+  {
+    "Staat": "F",
+    "Kürzel": "PI",
+    "Territorium": "la Picardie",
+    "URI": "http://gov.genealogy.net/object_277405"
+  },
+  {
+    "Staat": "F",
+    "Kürzel": "PL",
+    "Territorium": "les Pays de la Loire",
+    "URI": "http://gov.genealogy.net/object_357059"
+  },
+  {
+    "Staat": "F",
+    "Kürzel": "RA",
+    "Territorium": "Rhône-Alpes",
+    "URI": "http://gov.genealogy.net/object_319403"
+  },
+  {
+    "Staat": "F",
+    "Kürzel": "RE",
+    "Territorium": "Réunion et autres",
+    "URI": "http://gov.genealogy.net/object_357060"
+  },
+  {
+    "Staat": "FL",
+    "Kürzel": "LIE",
+    "Territorium": "Fürstentum Lichtenstein",
+    "URI": "http://gov.genealogy.net/object_220100"
+  },
+  {
+    "Staat": "GB",
+    "Kürzel": "ENG",
+    "Territorium": "England",
+    "URI": "http://gov.genealogy.net/object_357224"
+  },
+  {
+    "Staat": "GB",
+    "Kürzel": "NIR",
+    "Territorium": "Northern Ireland",
+    "URI": "http://gov.genealogy.net/object_357225"
+  },
+  {
+    "Staat": "GB",
+    "Kürzel": "SCT",
+    "Territorium": "Scotland",
+    "URI": "http://gov.genealogy.net/object_357222"
+  },
+  {
+    "Staat": "GB",
+    "Kürzel": "WLS",
+    "Territorium": "Wales",
+    "URI": "http://gov.genealogy.net/object_357223"
+  },
+  {
+    "Staat": "H",
+    "Kürzel": "BK",
+    "Territorium": "Bács-Kiskun",
+    "URI": "http://gov.genealogy.net/object_269220"
+  },
+  {
+    "Staat": "H",
+    "Kürzel": "BU",
+    "Territorium": "Budapest",
+    "URI": "http://gov.genealogy.net/object_269224"
+  },
+  {
+    "Staat": "H",
+    "Kürzel": "BZ",
+    "Territorium": "Komitat Borsod-Abaúj-Zemplén",
+    "URI": "http://gov.genealogy.net/object_269223"
+  },
+  {
+    "Staat": "H",
+    "Kürzel": "CS",
+    "Territorium": "Komitat Csongrád",
+    "URI": "http://gov.genealogy.net/object_269225"
+  },
+  {
+    "Staat": "H",
+    "Kürzel": "FE",
+    "Territorium": "Komitat Fejér",
+    "URI": "http://gov.genealogy.net/object_269227"
+  },
+  {
+    "Staat": "H",
+    "Kürzel": "GS",
+    "Territorium": "Komitat Gy?r-Moson-Sopron",
+    "URI": "http://gov.genealogy.net/object_269228"
+  },
+  {
+    "Staat": "H",
+    "Kürzel": "HE",
+    "Territorium": "Komitat Heves",
+    "URI": "http://gov.genealogy.net/object_269230"
+  },
+  {
+    "Staat": "H",
+    "Kürzel": "JN",
+    "Territorium": "Komitat Jász-Nagykun-Szolnok",
+    "URI": "http://gov.genealogy.net/object_269238"
+  },
+  {
+    "Staat": "H",
+    "Kürzel": "KE",
+    "Territorium": "Komárom-Esztergom",
+    "URI": "http://gov.genealogy.net/object_269231"
+  },
+  {
+    "Staat": "H",
+    "Kürzel": "NO",
+    "Territorium": "Komitat Nógrád",
+    "URI": "http://gov.genealogy.net/object_269233"
+  },
+  {
+    "Staat": "H",
+    "Kürzel": "PE",
+    "Territorium": "Komitat Pest",
+    "URI": "http://gov.genealogy.net/object_269234"
+  },
+  {
+    "Staat": "H",
+    "Kürzel": "SZ",
+    "Territorium": "Komitat Szabolcs-Szatmár-Bereg",
+    "URI": "http://gov.genealogy.net/object_269236"
+  },
+  {
+    "Staat": "H",
+    "Kürzel": "TO",
+    "Territorium": "Komitat Tolna",
+    "URI": "http://gov.genealogy.net/object_269239"
+  },
+  {
+    "Staat": "H",
+    "Kürzel": "ZA",
+    "Territorium": "Komitat Zala",
+    "URI": "http://gov.genealogy.net/object_269242"
+  },
+  {
+    "Staat": "HR",
+    "Kürzel": "ZG",
+    "Territorium": "Zagreb",
+    "URI": ""
+  },
+  {
+    "Staat": "I",
+    "Kürzel": "ABR",
+    "Territorium": "Abruzzi",
+    "URI": "http://gov.genealogy.net/object_357064"
+  },
+  {
+    "Staat": "I",
+    "Kürzel": "AOS",
+    "Territorium": "Valle d'Aosta (Aostatal)",
+    "URI": "http://gov.genealogy.net/object_357065"
+  },
+  {
+    "Staat": "I",
+    "Kürzel": "BAS",
+    "Territorium": "Basilicata",
+    "URI": "http://gov.genealogy.net/object_357066"
+  },
+  {
+    "Staat": "I",
+    "Kürzel": "CAL",
+    "Territorium": "Calabria",
+    "URI": "http://gov.genealogy.net/object_357067"
+  },
+  {
+    "Staat": "I",
+    "Kürzel": "CAM",
+    "Territorium": "Campania",
+    "URI": "http://gov.genealogy.net/object_278448"
+  },
+  {
+    "Staat": "I",
+    "Kürzel": "EMI",
+    "Territorium": "Emiglia-Romagna",
+    "URI": "http://gov.genealogy.net/object_282038"
+  },
+  {
+    "Staat": "I",
+    "Kürzel": "FVG",
+    "Territorium": "Friuli - Venezia Giulia",
+    "URI": "http://gov.genealogy.net/object_279662"
+  },
+  {
+    "Staat": "I",
+    "Kürzel": "LAZ",
+    "Territorium": "Lazio (Latium)",
+    "URI": "http://gov.genealogy.net/object_278174"
+  },
+  {
+    "Staat": "I",
+    "Kürzel": "LIG",
+    "Territorium": "Liguria",
+    "URI": "http://gov.genealogy.net/object_357068"
+  },
+  {
+    "Staat": "I",
+    "Kürzel": "LOM",
+    "Territorium": "Lombardia (Lombardei)",
+    "URI": "http://gov.genealogy.net/object_278445"
+  },
+  {
+    "Staat": "I",
+    "Kürzel": "MAR",
+    "Territorium": "Marche (Marken)",
+    "URI": "http://gov.genealogy.net/object_357069"
+  },
+  {
+    "Staat": "I",
+    "Kürzel": "MOL",
+    "Territorium": "Molise",
+    "URI": "http://gov.genealogy.net/object_357070"
+  },
+  {
+    "Staat": "I",
+    "Kürzel": "PIE",
+    "Territorium": "Piemonte",
+    "URI": "http://gov.genealogy.net/object_357071"
+  },
+  {
+    "Staat": "I",
+    "Kürzel": "PUG",
+    "Territorium": "Puglia (Apulien)",
+    "URI": "http://gov.genealogy.net/object_357072"
+  },
+  {
+    "Staat": "I",
+    "Kürzel": "SAR",
+    "Territorium": "Sardegna (Sardinien)",
+    "URI": "http://gov.genealogy.net/object_810779"
+  },
+  {
+    "Staat": "I",
+    "Kürzel": "SIC",
+    "Territorium": "Sicilia",
+    "URI": "http://gov.genealogy.net/object_278507"
+  },
+  {
+    "Staat": "I",
+    "Kürzel": "TAA",
+    "Territorium": "Trentino - Alto Adige (Südtirol)",
+    "URI": "http://gov.genealogy.net/object_214469"
+  },
+  {
+    "Staat": "I",
+    "Kürzel": "TOS",
+    "Territorium": "Toscana",
+    "URI": "http://gov.genealogy.net/object_278442"
+  },
+  {
+    "Staat": "I",
+    "Kürzel": "UMB",
+    "Territorium": "Umbria",
+    "URI": "http://gov.genealogy.net/object_357073"
+  },
+  {
+    "Staat": "I",
+    "Kürzel": "VEN",
+    "Territorium": "Veneto (Venetien)",
+    "URI": "http://gov.genealogy.net/object_278582"
+  },
+  {
+    "Staat": "KS",
+    "Kürzel": "SRB",
+    "Territorium": "Engeres Serbien",
+    "URI": "http://gov.genealogy.net/object_277026"
+  },
+  {
+    "Staat": "KS",
+    "Kürzel": "VOJ",
+    "Territorium": "Vojvodina",
+    "URI": "http://gov.genealogy.net/object_276877"
+  },
+  {
+    "Staat": "L",
+    "Kürzel": "D",
+    "Territorium": "Diekirch",
+    "URI": "http://gov.genealogy.net/DIERCHJN39AW"
+  },
+  {
+    "Staat": "L",
+    "Kürzel": "G",
+    "Territorium": "Grevenmacher",
+    "URI": "http://gov.genealogy.net/AUFHERJN39FQ"
+  },
+  {
+    "Staat": "L",
+    "Kürzel": "L",
+    "Territorium": "Luxemburg",
+    "URI": "http://gov.genealogy.net/LUXURGJN39CN"
+  },
+  {
+    "Staat": "L",
+    "Kürzel": "LUX",
+    "Territorium": "Luxemburg",
+    "URI": "http://gov.genealogy.net/object_218129"
+  },
+  {
+    "Staat": "LT",
+    "Kürzel": "AL",
+    "Territorium": "Alytus",
+    "URI": "http://gov.genealogy.net/object_298767"
+  },
+  {
+    "Staat": "LT",
+    "Kürzel": "KL",
+    "Territorium": "Klaipėda",
+    "URI": "http://gov.genealogy.net/object_298715"
+  },
+  {
+    "Staat": "LT",
+    "Kürzel": "KU",
+    "Territorium": "Kaunas",
+    "URI": "http://gov.genealogy.net/object_298768"
+  },
+  {
+    "Staat": "LT",
+    "Kürzel": "MR",
+    "Territorium": "Marijampolė",
+    "URI": "http://gov.genealogy.net/object_298769"
+  },
+  {
+    "Staat": "LT",
+    "Kürzel": "OPR",
+    "Territorium": "Ostpreußen",
+    "URI": "http://gov.genealogy.net/adm_368500"
+  },
+  {
+    "Staat": "LT",
+    "Kürzel": "PN",
+    "Territorium": "Panevėžys",
+    "URI": "http://gov.genealogy.net/object_298770"
+  },
+  {
+    "Staat": "LT",
+    "Kürzel": "SA",
+    "Territorium": "Šiauliai",
+    "URI": "http://gov.genealogy.net/object_298771"
+  },
+  {
+    "Staat": "LT",
+    "Kürzel": "TA",
+    "Territorium": "Tauragė",
+    "URI": "http://gov.genealogy.net/object_376236"
+  },
+  {
+    "Staat": "LT",
+    "Kürzel": "TE",
+    "Territorium": "Telšiai",
+    "URI": "http://gov.genealogy.net/object_298773"
+  },
+  {
+    "Staat": "LT",
+    "Kürzel": "UT",
+    "Territorium": "Utena",
+    "URI": "http://gov.genealogy.net/object_298774"
+  },
+  {
+    "Staat": "LT",
+    "Kürzel": "VL",
+    "Territorium": "Vilnius",
+    "URI": "http://gov.genealogy.net/object_298775"
+  },
+  {
+    "Staat": "LV",
+    "Kürzel": "AI",
+    "Territorium": "Aizkraukles rajons",
+    "URI": ""
+  },
+  {
+    "Staat": "LV",
+    "Kürzel": "AL",
+    "Territorium": "Alūksnes rajons",
+    "URI": ""
+  },
+  {
+    "Staat": "LV",
+    "Kürzel": "BL",
+    "Territorium": "Balvu rajons",
+    "URI": ""
+  },
+  {
+    "Staat": "LV",
+    "Kürzel": "BU",
+    "Territorium": "Bauskas rajons",
+    "URI": ""
+  },
+  {
+    "Staat": "LV",
+    "Kürzel": "CE",
+    "Territorium": "Cēsu rajons",
+    "URI": ""
+  },
+  {
+    "Staat": "LV",
+    "Kürzel": "DA",
+    "Territorium": "Daugavpils rajons",
+    "URI": ""
+  },
+  {
+    "Staat": "LV",
+    "Kürzel": "DO",
+    "Territorium": "Dobeles rajons",
+    "URI": ""
+  },
+  {
+    "Staat": "LV",
+    "Kürzel": "GU",
+    "Territorium": "Gulbenes rajons",
+    "URI": ""
+  },
+  {
+    "Staat": "LV",
+    "Kürzel": "JK",
+    "Territorium": "Jēkabpils rajons",
+    "URI": ""
+  },
+  {
+    "Staat": "LV",
+    "Kürzel": "JL",
+    "Territorium": "Jelgavas rajons",
+    "URI": ""
+  },
+  {
+    "Staat": "LV",
+    "Kürzel": "KR",
+    "Territorium": "Krāslavas rajons",
+    "URI": ""
+  },
+  {
+    "Staat": "LV",
+    "Kürzel": "KU",
+    "Territorium": "Kuldīgas rajons",
+    "URI": ""
+  },
+  {
+    "Staat": "LV",
+    "Kürzel": "LE",
+    "Territorium": "Liepājas rajons",
+    "URI": ""
+  },
+  {
+    "Staat": "LV",
+    "Kürzel": "LM",
+    "Territorium": "Limbažu rajons",
+    "URI": ""
+  },
+  {
+    "Staat": "LV",
+    "Kürzel": "LU",
+    "Territorium": "Ludzas rajons",
+    "URI": ""
+  },
+  {
+    "Staat": "LV",
+    "Kürzel": "MA",
+    "Territorium": "Madonas rajons",
+    "URI": ""
+  },
+  {
+    "Staat": "LV",
+    "Kürzel": "OG",
+    "Territorium": "Ogres rajons",
+    "URI": ""
+  },
+  {
+    "Staat": "LV",
+    "Kürzel": "PR",
+    "Territorium": "Preiļu rajons",
+    "URI": ""
+  },
+  {
+    "Staat": "LV",
+    "Kürzel": "RE",
+    "Territorium": "Rēzeknes rajons",
+    "URI": ""
+  },
+  {
+    "Staat": "LV",
+    "Kürzel": "RI",
+    "Territorium": "Rīgas rajons",
+    "URI": ""
+  },
+  {
+    "Staat": "LV",
+    "Kürzel": "SA",
+    "Territorium": "Saldus rajons",
+    "URI": ""
+  },
+  {
+    "Staat": "LV",
+    "Kürzel": "TA",
+    "Territorium": "Talsu rajons",
+    "URI": ""
+  },
+  {
+    "Staat": "LV",
+    "Kürzel": "TU",
+    "Territorium": "Tukuma rajons",
+    "URI": ""
+  },
+  {
+    "Staat": "LV",
+    "Kürzel": "VE",
+    "Territorium": "Ventspils rajons",
+    "URI": ""
+  },
+  {
+    "Staat": "LV",
+    "Kürzel": "VK",
+    "Territorium": "Valkas rajons",
+    "URI": ""
+  },
+  {
+    "Staat": "LV",
+    "Kürzel": "VM",
+    "Territorium": "Valmieras rajons",
+    "URI": ""
+  },
+  {
+    "Staat": "MEX",
+    "Kürzel": "JAL",
+    "Territorium": "Jalisco",
+    "URI": ""
+  },
+  {
+    "Staat": "NAM",
+    "Kürzel": "CA",
+    "Territorium": "Caprivi",
+    "URI": ""
+  },
+  {
+    "Staat": "NAM",
+    "Kürzel": "ER",
+    "Territorium": "Erongo",
+    "URI": ""
+  },
+  {
+    "Staat": "NAM",
+    "Kürzel": "HA",
+    "Territorium": "Hardap",
+    "URI": ""
+  },
+  {
+    "Staat": "NAM",
+    "Kürzel": "KA",
+    "Territorium": "Karas",
+    "URI": ""
+  },
+  {
+    "Staat": "NAM",
+    "Kürzel": "KH",
+    "Territorium": "Khomas",
+    "URI": ""
+  },
+  {
+    "Staat": "NAM",
+    "Kürzel": "KU",
+    "Territorium": "Kunene",
+    "URI": ""
+  },
+  {
+    "Staat": "NAM",
+    "Kürzel": "OD",
+    "Territorium": "Otjozondjupa",
+    "URI": ""
+  },
+  {
+    "Staat": "NAM",
+    "Kürzel": "OH",
+    "Territorium": "Omaheke",
+    "URI": ""
+  },
+  {
+    "Staat": "NAM",
+    "Kürzel": "OK",
+    "Territorium": "Kavango",
+    "URI": ""
+  },
+  {
+    "Staat": "NAM",
+    "Kürzel": "ON",
+    "Territorium": "Oshana",
+    "URI": ""
+  },
+  {
+    "Staat": "NAM",
+    "Kürzel": "OS",
+    "Territorium": "Omusati",
+    "URI": ""
+  },
+  {
+    "Staat": "NAM",
+    "Kürzel": "OT",
+    "Territorium": "Oshikoto",
+    "URI": ""
+  },
+  {
+    "Staat": "NAM",
+    "Kürzel": "OW",
+    "Territorium": "Ohangwena",
+    "URI": ""
+  },
+  {
+    "Staat": "NL",
+    "Kürzel": "DR",
+    "Territorium": "Drenthe",
+    "URI": "http://gov.genealogy.net/DREENTJO32GT"
+  },
+  {
+    "Staat": "NL",
+    "Kürzel": "FL",
+    "Territorium": "Flevoland",
+    "URI": "http://gov.genealogy.net/FLEANDJO22QJ"
+  },
+  {
+    "Staat": "NL",
+    "Kürzel": "FR",
+    "Territorium": "Friesland",
+    "URI": "http://gov.genealogy.net/FRIANDJO23VE"
+  },
+  {
+    "Staat": "NL",
+    "Kürzel": "GE",
+    "Territorium": "Geldern",
+    "URI": "http://gov.genealogy.net/GELANDJO22VA"
+  },
+  {
+    "Staat": "NL",
+    "Kürzel": "GR",
+    "Territorium": "Groningen",
+    "URI": "http://gov.genealogy.net/GROGENJO33JG"
+  },
+  {
+    "Staat": "NL",
+    "Kürzel": "LI",
+    "Territorium": "Limburg",
+    "URI": "http://gov.genealogy.net/LIMURGJO31AG"
+  },
+  {
+    "Staat": "NL",
+    "Kürzel": "NB",
+    "Territorium": "Noord-Brabant",
+    "URI": "http://gov.genealogy.net/BRAANTJO21MQ"
+  },
+  {
+    "Staat": "NL",
+    "Kürzel": "NH",
+    "Territorium": "Noord-Holland",
+    "URI": "http://gov.genealogy.net/NORANDJO22LN"
+  },
+  {
+    "Staat": "NL",
+    "Kürzel": "OV",
+    "Territorium": "Overijssel",
+    "URI": "http://gov.genealogy.net/OVESELJO32GK"
+  },
+  {
+    "Staat": "NL",
+    "Kürzel": "UT",
+    "Territorium": "Utrecht",
+    "URI": "http://gov.genealogy.net/GEMCHTJO22NB"
+  },
+  {
+    "Staat": "NL",
+    "Kürzel": "ZE",
+    "Territorium": "Zeeland",
+    "URI": "http://gov.genealogy.net/SEEANDJO11VK"
+  },
+  {
+    "Staat": "NL",
+    "Kürzel": "ZH",
+    "Territorium": "Zuid-Holland",
+    "URI": "http://gov.genealogy.net/SUDANDJO22IA"
+  },
+  {
+    "Staat": "PL",
+    "Kürzel": "DS",
+    "Territorium": "Niederschlesien",
+    "URI": ""
+  },
+  {
+    "Staat": "PL",
+    "Kürzel": "KP",
+    "Territorium": "Kujawien-Pommern",
+    "URI": "http://gov.genealogy.net/object_214133"
+  },
+  {
+    "Staat": "PL",
+    "Kürzel": "LB",
+    "Territorium": "Lebus",
+    "URI": "http://gov.genealogy.net/object_214140"
+  },
+  {
+    "Staat": "PL",
+    "Kürzel": "LD",
+    "Territorium": "Lódz",
+    "URI": ""
+  },
+  {
+    "Staat": "PL",
+    "Kürzel": "LU",
+    "Territorium": "Lublin",
+    "URI": ""
+  },
+  {
+    "Staat": "PL",
+    "Kürzel": "MA",
+    "Territorium": "Kleinpolen",
+    "URI": ""
+  },
+  {
+    "Staat": "PL",
+    "Kürzel": "MZ",
+    "Territorium": "Masowien",
+    "URI": ""
+  },
+  {
+    "Staat": "PL",
+    "Kürzel": "NMK",
+    "Territorium": "Neumark",
+    "URI": "http://gov.genealogy.net/object_190087"
+  },
+  {
+    "Staat": "PL",
+    "Kürzel": "NSL",
+    "Territorium": "Niederschlesien",
+    "URI": "http://gov.genealogy.net/object_214120"
+  },
+  {
+    "Staat": "PL",
+    "Kürzel": "OBB",
+    "Territorium": "Ostbrandenburg",
+    "URI": ""
+  },
+  {
+    "Staat": "PL",
+    "Kürzel": "OP",
+    "Territorium": "Oppeln",
+    "URI": "http://gov.genealogy.net/object_214145"
+  },
+  {
+    "Staat": "PL",
+    "Kürzel": "OPR",
+    "Territorium": "Ostpreußen",
+    "URI": "http://gov.genealogy.net/adm_368500"
+  },
+  {
+    "Staat": "PL",
+    "Kürzel": "OSL",
+    "Territorium": "Oberschlesien",
+    "URI": "http://gov.genealogy.net/object_190324"
+  },
+  {
+    "Staat": "PL",
+    "Kürzel": "PD",
+    "Territorium": "Podlachien",
+    "URI": ""
+  },
+  {
+    "Staat": "PL",
+    "Kürzel": "PK",
+    "Territorium": "Karpatenvorland",
+    "URI": ""
+  },
+  {
+    "Staat": "PL",
+    "Kürzel": "PM",
+    "Territorium": "Pommern",
+    "URI": "http://gov.genealogy.net/object_214152"
+  },
+  {
+    "Staat": "PL",
+    "Kürzel": "POM",
+    "Territorium": "Pommern",
+    "URI": "http://gov.genealogy.net/adm_368480"
+  },
+  {
+    "Staat": "PL",
+    "Kürzel": "POS",
+    "Territorium": "Posen",
+    "URI": "http://gov.genealogy.net/object_211667"
+  },
+  {
+    "Staat": "PL",
+    "Kürzel": "SK",
+    "Territorium": "Heiligkreuz",
+    "URI": ""
+  },
+  {
+    "Staat": "PL",
+    "Kürzel": "SL",
+    "Territorium": "Schlesien",
+    "URI": ""
+  },
+  {
+    "Staat": "PL",
+    "Kürzel": "WN",
+    "Territorium": "Ermland-Masuren",
+    "URI": "http://gov.genealogy.net/object_214170"
+  },
+  {
+    "Staat": "PL",
+    "Kürzel": "WP",
+    "Territorium": "Großpolen",
+    "URI": "http://gov.genealogy.net/object_214200"
+  },
+  {
+    "Staat": "PL",
+    "Kürzel": "WPR",
+    "Territorium": "Westpreußen",
+    "URI": "http://gov.genealogy.net/object_213750"
+  },
+  {
+    "Staat": "PL",
+    "Kürzel": "ZP",
+    "Territorium": "Westpommern",
+    "URI": "http://gov.genealogy.net/object_214203"
+  },
+  {
+    "Staat": "RA",
+    "Kürzel": "A",
+    "Territorium": "Salta",
+    "URI": ""
+  },
+  {
+    "Staat": "RA",
+    "Kürzel": "B",
+    "Territorium": "Buenos Aires (Provinz)",
+    "URI": ""
+  },
+  {
+    "Staat": "RA",
+    "Kürzel": "C",
+    "Territorium": "Autonome Stadt Buenos Aires",
+    "URI": ""
+  },
+  {
+    "Staat": "RA",
+    "Kürzel": "D",
+    "Territorium": "San Luis",
+    "URI": ""
+  },
+  {
+    "Staat": "RA",
+    "Kürzel": "E",
+    "Territorium": "Entre Ríos",
+    "URI": ""
+  },
+  {
+    "Staat": "RA",
+    "Kürzel": "F",
+    "Territorium": "La Rioja",
+    "URI": ""
+  },
+  {
+    "Staat": "RA",
+    "Kürzel": "G",
+    "Territorium": "Santiago del Estero",
+    "URI": ""
+  },
+  {
+    "Staat": "RA",
+    "Kürzel": "H",
+    "Territorium": "Chaco",
+    "URI": ""
+  },
+  {
+    "Staat": "RA",
+    "Kürzel": "J",
+    "Territorium": "San Juan",
+    "URI": ""
+  },
+  {
+    "Staat": "RA",
+    "Kürzel": "K",
+    "Territorium": "Catamarca",
+    "URI": ""
+  },
+  {
+    "Staat": "RA",
+    "Kürzel": "L",
+    "Territorium": "La Pampa",
+    "URI": ""
+  },
+  {
+    "Staat": "RA",
+    "Kürzel": "M",
+    "Territorium": "Mendoza",
+    "URI": ""
+  },
+  {
+    "Staat": "RA",
+    "Kürzel": "N",
+    "Territorium": "Misiones",
+    "URI": ""
+  },
+  {
+    "Staat": "RA",
+    "Kürzel": "P",
+    "Territorium": "Formosa",
+    "URI": ""
+  },
+  {
+    "Staat": "RA",
+    "Kürzel": "Q",
+    "Territorium": "Neuquén",
+    "URI": ""
+  },
+  {
+    "Staat": "RA",
+    "Kürzel": "R",
+    "Territorium": "Río Negro",
+    "URI": ""
+  },
+  {
+    "Staat": "RA",
+    "Kürzel": "S",
+    "Territorium": "Santa Fe",
+    "URI": ""
+  },
+  {
+    "Staat": "RA",
+    "Kürzel": "T",
+    "Territorium": "Tucumán",
+    "URI": ""
+  },
+  {
+    "Staat": "RA",
+    "Kürzel": "U",
+    "Territorium": "Chubut",
+    "URI": ""
+  },
+  {
+    "Staat": "RA",
+    "Kürzel": "V",
+    "Territorium": "Tierra del Fuego",
+    "URI": ""
+  },
+  {
+    "Staat": "RA",
+    "Kürzel": "W",
+    "Territorium": "Corrientes",
+    "URI": ""
+  },
+  {
+    "Staat": "RA",
+    "Kürzel": "X",
+    "Territorium": "Córdoba",
+    "URI": ""
+  },
+  {
+    "Staat": "RA",
+    "Kürzel": "Y",
+    "Territorium": "Jujuy",
+    "URI": ""
+  },
+  {
+    "Staat": "RA",
+    "Kürzel": "Z",
+    "Territorium": "Santa Cruz",
+    "URI": ""
+  },
+  {
+    "Staat": "RO",
+    "Kürzel": "AR",
+    "Territorium": "Arad",
+    "URI": "http://gov.genealogy.net/object_255452"
+  },
+  {
+    "Staat": "RO",
+    "Kürzel": "SB",
+    "Territorium": "Sibiu",
+    "URI": "http://gov.genealogy.net/object_255485"
+  },
+  {
+    "Staat": "RP",
+    "Kürzel": "CL",
+    "Territorium": "Central Luzon (PH-03)",
+    "URI": ""
+  },
+  {
+    "Staat": "RUS",
+    "Kürzel": "AMU",
+    "Territorium": "Amur",
+    "URI": ""
+  },
+  {
+    "Staat": "RUS",
+    "Kürzel": "ARK",
+    "Territorium": "Archangelsk",
+    "URI": ""
+  },
+  {
+    "Staat": "RUS",
+    "Kürzel": "AST",
+    "Territorium": "Astrachan",
+    "URI": ""
+  },
+  {
+    "Staat": "RUS",
+    "Kürzel": "BEL",
+    "Territorium": "Belgorod",
+    "URI": ""
+  },
+  {
+    "Staat": "RUS",
+    "Kürzel": "BES",
+    "Territorium": "Bessarabien",
+    "URI": "http://gov.genealogy.net/object_279450"
+  },
+  {
+    "Staat": "RUS",
+    "Kürzel": "BRY",
+    "Territorium": "Brjansk",
+    "URI": ""
+  },
+  {
+    "Staat": "RUS",
+    "Kürzel": "CHE",
+    "Territorium": "Tscheljabinsk",
+    "URI": ""
+  },
+  {
+    "Staat": "RUS",
+    "Kürzel": "CHI",
+    "Territorium": "Tschita",
+    "URI": ""
+  },
+  {
+    "Staat": "RUS",
+    "Kürzel": "IRK",
+    "Territorium": "Irkutsk",
+    "URI": ""
+  },
+  {
+    "Staat": "RUS",
+    "Kürzel": "IVA",
+    "Territorium": "Iwanowo",
+    "URI": ""
+  },
+  {
+    "Staat": "RUS",
+    "Kürzel": "KEM",
+    "Territorium": "Kemerowo",
+    "URI": ""
+  },
+  {
+    "Staat": "RUS",
+    "Kürzel": "KGD",
+    "Territorium": "Oblast Kaliningrad",
+    "URI": "http://gov.genealogy.net/object_213821"
+  },
+  {
+    "Staat": "RUS",
+    "Kürzel": "KGN",
+    "Territorium": "Kurgan",
+    "URI": ""
+  },
+  {
+    "Staat": "RUS",
+    "Kürzel": "KIR",
+    "Territorium": "Kirow",
+    "URI": ""
+  },
+  {
+    "Staat": "RUS",
+    "Kürzel": "KLU",
+    "Territorium": "Kaluga",
+    "URI": ""
+  },
+  {
+    "Staat": "RUS",
+    "Kürzel": "KOS",
+    "Territorium": "Kostroma",
+    "URI": ""
+  },
+  {
+    "Staat": "RUS",
+    "Kürzel": "KRS",
+    "Territorium": "Kursk",
+    "URI": ""
+  },
+  {
+    "Staat": "RUS",
+    "Kürzel": "LEN",
+    "Territorium": "Leningrad",
+    "URI": ""
+  },
+  {
+    "Staat": "RUS",
+    "Kürzel": "LIP",
+    "Territorium": "Lipezk",
+    "URI": ""
+  },
+  {
+    "Staat": "RUS",
+    "Kürzel": "MAG",
+    "Territorium": "Magadan",
+    "URI": ""
+  },
+  {
+    "Staat": "RUS",
+    "Kürzel": "MOS",
+    "Territorium": "Moskau (Oblast)",
+    "URI": ""
+  },
+  {
+    "Staat": "RUS",
+    "Kürzel": "MUR",
+    "Territorium": "Murmansk",
+    "URI": ""
+  },
+  {
+    "Staat": "RUS",
+    "Kürzel": "NGR",
+    "Territorium": "Nowgorod",
+    "URI": ""
+  },
+  {
+    "Staat": "RUS",
+    "Kürzel": "NIZ",
+    "Territorium": "Nischni Nowgorod",
+    "URI": ""
+  },
+  {
+    "Staat": "RUS",
+    "Kürzel": "NVS",
+    "Territorium": "Nowosibirsk",
+    "URI": ""
+  },
+  {
+    "Staat": "RUS",
+    "Kürzel": "OMS",
+    "Territorium": "Omsk",
+    "URI": ""
+  },
+  {
+    "Staat": "RUS",
+    "Kürzel": "OPR",
+    "Territorium": "Ostpreußen",
+    "URI": "http://gov.genealogy.net/adm_368500"
+  },
+  {
+    "Staat": "RUS",
+    "Kürzel": "ORE",
+    "Territorium": "Orenburg",
+    "URI": ""
+  },
+  {
+    "Staat": "RUS",
+    "Kürzel": "ORL",
+    "Territorium": "Orjol",
+    "URI": ""
+  },
+  {
+    "Staat": "RUS",
+    "Kürzel": "PNZ",
+    "Territorium": "Pensa",
+    "URI": ""
+  },
+  {
+    "Staat": "RUS",
+    "Kürzel": "PSK",
+    "Territorium": "Pskow",
+    "URI": ""
+  },
+  {
+    "Staat": "RUS",
+    "Kürzel": "ROS",
+    "Territorium": "Rostow am Don",
+    "URI": ""
+  },
+  {
+    "Staat": "RUS",
+    "Kürzel": "RYA",
+    "Territorium": "Rjasan",
+    "URI": ""
+  },
+  {
+    "Staat": "RUS",
+    "Kürzel": "SAK",
+    "Territorium": "Sachalin",
+    "URI": ""
+  },
+  {
+    "Staat": "RUS",
+    "Kürzel": "SAM",
+    "Territorium": "Samara",
+    "URI": ""
+  },
+  {
+    "Staat": "RUS",
+    "Kürzel": "SAR",
+    "Territorium": "Saratow",
+    "URI": ""
+  },
+  {
+    "Staat": "RUS",
+    "Kürzel": "SMO",
+    "Territorium": "Smolensk",
+    "URI": ""
+  },
+  {
+    "Staat": "RUS",
+    "Kürzel": "SVE",
+    "Territorium": "Swerdlowsk",
+    "URI": ""
+  },
+  {
+    "Staat": "RUS",
+    "Kürzel": "TAM",
+    "Territorium": "Tambow",
+    "URI": ""
+  },
+  {
+    "Staat": "RUS",
+    "Kürzel": "TOM",
+    "Territorium": "Tomsk",
+    "URI": ""
+  },
+  {
+    "Staat": "RUS",
+    "Kürzel": "TUL",
+    "Territorium": "Tula",
+    "URI": ""
+  },
+  {
+    "Staat": "RUS",
+    "Kürzel": "TVE",
+    "Territorium": "Twer",
+    "URI": ""
+  },
+  {
+    "Staat": "RUS",
+    "Kürzel": "TYU",
+    "Territorium": "Tjumen",
+    "URI": ""
+  },
+  {
+    "Staat": "RUS",
+    "Kürzel": "ULY",
+    "Territorium": "Uljanowsk",
+    "URI": ""
+  },
+  {
+    "Staat": "RUS",
+    "Kürzel": "VGG",
+    "Territorium": "Wolgograd",
+    "URI": ""
+  },
+  {
+    "Staat": "RUS",
+    "Kürzel": "VLA",
+    "Territorium": "Wladimir",
+    "URI": ""
+  },
+  {
+    "Staat": "RUS",
+    "Kürzel": "VLG",
+    "Territorium": "Wologda",
+    "URI": ""
+  },
+  {
+    "Staat": "RUS",
+    "Kürzel": "VOR",
+    "Territorium": "Woronesch",
+    "URI": ""
+  },
+  {
+    "Staat": "RUS",
+    "Kürzel": "YAR",
+    "Territorium": "Jaroslawl",
+    "URI": ""
+  },
+  {
+    "Staat": "S",
+    "Kürzel": "AB",
+    "Territorium": "Stockholms län",
+    "URI": "http://gov.genealogy.net/object_298782"
+  },
+  {
+    "Staat": "S",
+    "Kürzel": "AC",
+    "Territorium": "Västerbottens län",
+    "URI": "http://gov.genealogy.net/object_298792"
+  },
+  {
+    "Staat": "S",
+    "Kürzel": "BD",
+    "Territorium": "Norrbottens län",
+    "URI": "http://gov.genealogy.net/object_298800"
+  },
+  {
+    "Staat": "S",
+    "Kürzel": "C",
+    "Territorium": "Uppsala län",
+    "URI": "http://gov.genealogy.net/object_298796"
+  },
+  {
+    "Staat": "S",
+    "Kürzel": "D",
+    "Territorium": "Södermanlands län",
+    "URI": "http://gov.genealogy.net/object_298785"
+  },
+  {
+    "Staat": "S",
+    "Kürzel": "E",
+    "Territorium": "Östergötlands län",
+    "URI": "http://gov.genealogy.net/object_298801"
+  },
+  {
+    "Staat": "S",
+    "Kürzel": "F",
+    "Territorium": "Jönköpings län",
+    "URI": "http://gov.genealogy.net/object_298797"
+  },
+  {
+    "Staat": "S",
+    "Kürzel": "G",
+    "Territorium": "Kronobergs län",
+    "URI": "http://gov.genealogy.net/object_298798"
+  },
+  {
+    "Staat": "S",
+    "Kürzel": "H",
+    "Territorium": "Kalmar län",
+    "URI": "http://gov.genealogy.net/object_298793"
+  },
+  {
+    "Staat": "S",
+    "Kürzel": "I",
+    "Territorium": "Gotlands län",
+    "URI": "http://gov.genealogy.net/object_298794"
+  },
+  {
+    "Staat": "S",
+    "Kürzel": "K",
+    "Territorium": "Blekinge län",
+    "URI": "http://gov.genealogy.net/object_298795"
+  },
+  {
+    "Staat": "S",
+    "Kürzel": "M",
+    "Territorium": "Skåne län",
+    "URI": "http://gov.genealogy.net/object_416986"
+  },
+  {
+    "Staat": "S",
+    "Kürzel": "N",
+    "Territorium": "Hallands län",
+    "URI": "http://gov.genealogy.net/object_298781"
+  },
+  {
+    "Staat": "S",
+    "Kürzel": "O",
+    "Territorium": "Västra Götalands län",
+    "URI": "http://gov.genealogy.net/object_416987"
+  },
+  {
+    "Staat": "S",
+    "Kürzel": "S",
+    "Territorium": "Värmlands län",
+    "URI": "http://gov.genealogy.net/object_298790"
+  },
+  {
+    "Staat": "S",
+    "Kürzel": "T",
+    "Territorium": "Örebro län",
+    "URI": "http://gov.genealogy.net/object_298783"
+  },
+  {
+    "Staat": "S",
+    "Kürzel": "U",
+    "Territorium": "Västmanlands län",
+    "URI": "http://gov.genealogy.net/object_298791"
+  },
+  {
+    "Staat": "S",
+    "Kürzel": "W",
+    "Territorium": "Dalarnas län",
+    "URI": "http://gov.genealogy.net/object_416985"
+  },
+  {
+    "Staat": "S",
+    "Kürzel": "X",
+    "Territorium": "Gävleborgs län",
+    "URI": "http://gov.genealogy.net/object_298786"
+  },
+  {
+    "Staat": "S",
+    "Kürzel": "Y",
+    "Territorium": "Västernorrlands län",
+    "URI": "http://gov.genealogy.net/object_298788"
+  },
+  {
+    "Staat": "S",
+    "Kürzel": "Z",
+    "Territorium": "Jämtlands län",
+    "URI": "http://gov.genealogy.net/object_298787"
+  },
+  {
+    "Staat": "SK",
+    "Kürzel": "BÖH",
+    "Territorium": "Böhmen",
+    "URI": "http://gov.genealogy.net/adm_368374"
+  },
+  {
+    "Staat": "SLO",
+    "Kürzel": "OKR",
+    "Territorium": "Oberkrain",
+    "URI": ""
+  },
+  {
+    "Staat": "SRB",
+    "Kürzel": "VO",
+    "Territorium": "Provinz Vojvodina",
+    "URI": "http://gov.genealogy.net/object_276877"
+  },
+  {
+    "Staat": "UA",
+    "Kürzel": "KR",
+    "Territorium": "Oblast Krim",
+    "URI": "http://gov.genealogy.net/object_278478"
+  },
+  {
+    "Staat": "USA",
+    "Kürzel": "AK",
+    "Territorium": "Alaska",
+    "URI": "http://gov.genealogy.net/object_276609"
+  },
+  {
+    "Staat": "USA",
+    "Kürzel": "AL",
+    "Territorium": "Alabama",
+    "URI": "http://gov.genealogy.net/object_276608"
+  },
+  {
+    "Staat": "USA",
+    "Kürzel": "AR",
+    "Territorium": "Arkansas",
+    "URI": "http://gov.genealogy.net/object_276611"
+  },
+  {
+    "Staat": "USA",
+    "Kürzel": "AS",
+    "Territorium": "Amerikanisch Samoa",
+    "URI": ""
+  },
+  {
+    "Staat": "USA",
+    "Kürzel": "AZ",
+    "Territorium": "Arizona",
+    "URI": "http://gov.genealogy.net/object_276610"
+  },
+  {
+    "Staat": "USA",
+    "Kürzel": "CA",
+    "Territorium": "California",
+    "URI": "http://gov.genealogy.net/object_276612"
+  },
+  {
+    "Staat": "USA",
+    "Kürzel": "CO",
+    "Territorium": "Colorado",
+    "URI": "http://gov.genealogy.net/object_276613"
+  },
+  {
+    "Staat": "USA",
+    "Kürzel": "CT",
+    "Territorium": "Connecticut",
+    "URI": "http://gov.genealogy.net/object_276618"
+  },
+  {
+    "Staat": "USA",
+    "Kürzel": "DC",
+    "Territorium": "Dist. of Columbia",
+    "URI": "http://gov.genealogy.net/object_276700"
+  },
+  {
+    "Staat": "USA",
+    "Kürzel": "DE",
+    "Territorium": "Delaware",
+    "URI": "http://gov.genealogy.net/object_276619"
+  },
+  {
+    "Staat": "USA",
+    "Kürzel": "FL",
+    "Territorium": "Florida",
+    "URI": "http://gov.genealogy.net/object_276620"
+  },
+  {
+    "Staat": "USA",
+    "Kürzel": "GA",
+    "Territorium": "Georgia",
+    "URI": "http://gov.genealogy.net/object_276661"
+  },
+  {
+    "Staat": "USA",
+    "Kürzel": "GU",
+    "Territorium": "Guam",
+    "URI": ""
+  },
+  {
+    "Staat": "USA",
+    "Kürzel": "HI",
+    "Territorium": "Hawaii",
+    "URI": "http://gov.genealogy.net/object_308886"
+  },
+  {
+    "Staat": "USA",
+    "Kürzel": "IA",
+    "Territorium": "Iowa",
+    "URI": "http://gov.genealogy.net/object_276665"
+  },
+  {
+    "Staat": "USA",
+    "Kürzel": "ID",
+    "Territorium": "Idaho",
+    "URI": "http://gov.genealogy.net/object_276662"
+  },
+  {
+    "Staat": "USA",
+    "Kürzel": "IL",
+    "Territorium": "Illinois",
+    "URI": "http://gov.genealogy.net/object_276663"
+  },
+  {
+    "Staat": "USA",
+    "Kürzel": "IN",
+    "Territorium": "Indiana",
+    "URI": "http://gov.genealogy.net/object_276664"
+  },
+  {
+    "Staat": "USA",
+    "Kürzel": "KS",
+    "Territorium": "Kansas",
+    "URI": "http://gov.genealogy.net/object_276666"
+  },
+  {
+    "Staat": "USA",
+    "Kürzel": "KY",
+    "Territorium": "Kentucky",
+    "URI": "http://gov.genealogy.net/object_276667"
+  },
+  {
+    "Staat": "USA",
+    "Kürzel": "LA",
+    "Territorium": "Louisiana",
+    "URI": "http://gov.genealogy.net/object_276669"
+  },
+  {
+    "Staat": "USA",
+    "Kürzel": "MA",
+    "Territorium": "Massachusetts",
+    "URI": "http://gov.genealogy.net/object_276671"
+  },
+  {
+    "Staat": "USA",
+    "Kürzel": "MD",
+    "Territorium": "Maryland",
+    "URI": "http://gov.genealogy.net/object_276672"
+  },
+  {
+    "Staat": "USA",
+    "Kürzel": "ME",
+    "Territorium": "Maine",
+    "URI": "http://gov.genealogy.net/object_276670"
+  },
+  {
+    "Staat": "USA",
+    "Kürzel": "MI",
+    "Territorium": "Michigan",
+    "URI": "http://gov.genealogy.net/object_276673"
+  },
+  {
+    "Staat": "USA",
+    "Kürzel": "MN",
+    "Territorium": "Minnesota",
+    "URI": "http://gov.genealogy.net/object_276674"
+  },
+  {
+    "Staat": "USA",
+    "Kürzel": "MO",
+    "Territorium": "Missouri",
+    "URI": "http://gov.genealogy.net/object_276676"
+  },
+  {
+    "Staat": "USA",
+    "Kürzel": "MP",
+    "Territorium": "Nördl. Marianen",
+    "URI": ""
+  },
+  {
+    "Staat": "USA",
+    "Kürzel": "MS",
+    "Territorium": "Mississippi",
+    "URI": "http://gov.genealogy.net/object_276675"
+  },
+  {
+    "Staat": "USA",
+    "Kürzel": "MT",
+    "Territorium": "Montana",
+    "URI": "http://gov.genealogy.net/object_276677"
+  },
+  {
+    "Staat": "USA",
+    "Kürzel": "NC",
+    "Territorium": "N. Carolina",
+    "URI": "http://gov.genealogy.net/object_276684"
+  },
+  {
+    "Staat": "USA",
+    "Kürzel": "ND",
+    "Territorium": "North Dakota",
+    "URI": "http://gov.genealogy.net/object_276685"
+  },
+  {
+    "Staat": "USA",
+    "Kürzel": "NE",
+    "Territorium": "Nebraska",
+    "URI": "http://gov.genealogy.net/object_276678"
+  },
+  {
+    "Staat": "USA",
+    "Kürzel": "NH",
+    "Territorium": "New Hampshire",
+    "URI": "http://gov.genealogy.net/object_276680"
+  },
+  {
+    "Staat": "USA",
+    "Kürzel": "NJ",
+    "Territorium": "New Jersey",
+    "URI": "http://gov.genealogy.net/object_276681"
+  },
+  {
+    "Staat": "USA",
+    "Kürzel": "NM",
+    "Territorium": "New Mexico",
+    "URI": "http://gov.genealogy.net/object_276682"
+  },
+  {
+    "Staat": "USA",
+    "Kürzel": "NV",
+    "Territorium": "Nevada",
+    "URI": "http://gov.genealogy.net/object_276679"
+  },
+  {
+    "Staat": "USA",
+    "Kürzel": "NY",
+    "Territorium": "New York",
+    "URI": "http://gov.genealogy.net/object_276683"
+  },
+  {
+    "Staat": "USA",
+    "Kürzel": "OH",
+    "Territorium": "Ohio",
+    "URI": "http://gov.genealogy.net/object_276686"
+  },
+  {
+    "Staat": "USA",
+    "Kürzel": "OK",
+    "Territorium": "Oklahoma",
+    "URI": "http://gov.genealogy.net/object_276687"
+  },
+  {
+    "Staat": "USA",
+    "Kürzel": "OR",
+    "Territorium": "Oregon",
+    "URI": "http://gov.genealogy.net/object_276688"
+  },
+  {
+    "Staat": "USA",
+    "Kürzel": "PA",
+    "Territorium": "Pennsylvania",
+    "URI": "http://gov.genealogy.net/object_276689"
+  },
+  {
+    "Staat": "USA",
+    "Kürzel": "PR",
+    "Territorium": "Puerto Rico",
+    "URI": ""
+  },
+  {
+    "Staat": "USA",
+    "Kürzel": "RI",
+    "Territorium": "Rhode Island",
+    "URI": "http://gov.genealogy.net/object_276690"
+  },
+  {
+    "Staat": "USA",
+    "Kürzel": "SC",
+    "Territorium": "S. Carolina",
+    "URI": "http://gov.genealogy.net/object_276691"
+  },
+  {
+    "Staat": "USA",
+    "Kürzel": "SD",
+    "Territorium": "South Dakota",
+    "URI": "http://gov.genealogy.net/object_276693"
+  },
+  {
+    "Staat": "USA",
+    "Kürzel": "TN",
+    "Territorium": "Tennessee",
+    "URI": "http://gov.genealogy.net/object_276694"
+  },
+  {
+    "Staat": "USA",
+    "Kürzel": "TX",
+    "Territorium": "Texas",
+    "URI": "http://gov.genealogy.net/object_276695"
+  },
+  {
+    "Staat": "USA",
+    "Kürzel": "UM",
+    "Territorium": "US Minor Outlying Islands",
+    "URI": ""
+  },
+  {
+    "Staat": "USA",
+    "Kürzel": "UT",
+    "Territorium": "Utah",
+    "URI": "http://gov.genealogy.net/object_276696"
+  },
+  {
+    "Staat": "USA",
+    "Kürzel": "VA",
+    "Territorium": "Virginia",
+    "URI": "http://gov.genealogy.net/object_276698"
+  },
+  {
+    "Staat": "USA",
+    "Kürzel": "VI",
+    "Territorium": "Amerikanische Jungferninseln",
+    "URI": ""
+  },
+  {
+    "Staat": "USA",
+    "Kürzel": "VT",
+    "Territorium": "Vermont",
+    "URI": "http://gov.genealogy.net/object_276697"
+  },
+  {
+    "Staat": "USA",
+    "Kürzel": "WA",
+    "Territorium": "Washington",
+    "URI": "http://gov.genealogy.net/object_276700"
+  },
+  {
+    "Staat": "USA",
+    "Kürzel": "WI",
+    "Territorium": "Wisconsin",
+    "URI": "http://gov.genealogy.net/object_276701"
+  },
+  {
+    "Staat": "USA",
+    "Kürzel": "WV",
+    "Territorium": "West Virginia",
+    "URI": "http://gov.genealogy.net/object_276702"
+  },
+  {
+    "Staat": "USA",
+    "Kürzel": "WY",
+    "Territorium": "Wyoming",
+    "URI": "http://gov.genealogy.net/object_276703"
+  },
+  {
+    "Staat": "ZA",
+    "Kürzel": "EC",
+    "Territorium": "Ostkap",
+    "URI": ""
+  },
+  {
+    "Staat": "ZA",
+    "Kürzel": "FS",
+    "Territorium": "Freistaat",
+    "URI": ""
+  },
+  {
+    "Staat": "ZA",
+    "Kürzel": "GP",
+    "Territorium": "Gauteng",
+    "URI": ""
+  },
+  {
+    "Staat": "ZA",
+    "Kürzel": "LP",
+    "Territorium": "Limpopo",
+    "URI": ""
+  },
+  {
+    "Staat": "ZA",
+    "Kürzel": "MP",
+    "Territorium": "Mpumalanga",
+    "URI": ""
+  },
+  {
+    "Staat": "ZA",
+    "Kürzel": "NC",
+    "Territorium": "Nordkap",
+    "URI": ""
+  },
+  {
+    "Staat": "ZA",
+    "Kürzel": "NW",
+    "Territorium": "Nordwest",
+    "URI": ""
+  },
+  {
+    "Staat": "ZA",
+    "Kürzel": "WC",
+    "Territorium": "Westkap",
+    "URI": ""
+  },
+  {
+    "Staat": "ZA",
+    "Kürzel": "ZN",
+    "Territorium": "KwaZulu-Natal",
+    "URI": ""
+  }
+]
