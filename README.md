@@ -1,5 +1,9 @@
 # Distribution of Family Names
 
+**New in 2026:** this is a full rewrite of the original 2016 app — same data and
+features, fully modernized to TypeScript, React, Vite, and a single embedded
+SQLite database, migrated by Claude Sonnet 5.
+
 A project created during the cultural hackathon
 ["Coding da Vinci Nord" 2016](https://codingdavinci.de). See also the project page [Entry](https://hackdash.org/projects/57dd5ce5d9284f016c04745b)
 at [HackDash](https://hackdash.org/dashboards/cdvnord) or the [article in my blog](https://jdinkla.github.io/software-development/2016/11/10/web-app-fuer-die-visualisierung-der-verbreitung-von-familiennamen.html).
