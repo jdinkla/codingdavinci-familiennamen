@@ -38,5 +38,8 @@
     "esbuild@0.28.1": true,
     "esbuild@0.27.7": true,
     "fsevents@2.3.3": true
+  },
+  "overrides": {
+    "esbuild": "0.28.1"
   }
 }
