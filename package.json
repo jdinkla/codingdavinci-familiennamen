@@ -23,20 +23,24 @@
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
-    "@vitest/coverage-v8": "^4.1.9",
-    "concurrently": "^10.0.3",
+    "@vitest/coverage-v8": "^4.1.11",
+    "concurrently": "^10.0.5",
     "eslint": "^10.6.0",
     "eslint-plugin-react-hooks": "^7.1.1",
     "eslint-plugin-react-refresh": "^0.5.3",
     "globals": "^17.7.0",
     "typescript": "^6.0.3",
     "typescript-eslint": "^8.62.0",
-    "vitest": "^4.1.9"
+    "vitest": "^4.1.11"
   },
   "allowScripts": {
     "better-sqlite3@12.11.1": true,
     "esbuild@0.28.1": true,
-    "esbuild@0.27.7": true,
     "fsevents@2.3.3": true
+  },
+  "overrides": {
+    "tsup": {
+      "esbuild": "0.28.1"
+    }
   }
 }
